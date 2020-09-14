@@ -19,13 +19,35 @@ async function fetchBirthdayList () {
                         <td>${person.lastName}</td>
                         <td>${person.birthday}</td>
                         <td>${person.id}</td>
+                        <td>
+                          <button class= "edit" class="btn btn-primary">Edit</button>
+                        </td>
+                        <td>
+                          <button class= "delete" class="btn btn-primary">Delete</button>
+                        </td>
                     </tr>
                 </body>
             </div>
             `;
     });
-    listOfBirthday.innerHTML = html.join('');
+            listOfBirthday.innerHTML = html.join('');
 }
+
+
+const deleteBirthday = (e) => {
+	// code delete function here
+	const button = e.target.closest('.delete');
+	if (button) {
+		const personToDelete = e.target.closest("tr");
+		console.log(personToDelete);
+		const id = personToDelete.dataset.id;
+		console.log(id);
+		deletePopup(id);
+	}
+};
+
+
+
 
 fetchBirthdayList();
 
