@@ -1,0 +1,10 @@
+td {
+    padding-left: 5rem;
+    padding-top: 2rem;
+    column-gap: 2rem;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 50%;
+}
