@@ -9,5 +9,63 @@ img {
     border-radius: 50%;
 }
 
+label {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 400;
+}
 
 
+.outer-modal {
+	display: grid;
+	place-items: center center;
+	pointer-events: none;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+    width: 100vw;
+}
+
+.outer-modal.open {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.inner-modal {
+	background-color: rgb(48, 114, 168);
+	min-height: 400px;
+	min-width: 300px;
+	padding: 10px;
+}
+
+/* .form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+} */
+
+.form-control {
+	padding: 10px;
+	width: 300px;
+	border-radius: 2px;
+	border: 1px solid lightgray;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.btn {
+	display: block;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding: 10px;
+	width: 100px;
+	border-radius: 2px;
+    border: 1px solid lightgray;
+    text-transform: uppercase;
+    font-weight: 700;
+}
