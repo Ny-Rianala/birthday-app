@@ -2,7 +2,7 @@ const basePoint = './people.json';
 const listOfBirthday = document.querySelector('.birthday');
 const outerModal = document.querySelector('.outer-modal');
 const innerModal = document.querySelector('.inner-modal');
-const addBtn = document.querySelector('button.edit');
+const editBtn = document.querySelector('button .edit');
 
 
 //fetch data from the url
@@ -35,12 +35,15 @@ async function fetchBirthdayList() {
   listOfBirthday.innerHTML = html.join('');
 }
 
-fetchBirthdayList()
+fetchBirthdayList();
 
 
-//Function that will allow the users to edit the list
-const openModal = e => {
-  innerModal.innerHTML = `
+//Listen for a click to the edit button
+window.addEventListener('click', e => {
+  if (e.target.matches(".edit")) {
+    //Function that will allow the users to edit the list
+   const openModal = e => {
+    innerModal.innerHTML = `
       <form>
           <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">First Name</label>
@@ -61,13 +64,17 @@ const openModal = e => {
             </div>
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-secondary mb-2">Add</button>
+            <button type="submit" class="btn btn-primary mb-2">Add</button>
           </div>
-        </form>
-    `;
-  outerModal.classList.add('open');
+          </form>
+      `;
+    outerModal.classList.add('open');
+  };
+  openModal();
+  };
+});
 
-};
+
 
 //function to close modals
 const handleCloseModal = event => {
@@ -86,31 +93,10 @@ const handleEscapeKey = event => {
   }
 };
 
-const handleBtnClick = e => {
-  if (e.target.matches("button.served")) {
-    const edit = event.target.closest(".edit");
-    deleteOrder(edit);
-  }
-};
 
 //Listeners
-window.addEventListener("click", handleBtnClick);
 window.addEventListener("keydown", handleEscapeKey);
 outerModal.addEventListener("click", handleCloseModal);
-addBtn.addEventListener("click", openModal);
-
-
-// const deleteBirthday = (e) => {
-// 	// code delete function here
-// 	const button = e.target.closest('.delete');
-// 	if (button) {
-// 		const personToDelete = e.target.closest("tr");
-// 		console.log(personToDelete);
-// 		const id = personToDelete.dataset.id;
-// 		console.log(id);
-// 		deletePopup(id);
-// 	}
-// };
 
 
 
