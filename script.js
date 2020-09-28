@@ -1,12 +1,14 @@
 const basePoint = './people.json';
 const listOfBirthday = document.querySelector('.birthday');
-// const outerModal = document.querySelector('.outer-modal');
-// const innerModal = document.querySelector('.inner-modal');
 const editBtn = document.querySelector('button .edit');
+const deleteBtn = document.querySelector('button .delete');
 const editedForm = document.querySelector("form");
 const innerConfirmModal = document.querySelector(".inner-confirm");
 const outerConfirmModal = document.querySelector('.outer-confirm');
+const innerModal = document.querySelector('.inner-modal');
+const outerModal = document.querySelector(".outer-modal");
 const addedList = document.querySelector(".list");
+const tbody = document.querySelector('tbody');
 
 
 //fetch data from the url
@@ -40,12 +42,13 @@ async function fetchBirthdayList() {
 fetchBirthdayList();
 
 //Listen for a click to the edit button
-window.addEventListener('click', e => {
-  if (e.target.matches(".edit")) {
+  window.addEventListener('click', e => {
+    if (e.target.matches(".edit")) {
   const tableList = e.target.closest("tr");
   let firstName = tableList.querySelector(".firstname"); 
   let lastName = tableList.querySelector(".lastname");
   let birthday = tableList.querySelector(".birthday");
+  let id = tableList.dataset.id;
 
     //Function that will allow the users to edit the list
     const form = document.createElement("form");
@@ -91,7 +94,7 @@ window.addEventListener('click', e => {
     birthday.textContent = editedBirthday;
     const cancelButton = (e) => {
 			if (cancelButton) {
-        form.classList.remove("open");
+        form.remove("inner-modal", "popup", "open");
 			}
     }
 		window.addEventListener("click", cancelButton);
@@ -100,71 +103,44 @@ window.addEventListener('click', e => {
 });
 
 
-
-const deleteBirthday = (e) => {
-  // If the delete icon is clicked, show this modal
-  const deleteButton = e.target.closest("button.delete")
-  if (deleteButton) {
-    innerConfirmModal.innerHTML = `
-    <div class="delete_container">
-      <p class="warning">
+const handleDeleteBirthday = e => {
+  // If the delete button is clicked, show this modal
+  innerConfirmModal.innerHTML = `
+    <div class="delete-birthday">
+      <p>
         Are you sure you want to delete
       </p>
-      <button type="button"  class="confirm">Confirm</button>
+      <button type="button" class="confirm">Confirm</button>
       <button type="button" class="cancel">Delete</button>
     </div>`;
     outerConfirmModal.classList.add('open');
-  }
+    console.log(handleDeleteBirthday);
+    innerConfirmModal();
+  };
 
-  // Grab the confirm and cancel delete buttons container
-  const confirmDeleteContainer = e.target.closest(".delete_container");
-
+  
   // Delete it
   const confirmDelete = e.target.closest(".confirm");
   if (confirmDelete) {
-    const elementToDelete = tbody.querySelector(".container");
+    const elementToDelete = tbody.querySelector("tr");
     const id = elementToDelete.dataset.id;
-    let findElement = people.filter(person => person.id !== id);
-    deletePopup();
+    let searchElement = people.filter(person => person.id !== id);
+    birthdayList(searchElement);
   }
 
-  // Cancel the delete warning
+  // Cancel the warning
   const cancelDelete = e.target.closest(".cancel");
   if (cancelDelete){
-    outerConfirmModal.remove();
-    deletePopup();
+    confirmDeleteBirthday.remove();
   }
-}; 
 
 
-      
 //listeners
-// window.addEventListener("keydown", handleEscapeKey);
-// outerModal.addEventListener("click", handleCloseModal);
+window.addEventListener("click", handleDeleteBirthday);
 window.addEventListener("key", handleKey);
-outerConfirmModal.addEventListener('click',closeAddModal);
+deleteBtn.addEventListener('click', handleDeleteBirthday);
 window.addEventListener("submit", handleSubmit);
-listUpdated.addEventListener('itemsUpdated', mirrorToLocalStorage);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+tbody.addEventListener("click", handleDeleteBirthday);
 
 
 

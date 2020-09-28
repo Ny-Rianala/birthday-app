@@ -98,12 +98,12 @@ label {
 	width: 80vw;
 }
 
-.outer-confirm.confirm {
+.outer-confirm-modal.confirm {
 	opacity: 1;
 	pointer-events: all;
 }
 
-.inner-confirm {
+.inner-confirm-modal {
 	background-color: white;
 	min-height: 400px;
 	min-width: 400px;
