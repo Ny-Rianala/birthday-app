@@ -37,17 +37,15 @@ async function fetchBirthdayList() {
   listOfBirthday.innerHTML = html.join('');
 }
 
-
 fetchBirthdayList();
-
 
 //Listen for a click to the edit button
 window.addEventListener('click', e => {
   if (e.target.matches(".edit")) {
-  const tableRow = e.target.closest("tr");
-  let firstName = tableRow.querySelector(".firstname"); 
-  let lastName = tableRow.querySelector(".lastname");
-  let birthday = tableRow.querySelector(".birthday");
+  const tableList = e.target.closest("tr");
+  let firstName = tableList.querySelector(".firstname"); 
+  let lastName = tableList.querySelector(".lastname");
+  let birthday = tableList.querySelector(".birthday");
 
     //Function that will allow the users to edit the list
     const form = document.createElement("form");
@@ -75,8 +73,9 @@ window.addEventListener('click', e => {
             <button type="submit" id= "submit-btn" class="btn btn-primary mb-2">Save</button>
           </div>
           <div class="col-auto">
-            <button type="submit" id= "cancel-btn" class="btn btn-primary mb-2">Cancel</button>
-          </div>`);
+            <button type= "button" id= "cancel-btn" class="btn btn-primary mb-2">Cancel</button>
+          </div>
+   `);
   document.body.appendChild(form); 
 
   form.addEventListener("submit", (e) => {
@@ -86,7 +85,7 @@ window.addEventListener('click', e => {
     const editedLastName = e.target.lastname.value;
     const editedBirthday = e.target.birthday.value;
 
-    // Change the content of the profile
+    // Change the content of the birthday
     firstName.textContent = editedFirstName;
     lastName.textContent = editedLastName; 
     birthday.textContent = editedBirthday;
@@ -94,34 +93,51 @@ window.addEventListener('click', e => {
 			if (cancelButton) {
         form.classList.remove("open");
 			}
-		}
+    }
 		window.addEventListener("click", cancelButton);
-    form.classList.remove("open");
   })
   };
 });
 
 
 
-
-window.addEventListener('click', e => {
-  if (e.target.matches(".delete")) {
-    //Function that will allow the users to confirm
-   const openConfirmModal = e => {
+const deleteBirthday = (e) => {
+  // If the delete icon is clicked, show this modal
+  const deleteButton = e.target.closest("button.delete")
+  if (deleteButton) {
     innerConfirmModal.innerHTML = `
-      <div>
-        <p>Are sure to delete this item</p>
-        <button class="btn accept">Accept</button>
-        <button class= "btn cancel">Cancel</button>
-      </div>
-      `;
-      outerConfirmModal.classList.add('confirm');
-  };
-  openConfirmModal();
-  };
-});
+    <div class="delete_container">
+      <p class="warning">
+        Are you sure you want to delete
+      </p>
+      <button type="button"  class="confirm">Confirm</button>
+      <button type="button" class="cancel">Delete</button>
+    </div>`;
+    outerConfirmModal.classList.add('open');
+  }
+
+  // Grab the confirm and cancel delete buttons container
+  const confirmDeleteContainer = e.target.closest(".delete_container");
+
+  // Delete it
+  const confirmDelete = e.target.closest(".confirm");
+  if (confirmDelete) {
+    const elementToDelete = tbody.querySelector(".container");
+    const id = elementToDelete.dataset.id;
+    let findElement = people.filter(person => person.id !== id);
+    deletePopup();
+  }
+
+  // Cancel the delete warning
+  const cancelDelete = e.target.closest(".cancel");
+  if (cancelDelete){
+    outerConfirmModal.remove();
+    deletePopup();
+  }
+}; 
 
 
+      
 //listeners
 // window.addEventListener("keydown", handleEscapeKey);
 // outerModal.addEventListener("click", handleCloseModal);
@@ -129,6 +145,23 @@ window.addEventListener("key", handleKey);
 outerConfirmModal.addEventListener('click',closeAddModal);
 window.addEventListener("submit", handleSubmit);
 listUpdated.addEventListener('itemsUpdated', mirrorToLocalStorage);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
