@@ -3,8 +3,8 @@ const listOfBirthday = document.querySelector('.birthday');
 const editBtn = document.querySelector('button .edit');
 const deleteBtn = document.querySelector('button .delete');
 const editedForm = document.querySelector("form");
-const innerConfirmModal = document.querySelector(".inner-confirm");
-const outerConfirmModal = document.querySelector('.outer-confirm');
+const innerConfirmModal = document.querySelector(".inner-confirm-modal");
+const outerConfirmModal = document.querySelector('.outer-confirm-modal');
 const innerModal = document.querySelector('.inner-modal');
 const outerModal = document.querySelector(".outer-modal");
 const addedList = document.querySelector(".list");
@@ -50,7 +50,7 @@ fetchBirthdayList();
   let birthday = tableList.querySelector(".birthday");
   let id = tableList.dataset.id;
 
-    //Function that will allow the users to edit the list
+  //Function that will allow the users to edit the list
     const form = document.createElement("form");
     form.classList.add("inner-modal", "popup", "open");
     form.insertAdjacentHTML("afterbegin", 
@@ -118,8 +118,8 @@ const handleDeleteBirthday = e => {
     innerConfirmModal();
   };
 
-  
-  // Delete it
+
+  //confirm the delete
   const confirmDelete = e.target.closest(".confirm");
   if (confirmDelete) {
     const elementToDelete = tbody.querySelector("tr");
@@ -140,7 +140,7 @@ window.addEventListener("click", handleDeleteBirthday);
 window.addEventListener("key", handleKey);
 deleteBtn.addEventListener('click', handleDeleteBirthday);
 window.addEventListener("submit", handleSubmit);
-tbody.addEventListener("click", handleDeleteBirthday);
+
 
 
 
