@@ -40,3 +40,28 @@ Once you're finished with the functionality, try to make your app more appealing
 Be creative 🎨
 
 Good Luck
+
+
+
+## report :
+
+ 1 - Structure of the my project:  
+- Firstly, I created a function that fetches all of the data. Then, I used sort method to sort the birthady date.  
+-  Secondly, I added an eventListener that listen for the edit button so I added variables that will show the values already.  
+-  I created a form that will allow the user to edit the list  
+  Adding eventListener to the submit button. Then get the input values from the form. 
+-  After that, I created a function that will handle the delete button so I added a modal to show the confirm text and the buttons.  
+
+
+2 - If you had more time, what area of your project would you improve?
+ - If I had more time, I would work in the delete, confirm buttons and so on.
+     
+3 - Did you learn anything new while working on this project?
+  - Yes, I learned how to set values inside of the form which we are going to edit.
+    
+4 - What was the most challenging part for you?
+   - The most challenging part for me is to make sure that when we click the cancel button everything inside of the inputs should stay the same then the modal should disappear. I think, I still did not get them right though.  
+
+5 - Would you like a new explanation about a specific topic?  
+ I need a bit explanation of using async await. I do not really understand how it works.
+- Any other comments?

@@ -81,6 +81,7 @@ fetchBirthdayList();
    `);
   document.body.appendChild(form); 
 
+  //listen for submit button
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     // Get the input values from the form
