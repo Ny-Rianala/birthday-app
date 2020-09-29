@@ -6,8 +6,7 @@ const innerConfirmModal = document.querySelector(".inner-confirm-modal");
 const outerConfirmModal = document.querySelector('.outer-confirm-modal');
 const innerModal = document.querySelector('.inner-modal');
 const outerModal = document.querySelector(".outer-modal");
-const addedList = document.querySelector(".list");
-const tbody = document.querySelector('tbody');
+
 
 
 //fetch data from the url
