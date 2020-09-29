@@ -27,8 +27,8 @@ async function fetchBirthdayList() {
                         <td class="lastname">${person.lastName}</td>
                         <td class="birthday" id="date">Turns ${person.birthday}</td>
                         <td>${person.id}</td>  
-                        <td><button class= "edit">Edit</button></td> 
-                        <td><button class= "delete">Delete</button></td>                 
+                        <td><button  class= "edit-btn"><img class="edit" src="/images/edit.png" alt=""></button></td> 
+                        <td><button class= "delete-btn"><img class="delete" src="/images/delete.png" alt=""></button></td>
                     </tr>
                 </body>
             </div>
@@ -133,14 +133,13 @@ window.addEventListener('click', e => {
           outerConfirmModal.classList.add('confirm');
         };      
 
-
 const confirmDeleteContainer = e.target.closest(".delete-birthday");
 
 
   //confirm the delete
   const confirmDelete = e.target.closest(".confirm-btn");
   if (confirmDelete) {
-    let searchElement = people.filter(person => person.id !== id);
+    let searchElement = birthdayList.filter(person => person.id !== id);
     birthdayList(searchElement);
   }
   window.addEventListener("click", confirmDelete);

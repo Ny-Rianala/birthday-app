@@ -1,3 +1,20 @@
+body {
+	margin: 0;
+	background-color: #feeaa4;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 27px;
+	color: #594a4e;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+
 td {
     padding-left: 5rem;
     padding-top: 2rem;
@@ -110,16 +127,15 @@ label {
 	padding: 20px;
 }
 
-.delete,
-  .edit {
-		color: white;
-		padding-left: 1rem;
-		padding-top: 0.5rem;
-		padding-right: 1rem;
+.delete-btn,
+  .edit-btn {
+		padding-left: 0.5rem;
+		padding-top: 0.25rem;
+		padding-right: 0.5rem;
 		padding-bottom: 0.5rem;
-		background: steelblue;
 		border: none;
-		border-radius: 10px;
+		width: 48px;
+	    height: 48px;
   }
 
 
@@ -129,7 +145,7 @@ label {
 	padding-top: 0.5rem;
 	padding-right: 1rem;
 	padding-bottom: 0.5rem;
-	background: slateblue;
+	background: #8c7851;;
 	border: none;
 	border-radius: 10px;
  }
@@ -146,4 +162,15 @@ label {
 	border-radius: 10px;
 	margin-right: 1rem;
  }
+
+
+
+.cake-image svg {
+	position: absolute;
+	top: 3%;
+	left: 61%;
+	width: 48px;
+	height: 48px;
+}
+
 
