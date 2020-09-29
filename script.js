@@ -135,19 +135,21 @@ window.addEventListener('click', e => {
         };      
 
 
+const confirmDeleteContainer = e.target.closest(".delete-birthday");
+
+
   //confirm the delete
   const confirmDelete = e.target.closest(".confirm-btn");
   if (confirmDelete) {
-    const elementToDelete = tbody.querySelector("tr");
-    const id = elementToDelete.dataset.id;
     let searchElement = people.filter(person => person.id !== id);
     birthdayList(searchElement);
   }
+  window.addEventListener("click", confirmDelete);
 
   // Cancel the warning
   const cancelBtn = (e) => {
     if (cancelBtn) {
-      div.remove("confirm");
+      confirmDeleteContainer.remove("confirm");
     }
   }
   window.addEventListener("click", cancelBtn);

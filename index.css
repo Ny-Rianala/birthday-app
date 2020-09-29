@@ -53,7 +53,7 @@ label {
 .inner-modal {
 	position: absolute;		
 	top: 0;
-	left: 60%;
+	left: 24%;
 	background-color: rgb(48, 114, 168);
 	min-height: max-content;
 	min-width: 300px;
@@ -105,17 +105,45 @@ label {
 
 .inner-confirm-modal {
 	background-color: white;
-	min-height: 400px;
-	min-width: 400px;
+	min-height: 200px;
+	min-width: 200px;
 	padding: 20px;
 }
 
-button {
+.delete,
+  .edit {
+		color: white;
+		padding-left: 1rem;
+		padding-top: 0.5rem;
+		padding-right: 1rem;
+		padding-bottom: 0.5rem;
+		background: steelblue;
+		border: none;
+		border-radius: 10px;
+  }
+
+
+ .add-btn {
+	color: white;
 	padding-left: 1rem;
 	padding-top: 0.5rem;
 	padding-right: 1rem;
 	padding-bottom: 0.5rem;
-	background: steelblue;
+	background: slateblue;
 	border: none;
 	border-radius: 10px;
-  }
+ }
+
+
+ .confirm-btn, .cancel-btn {
+	color: white;
+	padding-left: 1rem;
+	padding-top: 0.5rem;
+	padding-right: 1rem;
+	padding-bottom: 0.5rem;
+	background: rgb(77, 184, 169);
+	border: none;
+	border-radius: 10px;
+	margin-right: 1rem;
+ }
+

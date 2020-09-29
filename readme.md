@@ -57,7 +57,7 @@ Good Luck
  - If I had more time, I would work in the delete, confirm buttons and so on.
      
 3 - Did you learn anything new while working on this project?
-  - Yes, I learned how to set values inside of the form which we are going to edit.
+  - Yes, I learned how to set values inside of the form which we are going to edit. I learnt how to listen for buttons when we have them inside the html file compare when we have it in the js file because I was confused about them.
     
 4 - What was the most challenging part for you?
    - The most challenging part for me is to make sure that when we click the cancel button everything inside of the inputs should stay the same then the modal should disappear. I think, I still did not get them right though.  
