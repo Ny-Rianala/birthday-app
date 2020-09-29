@@ -85,7 +85,7 @@ label {
 }
 
 
-.outer-confirm {
+.outer-confirm-modal {
 	display: grid;
 	place-items: center center;
 	background-color: hsla(0, 0%, 0%, 0.7);
@@ -109,3 +109,13 @@ label {
 	min-width: 400px;
 	padding: 20px;
 }
+
+button {
+	padding-left: 1rem;
+	padding-top: 0.5rem;
+	padding-right: 1rem;
+	padding-bottom: 0.5rem;
+	background: steelblue;
+	border: none;
+	border-radius: 10px;
+  }

@@ -1,7 +1,6 @@
 const basePoint = './people.json';
 const listOfBirthday = document.querySelector('.birthday');
 const editBtn = document.querySelector('button .edit');
-const deleteBtn = document.querySelector('button .delete');
 const editedForm = document.querySelector("form");
 const innerConfirmModal = document.querySelector(".inner-confirm-modal");
 const outerConfirmModal = document.querySelector('.outer-confirm-modal');
@@ -52,7 +51,7 @@ fetchBirthdayList();
 
   //Function that will allow the users to edit the list
     const form = document.createElement("form");
-    form.classList.add("inner-modal", "popup", "open");
+    form.classList.add("inner-modal", "open");
     form.insertAdjacentHTML("afterbegin", 
     `<div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">First Name</label>
@@ -95,7 +94,7 @@ fetchBirthdayList();
     birthday.textContent = editedBirthday;
     const cancelButton = (e) => {
 			if (cancelButton) {
-        form.remove("inner-modal", "popup", "open");
+        form.remove("inner-modal", "open");
 			}
     }
 		window.addEventListener("click", cancelButton);
@@ -104,24 +103,40 @@ fetchBirthdayList();
 });
 
 
-const handleDeleteBirthday = e => {
-  // If the delete button is clicked, show this modal
-  innerConfirmModal.innerHTML = `
-    <div class="delete-birthday">
-      <p>
-        Are you sure you want to delete
-      </p>
-      <button type="button" class="confirm">Confirm</button>
-      <button type="button" class="cancel">Delete</button>
-    </div>`;
-    outerConfirmModal.classList.add('open');
-    console.log(handleDeleteBirthday);
-    innerConfirmModal();
-  };
+//remove the modal
+
+const handleCloseModal = event => {
+  const isOutside = !event.target.closest(".inner-modal");
+  if (isOutside) {
+      outerModal.classList.remove("open")
+  }
+};
+
+const closeModal  = () => {
+  outerModal.classList.remove("open");
+}
+
+
+//Listen for the delete button
+window.addEventListener('click', e => {
+    if (e.target.matches(".delete")) {
+        // If the delete button is clicked, show this modal
+          const html = `
+          <div class="delete-birthday">
+            <p>
+              Are you sure you want to delete
+            </p>
+            <button type="button" class="confirm-btn">Confirm</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+          </div>`;
+          console.log(innerConfirmModal);
+          innerConfirmModal.innerHTML = html;
+          outerConfirmModal.classList.add('confirm');
+        };      
 
 
   //confirm the delete
-  const confirmDelete = e.target.closest(".confirm");
+  const confirmDelete = e.target.closest(".confirm-btn");
   if (confirmDelete) {
     const elementToDelete = tbody.querySelector("tr");
     const id = elementToDelete.dataset.id;
@@ -130,36 +145,28 @@ const handleDeleteBirthday = e => {
   }
 
   // Cancel the warning
-  const cancelDelete = e.target.closest(".cancel");
-  if (cancelDelete){
-    confirmDeleteBirthday.remove();
+  const cancelBtn = (e) => {
+    if (cancelBtn) {
+      div.remove("confirm");
+    }
   }
+  window.addEventListener("click", cancelBtn);
+})
+
+
+
+//remove the modal
+const handleCloseConfirmModal = event => {
+  const isOutside = !event.target.closest(".inner-confirm-modal");
+  if (isOutside) {
+      outerConfirmModal.classList.remove("confirm");
+  }
+};
 
 
 //listeners
-window.addEventListener("click", handleDeleteBirthday);
-window.addEventListener("key", handleKey);
-deleteBtn.addEventListener('click', handleDeleteBirthday);
-window.addEventListener("submit", handleSubmit);
+outerModal.addEventListener("click", handleCloseModal);
+outerConfirmModal.addEventListener("click", handleCloseConfirmModal);
 
 
-
-
-/*const mirrorToLocalStorage = () => {
-  console.info('mirroring item to local storage');
-  localStorage.setItem("newItems", JSON.stringify(newItems));
-};
-
-const restoreFromLocalStorage = () => {
-  console.info('restoring from LS');
-  const lsItems = JSON.parse(localStorage.getItem('newItems'));
-  //check if there is smthg inside the local storage
-  if (lsItems) {
-      //push has no limit for argument
-      newItems.push(...lsItems);
-      listUpdated.dispatchEvent(new CustomEvent('itemsUpdated'));
-  }
-};
-
-restoreFromLocalStorage();*/
 
