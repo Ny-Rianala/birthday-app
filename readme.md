@@ -60,8 +60,9 @@ Good Luck
   - Yes, I learned how to set values inside of the form which we are going to edit. I learnt how to listen for buttons when we have them inside the html file compare when we have it in the js file because I was confused about them.
     
 4 - What was the most challenging part for you?
-   - The most challenging part for me is to make sure that when we click the cancel button everything inside of the inputs should stay the same then the modal should disappear. I think, I still did not get them right though.  
+   - The most challenging part for me is to make sure that when we click the cancel button everything inside of the inputs should stay the same then the modal should disappear. I think, I still did not get them right though. 
+   - There is also some errors that I could not solve in the delete button. 
 
 5 - Would you like a new explanation about a specific topic?  
- I need a bit explanation of using async await. I do not really understand how it works.
+ I need a bit explanation of using async await. I do not really understand how it works. For me, it is still hard to get buttons work, for example when it is in html, in the dom, in the modal. 
 - Any other comments?
