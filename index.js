@@ -1,3 +1,4 @@
+
 function wait(ms = 0) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -85,14 +86,14 @@ async function fetchBirthdayList() {
     console.log(htmlList);
     const html = htmlList.map(person => {
        return `
-            <tr data-id ="${person.id}">
-            <th scope="row"><img src="${person.picture}"/></th>
+            <tr class="container" data-id ="${person.id}">
+                <th scope="row"><img src="${person.picture}"/></th>
                 <td class="firstname">${person.firstName}</td>
                 <td class="lastname">${person.lastName}</td>
                 <td class="birthday" id="date">Turns ${person.ages} in ${person.date}</td>
                 <td>${person.differenceBetweenDays} days</td>  
-                <td><button  class="editButton"><img class="edit" src="/images/edit.png" alt=""></button></td> 
-                <td><button class= "deleteButton" data-id="${person.id}"><img class="delete" src="/images/delete.png" alt=""></button></td>
+                <td><button  class="editButton"><i class="ri-edit-box-fill"></i></button></td> 
+                <td><button class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></button></td>
             </tr>
             `;
     });
@@ -129,14 +130,14 @@ async function fetchBirthdayList() {
         popup.classList.add('popup');
         popup.innerHTML =
             `<fieldset>
-          <h3>Edit</h3>
-          <label>Lastname</label>
-          <input type="text" name="lastName" value="${person.lastName}"/>
-          <label>Firstname</label>
-          <input type="text" name="firstName" value="${person.firstName}"/>
-          <label>Birthday</label>
-          <input type="date" id="start" name="tripStart"value="2000-01-01" min="2000-01-01" max="2020-12-31">
-          <button type="submit">Submit</button>
+                <h3>Edit</h3>
+                <label>Lastname</label>
+                <input type="text" name="lastName" value="${person.lastName}"/>
+                <label>Firstname</label>
+                <input type="text" name="firstName" value="${person.firstName}"/>
+                <label>Birthday</label>
+                <input type="date" id="start" name="tripStart"value="2000-01-01" min="2000-01-01" max="2020-12-31">
+                <button type="submit">Submit</button>
         </fieldset>`;
         const skipButton = document.createElement('button');
         skipButton.type = 'button'; // so it doesn't submit
@@ -169,25 +170,29 @@ async function fetchBirthdayList() {
 };
 
 
-    const deletePopup = id => {
+    const deletePopup =  id => {
+        
             const peopleToDeleteId = people.filter(personToDelete => personToDelete.id !== id);
             console.log(peopleToDeleteId);
-            const skipButton = document.createElement("div");
-            skipButton.classList.add('popup');
-            skipButton.insertAdjacentHTML(
+            const deletePerson = document.createElement("div");
+            document.body.appendChild(deletePerson);
+            deletePerson.classList.add('popup');
+            deletePerson.insertAdjacentHTML(
                 "afterbegin",
                 `
                 <fieldset>
-                     <h1>Delete ${id.firstName} ${id.lastName}</h1>
                     <p>Are you sure to delete this person</p>
                     <button type="submit" class="delete">Delete</button>
                 </fieldset>
                 `);
 
-                document.body.appendChild(skipButton);
-                skipButton.classList.add("open");
-                skipButton.addEventListener(
-
+                document.body.appendChild(deletePerson);
+                deletePerson.classList.add("open");
+                const skipButton = document.createElement('button');
+                skipButton.type = 'button'; // so it doesn't submit
+                skipButton.textContent = 'Cancel';
+                deletePerson.firstElementChild.appendChild(skipButton);
+                deletePerson.addEventListener(
                     'click',
                     (e) => {
                         e.preventDefault()
@@ -195,14 +200,58 @@ async function fetchBirthdayList() {
                         if(deletebtn) {
                             people = peopleToDeleteId;
                             displayList(people);
-                            destroyPopup(skipButton);
-                            // listOfBirthday.innerHTML = displayList();
+                            destroyPopup(deletePerson);
                         }
                     },
+                );
+                skipButton.addEventListener(
+                    'click',
+                    () => {
+                        destroyPopup(deletePerson);
+                    },
+                    { once: true }
                 );
             }
 
 
+
+            // const addPerson = async () => {
+            //     const newPerson = {};
+            //     const result = await editPopup(newPerson);
+            //     if (result) {
+            //         result.id = Date.now().toString();
+            //         result.picture = 'https://www.fillmurray.com/100/100';
+            //         people.push(result);
+            //         displayList(people);
+            //     const addPopup = document.createElement("form");
+            //     addPopup.insertAdjacentHTML
+            //     addPopup.classList.add("open");
+            //     addPopup.addEventListener (
+            //         "afterbegin",
+            //         `
+            //          <form>
+            //             <label>Lastname</label>
+            //             <input type="text" name="lastName" value="${person.lastName}"/>
+            //             <label>Firstname</label>
+            //             <input type="text" name="firstName" value="${person.firstName}"/>
+            //             <label>Birthday</label>
+            //             <input type="date" id="start" name="tripStart"value="2000-01-01" min="2000-01-01" max="2020-12-31">
+            //             <button type="submit">Submit</button>
+            //          </form>
+            //         `);
+            //         "click",
+            //         (e) => {
+            //             e.preventDefault()
+            //     }
+                
+            //     }
+
+            const addPerson = id => {
+                const addPopup = document.createElement("form");
+                console.log(addPopup);
+            }
+            
+            
    const handleClick = (e) => {
        if (e.target.closest("button.editButton")){
            const editBirthdayId = e.target.closest("tr");
@@ -214,12 +263,16 @@ async function fetchBirthdayList() {
            const birthdayToDeleteId = deleteBirthdayId.dataset.id;
         //    console.log(birthdayToDeleteId);
            deletePopup(birthdayToDeleteId);
-
+        if (e.target.closest("button.add")) {
+            addPerson();
+        }
        }
    }
    listOfBirthday.addEventListener("click", handleClick);   
-  
-
 }
+
   fetchBirthdayList();
+
+
+  
 

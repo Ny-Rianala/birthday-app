@@ -7,7 +7,7 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 16px;
 	background-color: #feeaa4;
-	max-width: 100%;
+	width: 100%;
 	padding: 20px;
 }
 
@@ -27,7 +27,6 @@ h1 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
-	width: 500px;
 }
 	input {
 		padding: 0.5rem;
@@ -42,9 +41,6 @@ h1 {
 		color: #594a4e;
 	}
 
-.popup {
-	background-color: blue;
-}
 
 .header {
 	display: flex;
@@ -74,14 +70,28 @@ label {
 }
 
 
-/* .popup {
+ .popup {
 	display: grid;
 	place-items: center center;
 	pointer-events: none;
-	opacity: 0; 			
-	top: 0;
-	left: 0; 
-} */
+	opacity: 0; 
+	position: absolute;			
+	top: 50%;
+	left: 30%; 
+	background-color: rgb(207, 238, 250);
+	border-radius: 1rem;
+} 
+
+
+button {
+	border: none;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 .popup.open {
 	position: absolute;
