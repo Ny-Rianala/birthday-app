@@ -1,9 +1,16 @@
 body {
 	margin: 0;
-	background-color: #feeaa4;
+}
+
+.birthday {
+	margin: 0;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 16px;
+	background-color: #feeaa4;
+	max-width: 100%;
+	padding: 20px;
 }
+
 
 h1 {
 	font-size: 27px;
@@ -15,10 +22,43 @@ h1 {
 
 
 
+.filters {
+	margin: 20px 0px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	width: 500px;
+}
+	input {
+		padding: 0.5rem;
+		border: 1px solid #faeee7;
+		border-radius: 5px;
+	}
+	select {
+		width: 100%;
+		padding: 0.5rem 0.5rem;
+		border-radius: 5px;
+		border: 1px solid #faeee7;
+		color: #594a4e;
+	}
+
+.popup {
+	background-color: blue;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: indianred;
+	/* padding: 2rem; */
+}
+
+
 td {
-    padding-left: 5rem;
-    padding-top: 2rem;
-    column-gap: 2rem;
+    padding-left: 3rem;
+    padding-top: 1rem;
+    column-gap: 1rem;
 }
 
 img {
@@ -34,17 +74,18 @@ label {
 }
 
 
-.popup {
+/* .popup {
 	display: grid;
 	place-items: center center;
 	pointer-events: none;
 	opacity: 0; 			
 	top: 0;
 	left: 0; 
-}
+} */
 
 .popup.open {
-	opacity: 1;
+	position: absolute;
+	opacity: 1; 
 	pointer-events: all;
 }
 
@@ -71,7 +112,7 @@ label {
 	position: absolute;		
 	top: 0;
 	left: 24%;
-	background-color: rgb(48, 114, 168);
+	background-color: #D8EEFE;
 	min-height: max-content;
 	min-width: 300px;
 	padding: 20px;
@@ -141,13 +182,14 @@ label {
 
  .add-btn {
 	color: white;
-	padding-left: 1rem;
-	padding-top: 0.5rem;
-	padding-right: 1rem;
-	padding-bottom: 0.5rem;
+	/* padding-left: 0.27rem;
+	padding-top: 0.25rem;
+	padding-right: 0.27rem;
+	padding-bottom: 0.25rem; */
 	background: #8c7851;;
 	border: none;
 	border-radius: 10px;
+	margin-right: 5rem;
  }
 
 
