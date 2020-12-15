@@ -10,14 +10,10 @@
 </head>
 
 <body>
-    <main>
-
-        <table class="birthday">
-            <h1>Birthday</h1>
-            <div class="header">
-                <section class="filters">
-                    <input class="searchName" type="text" placeholder="Search by name" />
-                    <select class="filterMonth">
+    <header class="header">
+        <h1>Birthday</h1>
+        <input class="searchName" type="text" placeholder="Search by name" />
+        <select class="filterMonth">
 							<option value="">Filter by month</option>
 							<option value="0">January</option>
 							<option value="1">February</option>
@@ -32,32 +28,12 @@
 							<option value="10">November</option>
 							<option value="11">December</option>
 						</select>
-                </section>
-                <button type="button" class="add">Add a person</button>
-            </div>
-            <!-- <div class="list">
-					<div class="list-of-b" data-first="firstname" data-scd="lastName" data-birthday="date">					</div>
-				</div>
-				<div class="form-group row">
-					<label for="name" class="col-sm-2 col-form-label">First Name</label>
-					<div class="col-sm-10">
-					  <input type="text" class="form-control form-control-lg" name="firstname" id="firstname">
-					</div>
-				  </div>
-				  <div class="form-group row">
-					<label for="name" class="col-sm-2 col-form-label">Last Name</label>
-					<div class="col-sm-10">
-					  <input type="text" class="form-control" name="lastname" id="lastname">
-					</div>
-				  </div>
-				  <div class="form-group row">
-					<label for="text" class="col-sm-2 col-form-label">Birthday</label>
-					<div class="col-sm-10">
-					  <input type="text" class="form-control" name="birthday" id="birthday" >
-					</div>
-				  </div> -->
-            <tbody></tbody>
-        </table>
+        <button type="button" class="add">Add a person</button>
+    </header>
+    <main>
+        <section class="birthday">
+            <div></div>
+        </section>
         <div class="outer-confirm-modal">
             <div class="inner-confirm-modal"></div>
         </div>

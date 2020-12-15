@@ -3,11 +3,8 @@ function wait(ms = 0) {
 }
 
 const basePoint = './birthdayData.json';
-const listOfBirthday = document.querySelector('tbody');
+const listOfBirthday = document.querySelector('div');
 const addPersonToList = document.querySelector("button.add");
-console.log(addPersonToList);
-
-
 
 //fetch data from the url
 async function fetchBirthdayList() {
@@ -88,15 +85,15 @@ async function fetchBirthdayList() {
         console.log(htmlList);
         const html = htmlList.map(person => {
             return `
-            <tr class="container" data-id ="${person.id}">
-                <th scope="row"><img src="${person.picture}"/></th>
-                <td class="firstname">${person.firstName}</td>
-                <td class="lastname">${person.lastName}</td>
-                <td class="birthday" id="date">Turns ${person.ages} in ${person.date}</td>
-                <td>${person.differenceBetweenDays} days</td>  
-                <td><button  class="editButton"><i class="ri-edit-box-fill"></i></button></td> 
-                <td><button class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></button></td>
-            </tr>
+            <ul class="container" data-id ="${person.id}">
+                <li scope="row"><img src="${person.picture}"/></li>
+                <li class="firstname">${person.firstName}</li>
+                <li class="lastname">${person.lastName}</li>
+                <li class="birthday" id="date">Turns ${person.ages} in ${person.date}</li>
+                <li>${person.differenceBetweenDays} days</li>  
+                <li><button  class="editButton"><i class="ri-edit-box-fill"></i></button></li> 
+                <li><button class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></button></li>
+            </ul>
             `;
         });
         listOfBirthday.innerHTML = html.join('');
@@ -225,16 +222,17 @@ async function fetchBirthdayList() {
             // Create a popup form when clicking the add button
             const popupAdd = document.createElement('form');
             popupAdd.classList.add('popup');
-            popupAdd.insertAdjacentHTML('afterbegin', `
+            popupAdd.insertAdjacentHTML('afterbegin',
+                `
                 <form class="modalForm">
                         <label>What is your Avantar?</label>
-                        <input type="url" name="pic" value="https://bit.ly/35LplYa">
+                        <input type="url" name="pic" value="https://picsum.photos/id/1006/800/600?grayscale">
                         <label>What is your LastName?</label>
                         <input type="text" name="lastname" value="Kati">
                         <label>What is your FirstName?</label>
                         <input type="text" name="firstname" value="Nirina">
                         <label>What is your Birthday date?</label>
-                        <input type="date" name="birthday" value="05/05/1998">
+                        <input type="date" name="birthday" value="1998/05/05">
                     <div class="form-btn">
                         <button type="submit" class="submit ">Submit</button>
                     </div>
@@ -284,12 +282,12 @@ async function fetchBirthdayList() {
 
     const handleClick = (e) => {
         if (e.target.closest("button.editButton")) {
-            const editBirthdayId = e.target.closest("tr");
+            const editBirthdayId = e.target.closest("ul");
             const birthdayId = editBirthdayId.dataset.id;
             editBirthday(birthdayId);
         }
         if (e.target.closest("button.deleteButton")) {
-            const deleteBirthdayId = e.target.closest("tr");
+            const deleteBirthdayId = e.target.closest("ul");
             const birthdayToDeleteId = deleteBirthdayId.dataset.id;
             console.log(birthdayToDeleteId);
             deletePopup(birthdayToDeleteId);
