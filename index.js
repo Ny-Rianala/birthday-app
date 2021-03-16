@@ -13,13 +13,23 @@ async function fetchBirthdayList() {
     console.log(birthdayList);
     let people = [];
     people = birthdayList;
-    console.log(people);
 
+    //Filter person's birthday by name
 
+    const input = document.getElementById('birthday_id');
+    input.addEventListener("keyup", filteredPeople);
+
+    function filteredPeople() {
+        keyword = input.value.toLowerCase();
+        const filteredPeopleBirthday = birthdayList.filter(function(person){
+            return person.firstName.toLowerCase().trim().includes(keyword) || person.lastName.toLowerCase().trim().includes(keyword)
+        });
+        displayList(filteredPeopleBirthday)
+    }
 
     //function that will display the list 
-    function displayList() {
-
+    function displayList(people) {
+        
         let newPeopleBirthdayArray = people.sort((a, b) => a.birthday - b.birthday);
 
         const htmlList = newPeopleBirthdayArray.map(person => {
@@ -82,6 +92,7 @@ async function fetchBirthdayList() {
             }
             return newPerson;
         });
+
         console.log(htmlList);
         const html = htmlList.map(person => {
             return `
@@ -98,7 +109,7 @@ async function fetchBirthdayList() {
         });
         listOfBirthday.innerHTML = html.join('');
     };
-    displayList();
+    displayList(people);
 
     async function destroyPopup(popup) {
         popup.classList.remove('open');
