@@ -27,21 +27,20 @@ async function fetchBirthdayList() {
         displayList(filteredPeopleBirthday)
     }
 
-    const select = document.getElementById("filter_month");
-    select.addEventListener("click", filteredMonth);
+//     const select = document.getElementById("filter_month");
+//     select.addEventListener("click", filteredMonth);
      
-    function filteredMonth() {
-       key = select.value.toStringify();
-       const filteredBirthday = birthdayList.filter(function(month) {
-           return month.includes(key);
-       });
-       displayList(filteredBirthday);
-       console.log(filterBirthday);
-   }
+//    function filteredMonth() {
+//        key = select.value.toStringify();
+//        const filteredBirthday = birthdayList.filter(function(month) {
+//            return month.birthday.toStringify().includes(key);
+//        });
+//        displayList(filteredBirthday);
+//    }
 
 
     //function that will display the list 
-    function displayList(birthdayList) {
+    function displayList(people) {
         
         let newPeopleBirthdayArray = birthdayList.sort((a, b) => a.birthday - b.birthday);
 
@@ -122,7 +121,7 @@ async function fetchBirthdayList() {
         });
         listOfBirthday.innerHTML = html.join('');
     };
-    displayList(birthdayList);
+    displayList(people);
 
     async function destroyPopup(popup) {
         popup.classList.remove('open');
@@ -136,7 +135,7 @@ async function fetchBirthdayList() {
 
     //function that will look for the birthday id
     const editBirthday = id => {
-        const birthdayId = birthdayList.find((birthday => birthday.id == id));
+        const birthdayId = people.find((birthday => birthday.id == id));
         console.log(birthdayId);
         const result = editPopup(birthdayId);
         if (result) {
