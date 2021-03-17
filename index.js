@@ -3,12 +3,12 @@ function wait(ms = 0) {
 }
 
 const basePoint = './birthdayData.json';
-const listOfBirthday = document.querySelector('div');
+const listOfBirthday = document.querySelector('div.wrapper');
 const addPersonToList = document.querySelector("button.add");
 
 //fetch data from the url
 async function fetchBirthdayList() {
-    let res = await fetch("https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/93debb7463fbaaec29622221b8f9e719bd5b119f/birthdayPeople.json");
+    let res = await fetch("https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/b17e08696906abeaac8bc260f57738eaa3f6abb1/birthdayPeople.json");
     const birthdayList = await res.json();
     console.log(birthdayList);
     let people = [];
@@ -24,22 +24,25 @@ async function fetchBirthdayList() {
         const filteredPeopleBirthday = birthdayList.filter(function(person){
             return person.firstName.toLowerCase().trim().includes(keyword) || person.lastName.toLowerCase().trim().includes(keyword)
         });
-        displayList(filteredPeopleBirthday)
+        displayList(filteredPeopleBirthday);
     }
 
-    const select = document.getElementById("filter_month");
-    select.addEventListener("click", filteredMonth);
-     
-    function filteredMonth() {
-       key = select.value.toStringify();
-       const filteredBirthday = birthdayList.filter(function(month) {
-           return month.includes(key);
-       });
-       displayList(filteredBirthday);
-       console.log(filterBirthday);
-   }
+//select by birthday
+  const select = document.getElementById("filter_month");
+  select.addEventListener("change", function(e) {
+    let filteredBirthday = birthdayList.filter((item) => {
+        let date = new Date(item.birthday);
+        let monthName = date.toLocaleString("default", { month: "long"})
+        console.log(e.target.value);
 
+        return monthName === e.target.value;
+    });
+    let months = displayList(filteredBirthday);
+    console.log(filteredBirthday);
+    listOfBirthday.innerHtml = months;
+  });
 
+  
     //function that will display the list 
     function displayList(birthdayList) {
         
@@ -77,7 +80,7 @@ async function fetchBirthdayList() {
             }
             // Assign the age in a variable so that we can use it with the object
             let age = calculateAge(new Date(person.birthday));
-            // Set a condition for the number of days untill the birthday comes
+            // Set a condition for the number of days until the birthday comes
             if (date.getMonth() < today.getMonth()) {
                 birthDayYear = today.getFullYear() + 1;
                 age++;
@@ -250,13 +253,13 @@ async function fetchBirthdayList() {
                 `
                 <form class="modalForm">
                         <label>What is your Avantar?</label>
-                        <input type="url" name="pic" value="https://picsum.photos/id/1006/800/600?grayscale">
+                        <input type="url" name="pic" value="https://picsum.photos/id/1006/120/120?grayscale">
                         <label>What is your LastName?</label>
                         <input type="text" name="lastname" value="Kati">
                         <label>What is your FirstName?</label>
                         <input type="text" name="firstname" value="Nirina">
                         <label>What is your Birthday date?</label>
-                        <input type="date" name="birthday" value="1998/05/05">
+                        <input type="date" name="birthday" value="05/05/1998">
                     <div class="form-btn">
                         <button type="submit" class="submit ">Submit</button>
                     </div>
@@ -265,7 +268,8 @@ async function fetchBirthdayList() {
             const skipButton = document.createElement('button');
             skipButton.type = 'button'; // so it doesn't submit
             skipButton.textContent = 'Cancel';
-            popupAdd.firstElementChild.appendChild(skipButton);
+            skipButton.classList.add("cancel");
+            popupAdd.lastElementChild.appendChild(skipButton);
 
             document.body.appendChild(popupAdd);
             popupAdd.classList.add('open');
@@ -288,7 +292,7 @@ async function fetchBirthdayList() {
                 }
                 people.push(newPerson);
                 displayList(people);
-                // destroyPopup(popupAdd);
+                destroyPopup(popupAdd);
 
                 // tbody.dispatchEvent(new CustomEvent('updatePeopleLs'));
             });
