@@ -1,3 +1,5 @@
+const { format } = require("date-fns");
+
 function wait(ms = 0) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -147,6 +149,9 @@ async function fetchBirthdayList() {
 
 
     const editPopup = person => {
+        const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10);
+        // console.log(date);
+        console.log(birthdayDate);
         return new Promise(async resolve => {
             const popup = document.createElement('form');
             popup.classList.add('popup');
@@ -158,7 +163,12 @@ async function fetchBirthdayList() {
                 <label>Firstname</label>
                 <input type="text" name="firstName" value="${person.firstName}"/>
                 <label>Birthday</label>
-                <input type="date" id="start" name="tripStart"value="2000-01-01" min="2000-01-01" max="2020-12-31">
+                <input 
+                    type="date" 
+                    id="start" 
+                    name="birthday"  
+                    value="${birthdayDate}"
+                >
                 <button class="submit" type="submit">Save</button>
         </fieldset>`;
 
@@ -175,7 +185,9 @@ async function fetchBirthdayList() {
                     e.preventDefault();
                     person.lastName = e.target.lastName.value;
                     person.firstName = e.target.firstName.value;
-                    person.birthday = e.target.tripStart.value;
+                    person.birthday = e.target.birthday.value;
+                    person.id= Date.now();
+                    
                     resolve();
                     displayList(people)
                     destroyPopup(popup);
