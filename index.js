@@ -10,7 +10,6 @@ const addPersonToList = document.querySelector("button.add");
 async function fetchBirthdayList() {
     let res = await fetch("https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/b17e08696906abeaac8bc260f57738eaa3f6abb1/birthdayPeople.json");
     const birthdayList = await res.json();
-    console.log(birthdayList);
     let people = [];
     people = birthdayList;
 
@@ -21,7 +20,7 @@ async function fetchBirthdayList() {
 
     function filteredPeople() {
         keyword = input.value.toLowerCase();
-        const filteredPeopleBirthday = birthdayList.filter(function(person){
+        const filteredPeopleBirthday = people.filter(function(person){
             return person.firstName.toLowerCase().trim().includes(keyword) || person.lastName.toLowerCase().trim().includes(keyword)
         });
         displayList(filteredPeopleBirthday);
@@ -44,9 +43,9 @@ async function fetchBirthdayList() {
 
   
     //function that will display the list 
-    function displayList(birthdayList) {
+    function displayList(people) {
         
-        let newPeopleBirthdayArray = birthdayList.sort((a, b) => a.birthday - b.birthday);
+        let newPeopleBirthdayArray = people.sort((a, b) => a.birthday - b.birthday);
 
         const htmlList = newPeopleBirthdayArray.map(person => {
             // Store all the months in a variable
@@ -109,7 +108,6 @@ async function fetchBirthdayList() {
             return newPerson;
         });
 
-        console.log(htmlList);
         const html = htmlList.map(person => {
             return `
             <ul class="container" data-id ="${person.id}">
@@ -125,7 +123,7 @@ async function fetchBirthdayList() {
         });
         listOfBirthday.innerHTML = html.join('');
     };
-    displayList(birthdayList);
+    displayList(people);
 
     async function destroyPopup(popup) {
         popup.classList.remove('open');
@@ -139,11 +137,11 @@ async function fetchBirthdayList() {
 
     //function that will look for the birthday id
     const editBirthday = id => {
-        const birthdayId = birthdayList.find((birthday => birthday.id == id));
-        console.log(birthdayId);
-        const result = editPopup(birthdayId);
+        const personToEdit = birthdayList.find((birthday => birthday.id == id));
+        console.log(personToEdit);
+        const result = editPopup(personToEdit);
         if (result) {
-            displayList(result);
+            // displayList(result);
         }
     }
 
@@ -179,7 +177,7 @@ async function fetchBirthdayList() {
                     person.firstName = e.target.firstName.value;
                     person.birthday = e.target.tripStart.value;
                     resolve();
-                    displayList()
+                    displayList(people)
                     destroyPopup(popup);
                 }, { once: true }
             );

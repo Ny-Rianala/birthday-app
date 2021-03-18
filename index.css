@@ -1,14 +1,42 @@
 body {
+    font-family: "Rubik", sans-serif;
     margin: 0;
     background: #D8EEFE;
 }
 
 .birthday {
     margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     width: 100%;
     padding: 20px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+
+.search label {
+    color: #094067;
+    padding-bottom: 10px;
+}
+
+.month_filter {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14px;
+}
+
+.month_filter label {
+  color: #094067;
+  padding-bottom: 10px;    
+}
+.subheading {
+    font-size: 32px;
+    color: #094067;
 }
 
 .birthday {
@@ -70,14 +98,14 @@ h1 {
 } */
 
 input {
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #faeee7;
     border-radius: 5px;
 }
 
 select {
     width: 50%;
-    padding: 0.5rem 0.5rem;
+    padding: 0.75rem 0.75rem;
     border-radius: 5px;
     border: 1px solid #faeee7;
     color: #594a4e;
@@ -142,7 +170,7 @@ label {
 }
 
 .add {
-    margin-left: 2px;
+    margin-left: 14px;
     margin-top: 10px;
     padding: 10px;
     border-radius: 2px;
@@ -291,4 +319,22 @@ fieldset {
     left: 61%;
     width: 48px;
     height: 48px;
+}
+
+@media(min-width: 1000px) {
+    input , select {
+        max-width: 25%;
+    }
+    .birthday {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+    }
+    /* .form-search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: space-between; */
+    } */
 }

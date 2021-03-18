@@ -11,23 +11,31 @@
 
 <body>
     <header class="header">
-        <h1>Birthday</h1>
-        <input class="searchName" type="text" placeholder="Type a name" id="birthday_id"/>
-        <select class="filterMonth" id="filter_month">
-							<option value="">Filter by month</option>
-							<option value="January">January</option>
-							<option value="February">February</option>
-							<option value="March">March</option>
-							<option value="April">April</option>
-							<option value="May">May</option>
-							<option value="June">June</option>
-							<option value="July">July</option>
-							<option value="August">August</option>
-							<option value="September">September</option>
-							<option value="Octber">October</option>
-							<option value="November">November</option>
-							<option value="December">December</option>
-						</select>
+        <h1 class="subheading">Birthday App</h1>
+		<div class="form-search">
+			<form class="search">
+			<label>Filter by name</label>
+			<input class="searchName" type="text" placeholder="Type a name" id="birthday_id"/>
+			</form>
+			<div class="month_filter">
+				<label>Filter by month</label>
+				<select class="filterMonth" id="filter_month">
+						<option value="">Filter by month</option>
+						<option value="January">January</option>
+						<option value="February">February</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						<option value="September">September</option>
+						<option value="Octber">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+				</select>
+			</div>
+		</div>
         <button type="button" class="add">Add a person</button>
     </header>
     <main>
