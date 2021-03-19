@@ -110,7 +110,7 @@ async function fetchBirthdayList() {
             return newPerson;
         });
 
-        const html = htmlList.map(person => {
+        const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
             return `
             <ul class="container" data-id ="${person.id}">
                 <li scope="row"><img src="${person.picture}"/></li>
@@ -118,7 +118,7 @@ async function fetchBirthdayList() {
                 <li class="lastname">${person.lastName}</li>
                 <li class="birthday" id="date">Turns ${person.ages} in ${person.date}</li>
                 <li>${person.differenceBetweenDays} days</li>  
-                <li><button  class="editButton"><i class="ri-edit-box-fill"></i></button></li> 
+                <li><button class="editButton"><i class="ri-edit-box-fill"></i></button></li> 
                 <li><button class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></button></li>
             </ul>
             `;
@@ -149,8 +149,7 @@ async function fetchBirthdayList() {
 
 
     const editPopup = person => {
-        const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10);
-        // console.log(date);
+        const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10)
         console.log(birthdayDate);
         return new Promise(async resolve => {
             const popup = document.createElement('form');
@@ -169,12 +168,13 @@ async function fetchBirthdayList() {
                     name="birthday"  
                     value="${birthdayDate}"
                 >
-                <button class="submit" type="submit">Save</button>
+                <button class="submit-edit" type="submit">Save changes</button>
         </fieldset>`;
 
             const skipButton = document.createElement('button');
             skipButton.type = 'button'; // so it doesn't submit
             skipButton.textContent = 'Cancel';
+            skipButton.classList.add("cancel-edit");
             popup.firstElementChild.appendChild(skipButton);
             document.body.appendChild(popup);
             // await wait(10);
@@ -298,7 +298,7 @@ async function fetchBirthdayList() {
                     lastName: form.lastname.value,
                     firstName: form.firstname.value,
                     birthday: form.birthday.value,
-                    id: Date.now()
+                    id: Date.now().toString()
                 }
                 people.push(newPerson);
                 displayList(people);
