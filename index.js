@@ -230,7 +230,7 @@ async function fetchBirthdayList() {
                     document.body.style.overflow = "auto";
                     deletePerson.firstElementChild.appendChild(skipButton);
 
-                    deletePerson.addEventListener('click',(e) => {
+                    deletePerson.addEventListener('submit',(e) => {
                       e.preventDefault()
                       const peopleToDeleteId = people.filter(personToDelete => personToDelete.id != id);
                       displayList(peopleToDeleteId);
@@ -335,6 +335,10 @@ async function fetchBirthdayList() {
           deletePopup(birthdayToDeleteId);
         }
       }
+
+      // const setBirthday = people.localStorage.setItem("peoplesBirthday", JSON.stringify(people));
+      // const getBirthday = people.localStorage.getItem("peoplesBirthday");
+      
       getBirthdayList();
       listOfBirthday.addEventListener("click", handleClick);
       setBirthdayList();
