@@ -30,7 +30,7 @@ async function fetchBirthdayList() {
         displayList(people);
     }
 
-  //filter name and select
+  //filter name and select a month
   function filters () {
     const selectSearch = searchByMonth.value.toLowerCase().trim();
     const inputSearch = searchByName.value.toLowerCase().trim();
@@ -179,7 +179,8 @@ async function fetchBirthdayList() {
             </fieldset>`;
             
             const skipButton = document.createElement('button');
-            skipButton.type = 'button'; // so it doesn't submit
+            // so it doesn't submit
+            skipButton.type = 'button'; 
             skipButton.textContent = 'Cancel';
             skipButton.classList.add("cancel-edit");
             document.body.style.overflow = "auto";
@@ -202,6 +203,7 @@ async function fetchBirthdayList() {
             skipButton.addEventListener('click', () => {
               resolve(null);
               destroyPopup(popup);
+              document.body.style.overflow = "auto";
             }, { once: true });
           });
         };
@@ -233,6 +235,7 @@ async function fetchBirthdayList() {
                     const peopleToDeleteId = people.filter(personToDelete => personToDelete.id != id);
                     displayList(peopleToDeleteId);
                     destroyPopup(deletePerson);
+                    document.body.style.overflow = "auto";
                     
                   }, { once: true });
                   
@@ -260,17 +263,17 @@ async function fetchBirthdayList() {
         popupAdd.insertAdjacentHTML('afterbegin',
         `
         <form class="modalForm">
-        <label>What is your Avantar?</label>
-        <input type="url" name="pic" value="https://picsum.photos/id/1006/120/120?grayscale">
-        <label>What is your FirstName?</label>
-        <input type="text" name="firstname" placeholder="your firstname">
-        <label>What is your LastName?</label>
-        <input type="text" name="lastname" placeholder="your lastname">
-        <label>What is your Birthday date?</label>
-        <input type="date" name="birthday" max="${formatDate}">
-        <div class="form-btn" required>
-        <button type="submit" class="submit ">Submit</button>
-        </div>
+          <label>What is your Avantar?</label>
+          <input type="url" name="pic" value="https://picsum.photos/id/1006/120/120?grayscale">
+          <label>What is your FirstName?</label>
+          <input type="text" name="firstname" placeholder="your firstname">
+          <label>What is your LastName?</label>
+          <input type="text" name="lastname" placeholder="your lastname">
+          <label>What is your Birthday date?</label>
+          <input type="date" name="birthday" max="${formatDate}">
+          <div class="form-btn" required>
+            <button type="submit" class="submit ">Submit</button>
+          </div>
         </form>
         `);
         const skipButton = document.createElement('button');
@@ -332,6 +335,7 @@ async function fetchBirthdayList() {
           const birthdayToDeleteId = deleteBirthdayId.dataset.id;
           console.log(birthdayToDeleteId);
           deletePopup(birthdayToDeleteId);
+          document.body.style.overflow = "hidden";
         }
       }
       

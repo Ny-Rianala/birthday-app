@@ -351,7 +351,7 @@ fieldset {
     font-size: 18px;
     color: #5F6C7B;
     position: absolute;
-    top: 77%;
+    top: 69%;
     left: 46%;
     margin-top: 11px;
 }
@@ -513,13 +513,6 @@ fieldset {
     .container-name {
         padding-left: 39px;
     }
-    /* .popup {
-      position: absolute;
-      top: 20%;
-      left: 22%;
-      padding-left: 60px;
-      padding-right: 188px;
-   } */
    .firstandlastname {
        color: #094067;
        font-size: 48px;
@@ -554,16 +547,13 @@ fieldset label {
     pointer-events: none;
     opacity: 0;
     background-color: #ffff;
-    /* width: 50%; */
     position: absolute;
-    top: 20%;
-    left: 35%;
-    padding-top: 33px;
-    padding-bottom: 35px;
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-left: -21px;
-    padding-right: -54px;
+    top: 18%;
+    left: 18%;
+    padding-top: 121px;
+    padding-bottom: 189px;
+    padding-left: 263px;
+    padding-right: 298px;
 }
 .cancel-delete {
     padding-top: 13px;
@@ -576,8 +566,8 @@ fieldset label {
     font-size: 18px;
     color: #5F6C7B;
     position: absolute;
-    top: 48%;
-    left: 60%;
+    top: 42.075%;
+    left: 55%;
 }
 .searchName {
     margin-right: 35px;
@@ -585,6 +575,12 @@ fieldset label {
     padding-left: 20px;
     padding-bottom: 14px;
     padding-right: 141px;
+}
+.filterMonth {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    padding-right: 129px;
 }
 
     }
