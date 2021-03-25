@@ -35,7 +35,7 @@ body {
 
 .search label {
     color: #094067;
-    padding-bottom: 10px;
+    padding-bottom: 13px;
     font-size: 18px;
     font-weight: 500;
 }
@@ -43,7 +43,7 @@ body {
 
 .month_filter label {
   color: #094067;
-  padding-bottom: 10px;    
+  padding-bottom: 13px;    
   font-size: 18px;
   font-weight: 500;
 }
@@ -306,8 +306,8 @@ fieldset {
     padding-top: 15px;
     padding-left: 18px;
     padding-bottom: 14px;
-    padding-right: 19px;
-    border-radius: 2px;
+    padding-right: 17px;
+    border-radius: 8px;
     color: white;
     background-color: #EF4565;
     font-size: 18px;
@@ -454,6 +454,9 @@ fieldset {
 @media(min-width: 1000px) {
     .subheading {
         font-size: 64px;
+        margin: 0;
+        padding-top: 64px;
+        padding-bottom: 57px;
     }
     .header {
         display: flex;
@@ -477,6 +480,7 @@ fieldset {
         padding-right: 143px;
         background-color: #ffff;
         max-width: 79%;
+        margin-top: 10px;
     }
     .form-search {
         display: flex;
@@ -492,8 +496,10 @@ fieldset {
         padding-right: 34px;
     }
     .add {
-        margin: 34px;
         margin-top: 53px;
+        margin-left: 54px;
+        margin-bottom: 31px;
+    };
     }
     .days {
         color: #5F6C7B;
@@ -581,7 +587,47 @@ fieldset label {
     padding-left: 20px;
     padding-bottom: 14px;
     padding-right: 129px;
+    margin-left: 9px;
+}
+.editfirstname {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    padding-right: 156px;
+}
+.editlastname {
+    padding-top: 14px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-right: 185px;
+}
+.editbirthday {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    padding-right: 144px;
+}
+.submit-edit {
+    padding-top: 14px;
+    padding-left: 21px;
+    padding-bottom: 15px;
+    padding-right: 23px; 
+    font-size: 18px;
+    line-height: 23.33px;
+    margin-right: 0;
 }
 
-    }
-
+.cancel-edit {
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    padding-top: 14px;
+    padding-left: 48px;
+    padding-bottom: 15px;
+    padding-right: 64px;
+    line-height: 21.33px;
+    margin-top: 0;
+}
+.search {
+    margin-right: 0;
+}

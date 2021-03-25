@@ -163,12 +163,13 @@ async function fetchBirthdayList() {
           popup.innerHTML =
           `<fieldset>
             <h3 class="firstandlastname">Edit ${person.firstName} ${person.lastName}</h3>
-            <label>Lastname</label>
-            <input type="text" name="lastName" value="${person.lastName}"/>
             <label>Firstname</label>
-            <input type="text" name="firstName" value="${person.firstName}"/>
+            <input class="editfirstname" type="text" name="firstName" value="${person.firstName}"/>
+            <label>Lastname</label>
+            <input class="editlastname" type="text" name="lastName" value="${person.lastName}"/>
             <label>Birthday</label>
             <input 
+              class="editbirthday"
               type="date" 
               id="start" 
               name="birthday"  
@@ -186,7 +187,6 @@ async function fetchBirthdayList() {
             document.body.style.overflow = "auto";
             popup.firstElementChild.appendChild(skipButton);
             document.body.appendChild(popup);
-            // await wait(10);
             popup.classList.add('open');
             document.body.style.overflow = "hidden";
             popup.addEventListener('submit', (e) => {
