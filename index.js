@@ -210,7 +210,7 @@ async function fetchBirthdayList() {
               
                   
       const deletePopup = id => {
-        const deletePerson = document.createElement("div");
+        const deletePerson = document.createElement("form");
                 document.body.appendChild(deletePerson);
                 deletePerson.classList.add('popup');
                 deletePerson.insertAdjacentHTML(
