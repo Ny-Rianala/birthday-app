@@ -492,7 +492,8 @@ fieldset {
         padding-right: 34px;
     }
     .add {
-        margin: 0;
+        margin: 34px;
+        margin-top: 53px;
     }
     .days {
         color: #5F6C7B;
@@ -577,6 +578,13 @@ fieldset label {
     position: absolute;
     top: 48%;
     left: 60%;
+}
+.searchName {
+    margin-right: 35px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    padding-right: 141px;
 }
 
     }
