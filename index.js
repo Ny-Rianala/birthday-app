@@ -3,6 +3,7 @@ function wait(ms = 0) {
 }
 
 const basePoint = './birthdayData.json';
+const main = document.querySelector('main')
 const listOfBirthday = document.querySelector('div.wrapper');
 const addPersonToList = document.querySelector("button.add");
 const searchByName = document.querySelector("[name='search']")
@@ -11,7 +12,9 @@ const searchByMonth = document.querySelector('[name="select"]')
 //fetch data from the url
 async function fetchBirthdayList() {
     let res = await fetch("https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/b17e08696906abeaac8bc260f57738eaa3f6abb1/birthdayPeople.json");
-    const birthdayList = await res.json();
+    let listOfPeople = JSON.parse(localStorage.getItem("people"));
+    const birthdayList = listOfPeople && listOfPeople.length ? listOfPeople : await res.json();
+    // debugge
     let people = [];
     people = birthdayList;
 
@@ -22,7 +25,8 @@ async function fetchBirthdayList() {
     
     function getBirthdayList() {
         let listOfPeople = JSON.parse(localStorage.getItem("people"));
-        if(listOfPeople !== null) {
+        // debugger 
+        if(listOfPeople !== []) {
             people = listOfPeople;
         }else {
             people = birthdayList;
@@ -46,8 +50,8 @@ async function fetchBirthdayList() {
   }
   
   //function that will display the list 
-  function displayList(birthdayList) {
-    const htmlList = birthdayList.map(person => {
+  function displayList(people) {
+    const htmlList = people.map(person => {
       // Store all the months in a variable
       const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
       // Get the day and month
@@ -105,9 +109,13 @@ async function fetchBirthdayList() {
         date: dateString,
         differenceBetweenDays: diffDays,
       }
+      // console.log("calculate age updatelist");
+      // main.dispatchEvent(new CustomEvent('updateList'));
+
       return newPerson;
     });
     
+    // debugger
     const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
       return `
       <div>
@@ -130,6 +138,9 @@ async function fetchBirthdayList() {
       `;
     });
     listOfBirthday.innerHTML = html.join('');
+    console.log("sort upadate list");
+    main.dispatchEvent(new CustomEvent('updateList'));
+
   };
   displayList(people);
   
@@ -145,8 +156,7 @@ async function fetchBirthdayList() {
       
     //function that will look for the birthday id
   const editBirthday = id => {
-    const personToEdit = people.find((birthday => birthday.id == id));
-    console.log(personToEdit);
+    const personToEdit = people.find((birthday => birthday.id == id)); 
     const result = editPopup(personToEdit);
     if (result) {
     }
@@ -179,13 +189,13 @@ async function fetchBirthdayList() {
             <button class="submit-edit" type="submit">Save changes</button>
             </fieldset>`;
             
-            const skipButton = document.createElement('button');
+            const cancelEdit = document.createElement('button');
             // so it doesn't submit
-            skipButton.type = 'button'; 
-            skipButton.textContent = 'Cancel';
-            skipButton.classList.add("cancel-edit");
+            cancelEdit.type = 'button'; 
+            cancelEdit.textContent = 'Cancel';
+            cancelEdit.classList.add("cancel-edit");
             document.body.style.overflow = "auto";
-            popup.firstElementChild.appendChild(skipButton);
+            popup.firstElementChild.appendChild(cancelEdit);
             document.body.appendChild(popup);
             popup.classList.add('open');
             document.body.style.overflow = "hidden";
@@ -194,60 +204,67 @@ async function fetchBirthdayList() {
               person.lastName = e.target.lastName.value;
               person.firstName = e.target.firstName.value;
               person.birthday = e.target.birthday.value;
-              person.id= Date.now().toString;
+              person.id= Date.now().toString();
               displayList(people); 
+              // debugger
               destroyPopup(popup);
               document.body.style.overflow = "auto";
+            main.dispatchEvent(new CustomEvent('updateList'));
+
             }, { once: true });
 
-            skipButton.addEventListener('click', () => {
+            cancelEdit.addEventListener('click', () => {
               resolve(null);
               destroyPopup(popup);
               document.body.style.overflow = "auto";
+              console.log("skipButton.addEventListener('click',");
+              setBirthdayList()
             }, { once: true });
           });
         };
         
         
         const deletePopup = id => {
-          const deletePerson = document.createElement("form");
-          document.body.appendChild(deletePerson);
-          deletePerson.classList.add('popup');
-          deletePerson.insertAdjacentHTML(
+          const deletePersonForm = document.createElement("form");
+          document.body.appendChild(deletePersonForm);
+          deletePersonForm.classList.add('popup');
+          deletePersonForm.insertAdjacentHTML(
             "afterbegin",`<fieldset>
             <p>Are you sure to delete this person</p>
                     <button type="submit" class="delete">Delete</button>
                     </fieldset>
                     `);
                     
-                  document.body.appendChild(deletePerson);
-                  deletePerson.classList.add("open");
+                  document.body.appendChild(deletePersonForm);
+                  deletePersonForm.classList.add("open");
                   document.body.style.overflow = "hidden";
-                  const skipButton = document.createElement('button');
-                  skipButton.type = 'button'; // so it doesn't submit
-                  skipButton.textContent = 'Cancel';
-                  skipButton.classList.add("cancel-delete");
+                  const cancelDelete = document.createElement('button');
+                  cancelDelete.type = 'button'; // so it doesn't submit
+                  cancelDelete.textContent = 'Cancel';
+                  cancelDelete.classList.add("cancel-delete");
                   document.body.style.overflow = "auto";
-                  deletePerson.firstElementChild.appendChild(skipButton);
-                  
-                  deletePerson.addEventListener('submit',(e) => {
+                  deletePersonForm.firstElementChild.appendChild(cancelDelete);
+                  console.log(people);
+                  deletePersonForm.addEventListener('submit',(e) => {
                     e.preventDefault()
-                    const peopleToDeleteId = people.filter(personToDelete => personToDelete.id != id);
-                    displayList(peopleToDeleteId);
-                    destroyPopup(deletePerson);
+                    people = people.filter(personToDelete => personToDelete.id != id);
+                    // console.log(peopleToDeleteId);
+                    console.log(people);
+                    displayList(people);
+
+                    destroyPopup(deletePersonForm);
                     document.body.style.overflow = "auto";
                     
                   }, { once: true });
                   
-                  skipButton.addEventListener('click',() => {
-                    destroyPopup(deletePerson);
+                  cancelDelete.addEventListener('click',() => {
+                    destroyPopup(deletePersonForm);
                     document.body.style.overflow = "auto";
                       }, { once: true }
                       );
                     }
                     
-                    //Function to add a person to the list
-                    
+                  //Function to add a person to the list
                     const handleAddBtn = e => {
                       if (e.target.closest('button.add')) {
                         handleAddListBtn();
@@ -307,8 +324,8 @@ async function fetchBirthdayList() {
           displayList(people);
           destroyPopup(popupAdd);
           document.body.style.overflow = "auto";
-          
-          // tbody.dispatchEvent(new CustomEvent('updatePeopleLs'));
+          console.log("add form update list");
+          main.dispatchEvent(new CustomEvent('updateList'));
           
         });
         skipButton.addEventListener(
@@ -340,13 +357,17 @@ async function fetchBirthdayList() {
       }
       
 
-      getBirthdayList();
       listOfBirthday.addEventListener("click", handleClick);
+      console.log("here in the line 353");
       setBirthdayList();
       //Filter person's birthday by name  
       searchByName.addEventListener("keyup", filters);    
       //Select person's birthday by month
       searchByMonth.addEventListener("change",filters);
+      main.addEventListener("updateList", setBirthdayList);
+      // main.addEventListener("updateList", );
+      getBirthdayList();
+
     }
     
     fetchBirthdayList();
