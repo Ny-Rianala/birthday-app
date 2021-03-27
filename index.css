@@ -4,12 +4,6 @@ body {
     background: #D8EEFE;
 }
 
-/* .birthday {
-    margin: 0;
-    font-size: 16px;
-    width: 100%;
-    padding: 20px;
-} */
 
 .form-search {
     align-items: flex-start;
@@ -20,6 +14,8 @@ body {
 
 img {
     border-radius: 5px;
+    /* padding-top: 2px; */
+    padding-bottom: 23px;
 }
 
 .container {
@@ -182,12 +178,12 @@ button {
 }
 
 
-.firstname,
+/* .firstname,
 .lastname {
     margin-top: 1.5rem;
     font-size: 28px;
     font-weight: 500;
-}
+} */
 
 .birthday {
     margin-top: 0.25rem;
@@ -430,12 +426,12 @@ fieldset {
 .name {
     display: flex;
     flex-direction: row;
-    font-size: 36px;
+    font-size: 22px;
     color:  #000000;
 }
 
 #date {
-    padding-left: 1px;
+    /* padding-left: 1px; */
     font-size: 22px;
     color: #5F6C7B;
 }
@@ -491,15 +487,36 @@ fieldset {
     .container {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        padding-top: 22px;
-        padding-left: 62px;
-        padding-bottom: 23px;
-        padding-right: 143px;
+        gap: 23px;
         background-color: #ffff;
-        max-width: 79%;
-        margin-top: 10px;
+        max-width: 100%;
+        margin-top: 8px;
+        padding-bottom: 0;
+        /* max-height: 109px; */
+        padding-left: 35px;
     }
+    .firstandlastname {
+        color: #094067;
+        font-size: 48px;
+    }
+    .name {
+        padding-top: 7px;
+        font-size: 36px;
+        font-weight: 500;
+    }
+    .buttonanddays {
+        display: flex;
+        flex-direction: column;
+        padding-left: 200px;
+    }
+    .delete_edit {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        /* padding-top: 60px; */
+        padding-top: 20px;
+        padding-left: 25px;
+        }
     .form-search {
         display: flex;
         flex-direction: row;
@@ -517,30 +534,13 @@ fieldset {
         margin-top: 53px;
         margin-left: 54px;
         margin-bottom: 31px;
-    };
     }
     .days {
         color: #5F6C7B;
         font-size: 24px;
-        /* padding-left: 160px; */
-        padding-right: -7px;
-        padding-top: 22px;
-    }
-    /* .delete_edit {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: 86px;
-        margin-left: -70px;
-        padding-right: 25px;
-    } */
-    /* .container-name {
-        padding-left: 39px;
-    } */
-   .firstandlastname {
-       color: #094067;
-       font-size: 48px;
-}
+        font-weight: 500;
+       
+    } 
 fieldset {
     display: flex;
     flex-direction: column;
@@ -648,4 +648,5 @@ fieldset label {
 }
 .search {
     margin-right: 0;
+}
 }

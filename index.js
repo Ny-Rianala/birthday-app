@@ -119,21 +119,23 @@ async function fetchBirthdayList() {
     const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
       return `
       <div>
-      <ul class="container" data-id ="${person.id}">
-      <li scope="row"><img src="${person.picture}"/></li>
-      <div class="container-name">
-      <span class="name">
-      <li class="firstname">${person.firstName}</li>
-      <li class="lastname">${person.lastName}</li>
-      </span>
-      <li class="birthday" id="date">Turns <b>${person.ages + 1}</b> in ${person.date}</li>
-      </div>
-      <li class="days">${person.differenceBetweenDays} days</li>  
-      <div class="delete_edit">
-      <li class="editButton"><i class="ri-edit-box-line"></i></li> 
-      <li class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></li>
-      </div>
-      </ul>
+        <ul class="container" data-id ="${person.id}">
+          <li scope="row"><img src="${person.picture}"/></li>
+          <div class="container-name">
+            <span class="name">
+              <li class="firstname">${person.firstName}</li>
+              <li class="lastname">${person.lastName}</li>
+            </span>
+            <li id="date">Turns <b>${person.ages + 1}</b> in ${person.date}</li>
+          </div>
+          <div class="buttonanddays">
+            <li class="days">${person.differenceBetweenDays} days</li>  
+            <div class="delete_edit">
+                <li class="editButton"><i class="ri-edit-box-line"></i></li> 
+                <li class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></li>
+            </div>
+          </div>
+        </ul>
       </div>
       `;
     });
