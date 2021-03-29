@@ -14,8 +14,12 @@ body {
 
 img {
     border-radius: 5px;
-    /* padding-top: 2px; */
-    padding-bottom: 23px;
+    padding-top: 20px;
+    /* padding-bottom: 23px; */
+    padding-bottom: 12px;
+    max-width: 80.5%;
+    /* max-height: 82%; */
+    height: auto;
 }
 
 .container {
@@ -34,6 +38,7 @@ img {
     margin-right: 14px;
     margin-bottom: 14px;
 }
+
 
 .search label {
     color: #094067;
@@ -55,6 +60,19 @@ img {
     color: #094067;
 }
 
+.add {
+    padding-top: 15px;
+    padding-left: 18px;
+    padding-bottom: 14px;
+    padding-right: 17px;
+    border-radius: 8px;
+    color: white;
+    background-color: #EF4565;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+}
+
 li {
     list-style: none;
     margin: 0;
@@ -65,13 +83,13 @@ b {
     color: #EF4565; 
 }
 
-.submit {
+.submit{
     background-color: #EF4565;
     color: white;
-    padding-top: 14px;
-    padding-left: 21px;
-    padding-bottom: 15px;
-    padding-right: 16px;
+    padding-top: 18px;
+    padding-left: 54px;
+    padding-bottom: 19px;
+    padding-right: 51px;
     border-radius: 5px;
     font-size: 18px;
     text-transform: capitalize;
@@ -202,7 +220,8 @@ fieldset {
 }
 
 .popup.open {
-    position: absolute;
+    position: fixed;
+    top: 2rem;
     opacity: 1;
     pointer-events: all;
 }
@@ -257,6 +276,26 @@ fieldset {
     font-weight: 700;
 }
 
+.removeEditPopup {
+    position: absolute;
+    top: 11%;
+    left: 70%;
+    font-size: 39px;
+    color: #094067;
+    background: none;
+    outline: none;
+}
+
+.removeAddPopup {  
+    position: absolute;
+    top: 6%;
+    left: 84%;
+    font-size: 28px;
+    color: #094067;
+    background: none;
+
+}
+
 .outer-confirm-modal {
     display: grid;
     place-items: center center;
@@ -296,7 +335,7 @@ fieldset {
 .cancel {
     padding-top: 15px;
     padding-left: 48px;
-    padding-bottom: 15px;
+    padding-bottom: 17px;
     padding-right: 54px;
     border: 3px solid #5F6C7B;
     border-radius: 5px;
@@ -304,20 +343,10 @@ fieldset {
     font-size: 18px;
     color: #5F6C7B;
     margin-top: 12px;
-}
+    margin-left: 12px;
+};
 
-.add {
-    padding-top: 15px;
-    padding-left: 18px;
-    padding-bottom: 14px;
-    padding-right: 17px;
-    border-radius: 8px;
-    color: white;
-    background-color: #EF4565;
-    font-size: 18px;
-    font-weight: 500;
-    outline: none;
-}
+
 
 .confirm-btn,
 .cancel-btn {
@@ -356,7 +385,7 @@ fieldset {
     font-size: 18px;
     color: #5F6C7B;
     position: absolute;
-    top: 69%;
+    top: 77.5%;
     left: 46%;
     margin-top: 11px;
 }
@@ -492,8 +521,10 @@ fieldset {
         max-width: 100%;
         margin-top: 8px;
         padding-bottom: 0;
-        /* max-height: 109px; */
+        padding-top: 3px;
+        padding-bottom: 10px;
         padding-left: 35px;
+        max-height: 139px;
     }
     .firstandlastname {
         color: #094067;
@@ -513,8 +544,7 @@ fieldset {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        /* padding-top: 60px; */
-        padding-top: 20px;
+        padding-top: 50px;
         padding-left: 25px;
         }
     .form-search {
@@ -539,6 +569,8 @@ fieldset {
         color: #5F6C7B;
         font-size: 24px;
         font-weight: 500;
+        padding-top: 0;
+        padding-bottom: 0;
        
     } 
 fieldset {
@@ -648,5 +680,15 @@ fieldset label {
 }
 .search {
     margin-right: 0;
+}
+.removeEditPopup {
+    position: absolute;
+    top: 6%;
+    left: 80%;
+    color: #094067;
+    background: none;
+    outline: none;
+    height: 20%;
+    font-weight: lighter;
 }
 }

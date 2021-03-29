@@ -155,6 +155,7 @@ async function fetchBirthdayList() {
     // remove it from the javascript memory
     popup = null;
   }
+
       
     //function that will look for the birthday id
   const editBirthday = id => {
@@ -189,6 +190,7 @@ async function fetchBirthdayList() {
               max="${formatDate}"
               >
             <button class="submit-edit" type="submit">Save changes</button>
+            <button class="removeEditPopup"><i class="ri-close-line"></i></button>
             </fieldset>`;
             
             const cancelEdit = document.createElement('button');
@@ -222,11 +224,15 @@ async function fetchBirthdayList() {
               console.log("skipButton.addEventListener('click',");
               setBirthdayList()
             }, { once: true });
+
+            //removing popup
+            document.querySelector(".removeEditPopup").addEventListener('click', () => {
+              destroyPopup(popup);
+          });
           });
         };
-        
-        
-        const deletePopup = id => {
+
+     const deletePopup = id => {
           const deletePersonForm = document.createElement("form");
           document.body.appendChild(deletePersonForm);
           deletePersonForm.classList.add('popup');
@@ -273,73 +279,77 @@ async function fetchBirthdayList() {
                       }
                     }
                     
-                    const handleAddListBtn = () => {
-                      return new Promise(async function(resolve) {
-                        const formatDate = new Date().toISOString().slice(0, 10);
-        // Create a popup form when clicking the add button
-        const popupAdd = document.createElement('form');
-        popupAdd.classList.add('popup');
-        popupAdd.insertAdjacentHTML('afterbegin',
-        `
-        <form class="modalForm">
-          <label>What is your Avantar?</label>
-          <input type="url" name="pic" value="https://picsum.photos/id/1006/120/120?grayscale">
-          <label>What is your FirstName?</label>
-          <input type="text" name="firstname" placeholder="your firstname">
-          <label>What is your LastName?</label>
-          <input type="text" name="lastname" placeholder="your lastname">
-          <label>What is your Birthday date?</label>
-          <input type="date" name="birthday" max="${formatDate}">
-          <div class="form-btn" required>
-            <button type="submit" class="submit ">Submit</button>
-          </div>
-        </form>
-        `);
-        const skipButton = document.createElement('button');
-        skipButton.type = 'button'; // so it doesn't submit
-        skipButton.textContent = 'Cancel';
-        skipButton.classList.add("cancel");
-        document.body.style.overflow = "auto";
-        popupAdd.lastElementChild.appendChild(skipButton);
-        
-        document.body.appendChild(popupAdd);
-        popupAdd.classList.add('open');
-        document.body.style.overflow = "hidden";
-        
-        
-        // Listen to the submit event
-        popupAdd.addEventListener('submit', e => {
-          e.preventDefault();
-          const form = e.currentTarget;
-          resolve();
-          
-          
-          // Create a new object for the new person
-          const newPerson = {
-            picture: form.pic.value,
-            lastName: form.lastname.value,
-            firstName: form.firstname.value,
-            birthday: form.birthday.value,
-            id: Date.now().toString()
-          }
-          people.push(newPerson);
-          displayList(people);
-          destroyPopup(popupAdd);
+          const handleAddListBtn = () => {
+              return new Promise(async function(resolve) {
+              const formatDate = new Date().toISOString().slice(0, 10);
+          // Create a popup form when clicking the add button
+          const popupAdd = document.createElement('form');
+          popupAdd.classList.add('popup');
+          popupAdd.insertAdjacentHTML('afterbegin',
+          `
+          <form class="modalForm">
+            <label>What is your Avantar?</label>
+            <input type="url" name="pic" placeholder="Enter your url image">
+            <label>What is your FirstName?</label>
+            <input type="text" name="firstname" placeholder="your firstname">
+            <label>What is your LastName?</label>
+            <input type="text" name="lastname" placeholder="your lastname">
+            <label>What is your Birthday date?</label>
+            <input type="date" name="birthday" max="${formatDate}">
+            <div class="form-btn" required>
+              <button type="submit" class="submit ">Submit</button>
+              <button class="removeAddPopup"><i class="ri-close-line"></i></button>
+            </div>
+          </form>
+          `);
+          const skipButton = document.createElement('button');
+          skipButton.type = 'button'; // so it doesn't submit
+          skipButton.textContent = 'Cancel';
+          skipButton.classList.add("cancel");
           document.body.style.overflow = "auto";
-          console.log("add form update list");
-          main.dispatchEvent(new CustomEvent('updateList'));
+          popupAdd.lastElementChild.appendChild(skipButton);
           
-        });
-        skipButton.addEventListener(
-          'click',
-          () => {
-            resolve(null);
+          document.body.appendChild(popupAdd);
+          popupAdd.classList.add('open');
+          document.body.style.overflow = "hidden";
+          
+          
+          // Listen to the submit event
+          popupAdd.addEventListener('submit', e => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            resolve();
+            
+            
+            // Create a new object for the new person
+            const newPerson = {
+              picture: form.pic.value,
+              lastName: form.lastname.value,
+              firstName: form.firstname.value,
+              birthday: form.birthday.value,
+              id: Date.now().toString()
+            }
+            people.push(newPerson);
+            displayList(people);
             destroyPopup(popupAdd);
             document.body.style.overflow = "auto";
-          }, { once: true }
-          );
-        });
-      }
+            console.log("add form update list");
+            main.dispatchEvent(new CustomEvent('updateList'));
+            
+          });
+          skipButton.addEventListener(
+            'click',
+            () => {
+              resolve(null);
+              destroyPopup(popupAdd);
+              document.body.style.overflow = "auto";
+            }, { once: true }
+            );
+              document.querySelector(".removeAddPopup").addEventListener('click', () => {
+                destroyPopup(popupAdd);
+            });
+          });
+        }
       addPersonToList.addEventListener('click', handleAddBtn);
       
       
@@ -360,7 +370,6 @@ async function fetchBirthdayList() {
       
 
       listOfBirthday.addEventListener("click", handleClick);
-      console.log("here in the line 353");
       setBirthdayList();
       //Filter person's birthday by name  
       searchByName.addEventListener("keyup", filters);    
