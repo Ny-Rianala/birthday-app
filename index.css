@@ -17,7 +17,7 @@ img {
     padding-top: 20px;
     /* padding-bottom: 23px; */
     padding-bottom: 12px;
-    max-width: 80.5%;
+    max-width: 30%;
     /* max-height: 82%; */
     height: auto;
 }
@@ -48,7 +48,7 @@ img {
 }
 
 
-.month_filter label {
+.month-filter label {
   color: #094067;
   padding-bottom: 13px;    
   font-size: 18px;
@@ -120,13 +120,14 @@ b {
     display: flex;
     flex-direction: column;
     margin-bottom: 14px;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 12px;
     padding-bottom: 14px;
     padding-right: 50px;
     width: 100%;
     font-size: 18px;
     color: #5F6C7B;
+    margin-top: 12px;
 }
 
 select {
@@ -369,10 +370,10 @@ fieldset {
     height: 48px;
 }
 
-.container-name {
+/* .container-name {
     display: flex;
     flex-direction: column;
-}
+} */
 
 .cancel-edit {
     padding-top: 13px;
@@ -470,7 +471,7 @@ fieldset {
     padding-top: 15px;
     padding-left: 20px;
     padding-bottom: 14px;
-    padding-right: 60px;
+    padding-right: 20px;
 }
 
 .age {
@@ -504,27 +505,32 @@ fieldset {
     .header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-left: 335px;
+        align-items: center;
     }
     .birthday {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-left: 330px;
+        align-items: center;
     }
     .container {
         display: flex;
         flex-direction: row;
-        gap: 23px;
+        align-items: center;
+        justify-content: space-between;
         background-color: #ffff;
-        max-width: 100%;
+        /* max-width: 100%; */
+        width: 779px;
         margin-top: 8px;
         padding-bottom: 0;
         padding-top: 3px;
         padding-bottom: 10px;
-        padding-left: 35px;
+        /* padding-left: 35px; */
         max-height: 139px;
+    }
+    img {
+        border-radius: 5px;
+        padding-bottom: 12px;
+        max-width: 84px;
     }
     .firstandlastname {
         color: #094067;
@@ -541,12 +547,21 @@ fieldset {
         padding-left: 200px;
     }
     .delete_edit {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         justify-content: flex-end;
         padding-top: 50px;
-        padding-left: 25px;
+        padding-left: 25px; */
+        display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 50px;
+    /* padding-left: 25px; */
+    margin-left: 43px;
         }
+    .search {
+        margin-bottom: 0;
+    }
     .form-search {
         display: flex;
         flex-direction: row;
@@ -559,10 +574,11 @@ fieldset {
     .filterMonth {
         margin: 0;
         padding-right: 34px;
+        margin-top: 12px;
     }
     .add {
-        margin-top: 53px;
-        margin-left: 54px;
+        margin-top: 67px;
+        margin-left: 34px;
         margin-bottom: 31px;
     }
     .days {
@@ -680,6 +696,10 @@ fieldset label {
 }
 .search {
     margin-right: 0;
+}
+.container-name {
+    position: absolute;
+    left: 28%;
 }
 .removeEditPopup {
     position: absolute;

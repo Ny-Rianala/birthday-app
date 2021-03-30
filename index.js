@@ -3,7 +3,7 @@ function wait(ms = 0) {
 }
 
 const basePoint = './birthdayData.json';
-const main = document.querySelector('main')
+const main = document.querySelector('main');
 const listOfBirthday = document.querySelector('div.wrapper');
 const addPersonToList = document.querySelector("button.add");
 const searchByName = document.querySelector("[name='search']")
@@ -14,7 +14,6 @@ async function fetchBirthdayList() {
     let res = await fetch("https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/b17e08696906abeaac8bc260f57738eaa3f6abb1/birthdayPeople.json");
     let listOfPeople = JSON.parse(localStorage.getItem("people"));
     const birthdayList = listOfPeople && listOfPeople.length ? listOfPeople : await res.json();
-    // debugge
     let people = [];
     people = birthdayList;
 
@@ -53,7 +52,7 @@ async function fetchBirthdayList() {
   function displayList(people) {
     const htmlList = people.map(person => {
       // Store all the months in a variable
-      const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       // Get the day and month
       let date = new Date(person.birthday),
       day = date.getDate(),
@@ -109,8 +108,6 @@ async function fetchBirthdayList() {
         date: dateString,
         differenceBetweenDays: diffDays,
       }
-      // console.log("calculate age updatelist");
-      // main.dispatchEvent(new CustomEvent('updateList'));
 
       return newPerson;
     });
@@ -129,7 +126,7 @@ async function fetchBirthdayList() {
             <li id="date">Turns <b>${person.ages + 1}</b> in ${person.date}</li>
           </div>
           <div class="buttonanddays">
-            <li class="days">${person.differenceBetweenDays} days</li>  
+            <li class="days">In ${person.differenceBetweenDays} days</li>  
             <div class="delete_edit">
                 <li class="editButton"><i class="ri-edit-box-line"></i></li> 
                 <li class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></li>
@@ -140,7 +137,6 @@ async function fetchBirthdayList() {
       `;
     });
     listOfBirthday.innerHTML = html.join('');
-    console.log("sort upadate list");
     main.dispatchEvent(new CustomEvent('updateList'));
 
   };
@@ -169,7 +165,6 @@ async function fetchBirthdayList() {
       const editPopup = (person) => {
         const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10);
         const formatDate = new Date().toISOString().slice(0, 10);
-        // console.log(birthdayDate);
         return new Promise(async resolve => {
           const popup = document.createElement('form');
           popup.classList.add('popup');
@@ -210,7 +205,6 @@ async function fetchBirthdayList() {
               person.birthday = e.target.birthday.value;
               person.id= Date.now().toString();
               displayList(people); 
-              // debugger
               destroyPopup(popup);
               document.body.style.overflow = "auto";
             main.dispatchEvent(new CustomEvent('updateList'));
@@ -221,7 +215,6 @@ async function fetchBirthdayList() {
               resolve(null);
               destroyPopup(popup);
               document.body.style.overflow = "auto";
-              console.log("skipButton.addEventListener('click',");
               setBirthdayList()
             }, { once: true });
 
@@ -256,8 +249,6 @@ async function fetchBirthdayList() {
                   deletePersonForm.addEventListener('submit',(e) => {
                     e.preventDefault()
                     people = people.filter(personToDelete => personToDelete.id != id);
-                    // console.log(peopleToDeleteId);
-                    console.log(people);
                     displayList(people);
 
                     destroyPopup(deletePersonForm);
@@ -333,7 +324,6 @@ async function fetchBirthdayList() {
             displayList(people);
             destroyPopup(popupAdd);
             document.body.style.overflow = "auto";
-            console.log("add form update list");
             main.dispatchEvent(new CustomEvent('updateList'));
             
           });
@@ -362,7 +352,6 @@ async function fetchBirthdayList() {
         if (e.target.closest("li.deleteButton")) {
           const deleteBirthdayId = e.target.closest("ul");
           const birthdayToDeleteId = deleteBirthdayId.dataset.id;
-          console.log(birthdayToDeleteId);
           deletePopup(birthdayToDeleteId);
           document.body.style.overflow = "hidden";
         }
