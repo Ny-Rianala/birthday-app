@@ -90,6 +90,7 @@ b {
     border-radius: 5px;
     font-size: 18px;
     text-transform: capitalize;
+    outline: none;
 }
 
 .subheading {
@@ -164,7 +165,7 @@ button {
     padding-top: 33px;
     padding-bottom: 35px;
     padding-left: 24px;
-    padding-right: 9px;
+    padding-right: 75px;
     padding-left: -21px;
     padding-right: -54px;
 }
@@ -244,6 +245,7 @@ fieldset {
     padding: 20px;
     margin-top: 20px;
 }
+
 
 .form-control {
     padding: 10px;
@@ -417,18 +419,15 @@ fieldset {
 
 
 .cancel-delete {
-    padding-top: 13px;
-    padding-left: 40px;
-    padding-bottom: 13px;
-    padding-right: 40px;
-    border: 3px solid #5F6C7B;
+    padding: 13px 40px;
+    border: 3px solid rgb(95, 108, 123);
     border-radius: 5px;
-    background-color: #ffff;
+    background-color: rgb(255, 255, 255);
     font-size: 18px;
-    color: #5F6C7B;
+    color: rgb(95, 108, 123);
     position: absolute;
     top: 48%;
-    left: 52%;
+    left: 55%;
 }
 
 .name {
@@ -516,6 +515,7 @@ fieldset {
     .firstandlastname {
         color: #094067;
         font-size: 48px;
+        margin: 0;
     }
     .name {
         font-weight: 500;
@@ -590,9 +590,9 @@ fieldset {
         padding-top: 18px;
     }
     .popup {
-        display: grid;
-        place-items: center center;
-        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         opacity: 0;
         background-color: #ffff;
         position: absolute;
@@ -601,7 +601,7 @@ fieldset {
         padding-top: 55px;
         padding-bottom: 80px;
         padding-left: 263px;
-        padding-right: 298px;
+        padding-right: 230px;
     }
     .cancel-delete {
         padding-top: 13px;
@@ -614,22 +614,20 @@ fieldset {
         font-size: 18px;
         color: #5F6C7B;
         position: absolute;
-        top: 42.075%;
-        left: 55%;
+        top: 43%;
+        left: 58%;
     }
     .searchName {
         margin-right: 35px;
         padding-top: 15px;
         padding-left: 20px;
         padding-bottom: 14px;
-        /* padding-right: 141px; */
     }
     .filterMonth {
         padding-top: 15px;
         padding-left: 20px;
         padding-bottom: 14px;
         padding-right: 129px;
-        /* margin-left: 9px; */
     }
     .editfirstname {
         padding-top: 15px;
@@ -661,7 +659,7 @@ fieldset {
 
     .cancel-edit {
         position: absolute;
-        top: 78.5%;
+        top: 76%;
         left: 45%;
         padding-top: 14px;
         padding-left: 48px;
@@ -679,7 +677,7 @@ fieldset {
     }
     .removeEditPopup {
         position: absolute;
-        top: 6%;
+        top: 0%;
         left: 80%;
         color: #094067;
         background: none;
@@ -692,4 +690,16 @@ fieldset {
         font-size: 30px;
         cursor: pointer;
     }
+    .popup label {
+    padding-top: 20px;
+   }
+   .addNewPerson {
+       color: #094067;
+       font-size: 34px;
+       margin: 0;
+       padding-bottom: 12px;
+   }
+   .submit {
+       margin-top: 30px;
+   }
 }

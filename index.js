@@ -124,7 +124,7 @@ async function fetchBirthdayList() {
             <li id="date">Turns <b>${person.ages + 1}</b> in ${person.date}</li>
           </div>
           <div class="buttonanddays">
-            <li class="days">In ${person.differenceBetweenDays} days</li>  
+            <li class="days">${person.differenceBetweenDays === 0 ? "Today is your birthday!" : `In ${person.differenceBetweenDays} days`}</li>  
             <div class="delete_edit">
                 <li class="editButton"><i class="ri-edit-box-line"></i></li> 
                 <li class= "deleteButton" data-id="${person.id}"><i class="ri-delete-back-2-line"></i></li>
@@ -277,6 +277,7 @@ async function fetchBirthdayList() {
           popupAdd.insertAdjacentHTML('afterbegin',
           `
           <form class="modalForm">
+            <h4 class="addNewPerson">Add a new person</h4>
             <label>What is your Avantar?</label>
             <input type="url" name="pic" placeholder="Enter your url image">
             <label>What is your FirstName?</label>
