@@ -516,14 +516,20 @@ fieldset {
         justify-content: space-between;
         background-color: #ffff;
         /* max-width: 100%; */
-        width: 779px;
+        width: 760px;
         margin-top: 8px;
+        margin-left: 0;
+        margin-right: 0;
         padding-bottom: 0;
         padding-top: 0;
         /* padding-bottom: 10px; */
         /* padding-left: 35px; */
-        max-height: 139px;
-    }
+        max-height: 106px;
+        /* padding-bottom: 15px;
+        padding-top: 20px; */
+        padding-bottom: 15px;
+        padding-top: 17px;    
+}
     img {
         border-radius: 5px;
         padding-bottom: 0;
@@ -538,24 +544,32 @@ fieldset {
         font-size: 48px;
     }
     .name {
-        /* padding-top: 7px; */
-        font-size: 36px;
         font-weight: 500;
+        font-size: 36px;
+        line-height: 43px;
     }
     .buttonanddays {
         display: flex;
         flex-direction: column;
-        padding-right: 36px;
+        padding-right: 40px;
     }
     .delete_edit {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         justify-content: flex-end;
         padding-top: 50px;
         margin-left: 43px;
         padding-bottom: 19px;
         padding-right: 0;
-        margin-right: -5px;
+        margin-right: -5px; */
+        display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 13px;
+    margin-left: 43px;
+    /* padding-bottom: 19px; */
+    padding-right: 0;
+    margin-right: -10px;
         }
     .search {
         margin-bottom: 0;
@@ -583,9 +597,9 @@ fieldset {
         color: #5F6C7B;
         font-size: 24px;
         font-weight: 500;
-        padding-top: 18px;
+        padding-top: 0;
         padding-bottom: 0;
-       
+        margin-bottom: 32px;    
     } 
 fieldset {
     display: flex;
@@ -697,7 +711,7 @@ fieldset label {
 }
 .container-name {
     position: absolute;
-    left: 30%;
+    left: 33.5%;
 }
 .removeEditPopup {
     position: absolute;
