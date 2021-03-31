@@ -196,7 +196,7 @@ async function fetchBirthdayList() {
             document.body.appendChild(popup);
             popup.classList.add('open');
             document.body.style.overflow = "hidden";
-            document.body.style.background = "green";
+            document.body.style.background = "rgba(240, 248, 255, 0.932)";
             popup.addEventListener('submit', (e) => {
               e.preventDefault();
               person.lastName = e.target.lastName.value;
@@ -206,7 +206,7 @@ async function fetchBirthdayList() {
               displayList(people); 
               destroyPopup(popup);
               document.body.style.overflow = "auto";
-              document.body.style.background = "#D8EEFE";
+              document.body.style.background = "rgba(240, 248, 255, 0.932)";
             main.dispatchEvent(new CustomEvent('updateList'));
 
             }, { once: true });
@@ -304,7 +304,7 @@ async function fetchBirthdayList() {
               document.body.appendChild(popupAdd);
               popupAdd.classList.add('open');
               document.body.style.overflow = "hidden";
-              document.body.style.background = "green";
+              document.body.style.background = "rgba(240, 248, 255, 0.932)";
           
           
           // Listen to the submit event
@@ -357,7 +357,6 @@ async function fetchBirthdayList() {
           const birthdayToDeleteId = deleteBirthdayId.dataset.id;
           deletePopup(birthdayToDeleteId);
           document.body.style.overflow = "hidden";
-          // document.body.style.background = "green";
         }
       }
       

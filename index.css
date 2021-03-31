@@ -574,7 +574,6 @@ fieldset {
     .days {
         color: #5F6C7B;
         font-size: 24px;
-        font-weight: 500;
         padding-top: 0;
         padding-bottom: 0;
         margin-bottom: 32px;    
@@ -674,7 +673,7 @@ fieldset {
     .cancel-edit {
         position: absolute;
         top: 76%;
-        left: 45%;
+        left: 46%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
