@@ -203,7 +203,7 @@ button {
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 12px;
-    padding-right: 110px;
+    padding-right: 95px;
     border: none;
     
 }
@@ -295,8 +295,8 @@ fieldset {
 
 .removeAddPopup {  
     position: absolute;
-    top: 6%;
-    left: 84%;
+    top: 5%;
+    left: 75%;
     font-size: 28px;
     color: #094067;
     background: none;
@@ -349,8 +349,7 @@ fieldset {
     background-color: #ffff;
     font-size: 18px;
     color: #5F6C7B;
-    margin-top: 12px;
-    margin-left: 12px;
+    margin-top: 30px;
 };
 
 
@@ -388,7 +387,7 @@ fieldset {
     color: #5F6C7B;
     position: absolute;
     top: 77.5%;
-    left: 50%;
+    left: 46%;
     margin-top: 11px;
 }
 
@@ -609,8 +608,7 @@ fieldset {
         opacity: 0;
         background-color: #ffff;
         position: absolute;
-        top: 14%;
-        left: 18%;
+        left: 22%;
         padding-top: 55px;
         padding-bottom: 80px;
         padding-left: 263px;
@@ -715,4 +713,16 @@ fieldset {
    .submit {
        margin-top: 30px;
    }
+   
+    .removeAddPopup {  
+        top: 5%;
+        left: 85%;
+        font-size: 45px;
+        color: #094067;
+        background: none;
+
+    }
+    .cancel {
+        margin-left: 12px;
+    }
 }
