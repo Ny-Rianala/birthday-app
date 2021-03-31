@@ -164,7 +164,7 @@ button {
     padding-top: 33px;
     padding-bottom: 35px;
     padding-left: 24px;
-    padding-right: 70px;
+    padding-right: 9px;
     padding-left: -21px;
     padding-right: -54px;
 }
@@ -188,7 +188,7 @@ button {
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 12px;
-    padding-right: 123px;
+    padding-right: 110px;
     border: none;
     outline: none;
 }
@@ -372,7 +372,7 @@ fieldset {
     color: #5F6C7B;
     position: absolute;
     top: 77.5%;
-    left: 46%;
+    left: 50%;
     margin-top: 11px;
 }
 
@@ -380,7 +380,7 @@ fieldset {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 10px;
+    padding-right: 40px;
 }
 
 .days {
@@ -596,10 +596,10 @@ fieldset {
         opacity: 0;
         background-color: #ffff;
         position: absolute;
-        top: 18%;
+        top: 14%;
         left: 18%;
-        padding-top: 121px;
-        padding-bottom: 189px;
+        padding-top: 55px;
+        padding-bottom: 80px;
         padding-left: 263px;
         padding-right: 298px;
     }
@@ -661,7 +661,7 @@ fieldset {
 
     .cancel-edit {
         position: absolute;
-        top: 70%;
+        top: 78.5%;
         left: 45%;
         padding-top: 14px;
         padding-left: 48px;
