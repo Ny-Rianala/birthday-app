@@ -164,7 +164,7 @@ button {
     padding-top: 33px;
     padding-bottom: 35px;
     padding-left: 24px;
-    padding-right: 90px;
+    padding-right: 70px;
     padding-left: -21px;
     padding-right: -54px;
 }
@@ -193,13 +193,6 @@ button {
     outline: none;
 }
 
-
-/* .firstname,
-.lastname {
-    margin-top: 1.5rem;
-    font-size: 28px;
-    font-weight: 500;
-} */
 
 .birthday {
     margin-top: 0.25rem;
@@ -367,11 +360,6 @@ fieldset {
     height: 48px;
 }
 
-/* .container-name {
-    display: flex;
-    flex-direction: column;
-} */
-
 .cancel-edit {
     padding-top: 13px;
     padding-left: 40px;
@@ -426,14 +414,7 @@ fieldset {
     color: white;
     margin-right: 100px;
 }
-/* 
-.popup.open {
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    padding-left: 20px; 
-    padding-right: 20px;
-} */
+
 
 .cancel-delete {
     padding-top: 13px;
@@ -458,7 +439,6 @@ fieldset {
 }
 
 #date {
-    /* padding-left: 1px; */
     font-size: 22px;
     color: #5F6C7B;
 }
@@ -479,7 +459,6 @@ fieldset {
 
 .ri-delete-back-2-line {
     color: #EF4565;
-    /* padding-right: 19px; */
     font-size: 30px;
     cursor: pointer;
 }
@@ -515,18 +494,13 @@ fieldset {
         align-items: center;
         justify-content: space-between;
         background-color: #ffff;
-        /* max-width: 100%; */
         width: 760px;
         margin-top: 8px;
         margin-left: 0;
         margin-right: 0;
         padding-bottom: 0;
         padding-top: 0;
-        /* padding-bottom: 10px; */
-        /* padding-left: 35px; */
         max-height: 106px;
-        /* padding-bottom: 15px;
-        padding-top: 20px; */
         padding-bottom: 15px;
         padding-top: 17px;    
 }
@@ -554,22 +528,13 @@ fieldset {
         padding-right: 40px;
     }
     .delete_edit {
-        /* display: flex;
+        display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        padding-top: 50px;
+        padding-top: 13px;
         margin-left: 43px;
-        padding-bottom: 19px;
         padding-right: 0;
-        margin-right: -5px; */
-        display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-top: 13px;
-    margin-left: 43px;
-    /* padding-bottom: 19px; */
-    padding-right: 0;
-    margin-right: -10px;
+        margin-right: -10px;
         }
     .search {
         margin-bottom: 0;
@@ -601,131 +566,131 @@ fieldset {
         padding-bottom: 0;
         margin-bottom: 32px;    
     } 
-fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: none;
-    color: #094067;
-    padding-left: 0;
-}
-fieldset input {
-    color: #094067;
-    font-size: 18px;
-    background-color: #D8EEFE;
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
-    padding-right: 156px;
-    border: none;
-    outline: none;
-}
-fieldset label {
-    font-size: 18px;
-    padding-bottom: 8px;
-    padding-top: 18px;
-}
-.popup {
-    display: grid;
-    place-items: center center;
-    pointer-events: none;
-    opacity: 0;
-    background-color: #ffff;
-    position: absolute;
-    top: 18%;
-    left: 18%;
-    padding-top: 121px;
-    padding-bottom: 189px;
-    padding-left: 263px;
-    padding-right: 298px;
-}
-.cancel-delete {
-    padding-top: 13px;
-    padding-left: 40px;
-    padding-bottom: 13px;
-    padding-right: 40px;
-    border: 3px solid #5F6C7B;
-    border-radius: 5px;
-    background-color: #ffff;
-    font-size: 18px;
-    color: #5F6C7B;
-    position: absolute;
-    top: 42.075%;
-    left: 55%;
-}
-.searchName {
-    margin-right: 35px;
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
-    /* padding-right: 141px; */
-}
-.filterMonth {
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
-    padding-right: 129px;
-    /* margin-left: 9px; */
-}
-.editfirstname {
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
-    padding-right: 156px;
-}
-.editlastname {
-    padding-top: 14px;
-    padding-left: 20px;
-    padding-bottom: 15px;
-    padding-right: 185px;
-}
-.editbirthday {
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
-    padding-right: 144px;
-}
-.submit-edit {
-    padding-top: 14px;
-    padding-left: 21px;
-    padding-bottom: 15px;
-    padding-right: 23px; 
-    font-size: 18px;
-    line-height: 23.33px;
-    margin-right: 0;
-}
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: none;
+        color: #094067;
+        padding-left: 0;
+    }
+    fieldset input {
+        color: #094067;
+        font-size: 18px;
+        background-color: #D8EEFE;
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        padding-right: 156px;
+        border: none;
+        outline: none;
+    }
+    fieldset label {
+        font-size: 18px;
+        padding-bottom: 8px;
+        padding-top: 18px;
+    }
+    .popup {
+        display: grid;
+        place-items: center center;
+        pointer-events: none;
+        opacity: 0;
+        background-color: #ffff;
+        position: absolute;
+        top: 18%;
+        left: 18%;
+        padding-top: 121px;
+        padding-bottom: 189px;
+        padding-left: 263px;
+        padding-right: 298px;
+    }
+    .cancel-delete {
+        padding-top: 13px;
+        padding-left: 40px;
+        padding-bottom: 13px;
+        padding-right: 40px;
+        border: 3px solid #5F6C7B;
+        border-radius: 5px;
+        background-color: #ffff;
+        font-size: 18px;
+        color: #5F6C7B;
+        position: absolute;
+        top: 42.075%;
+        left: 55%;
+    }
+    .searchName {
+        margin-right: 35px;
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        /* padding-right: 141px; */
+    }
+    .filterMonth {
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        padding-right: 129px;
+        /* margin-left: 9px; */
+    }
+    .editfirstname {
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        padding-right: 156px;
+    }
+    .editlastname {
+        padding-top: 14px;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-right: 185px;
+    }
+    .editbirthday {
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        padding-right: 144px;
+    }
+    .submit-edit {
+        padding-top: 14px;
+        padding-left: 21px;
+        padding-bottom: 15px;
+        padding-right: 23px; 
+        font-size: 18px;
+        line-height: 23.33px;
+        margin-right: 0;
+    }
 
-.cancel-edit {
-    position: absolute;
-    top: 70%;
-    left: 45%;
-    padding-top: 14px;
-    padding-left: 48px;
-    padding-bottom: 15px;
-    padding-right: 64px;
-    line-height: 21.33px;
-    margin-top: 0;
-}
-.search {
-    margin-right: 0;
-}
-.container-name {
-    position: absolute;
-    left: 33.5%;
-}
-.removeEditPopup {
-    position: absolute;
-    top: 6%;
-    left: 80%;
-    color: #094067;
-    background: none;
-    outline: none;
-    height: 20%;
-    font-weight: lighter;
-}
-.ri-delete-back-2-line {
-    color: #EF4565;
-    font-size: 30px;
-    cursor: pointer;
-}
+    .cancel-edit {
+        position: absolute;
+        top: 70%;
+        left: 45%;
+        padding-top: 14px;
+        padding-left: 48px;
+        padding-bottom: 15px;
+        padding-right: 64px;
+        line-height: 21.33px;
+        margin-top: 0;
+    }
+    .search {
+        margin-right: 0;
+    }
+    .container-name {
+        position: absolute;
+        left: 33.5%;
+    }
+    .removeEditPopup {
+        position: absolute;
+        top: 6%;
+        left: 80%;
+        color: #094067;
+        background: none;
+        outline: none;
+        height: 20%;
+        font-weight: lighter;
+    }
+    .ri-delete-back-2-line {
+        color: #EF4565;
+        font-size: 30px;
+        cursor: pointer;
+    }
 }
