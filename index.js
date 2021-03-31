@@ -24,7 +24,6 @@ async function fetchBirthdayList() {
     
     function getBirthdayList() {
         let listOfPeople = JSON.parse(localStorage.getItem("people"));
-        // debugger 
         if(listOfPeople !== []) {
             people = listOfPeople;
         }else {
@@ -112,7 +111,6 @@ async function fetchBirthdayList() {
       return newPerson;
     });
     
-    // debugger
     const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
       return `
       <div>
@@ -357,7 +355,6 @@ async function fetchBirthdayList() {
         }
       }
       
-
       listOfBirthday.addEventListener("click", handleClick);
       setBirthdayList();
       //Filter person's birthday by name  
@@ -367,7 +364,6 @@ async function fetchBirthdayList() {
       main.addEventListener("updateList", setBirthdayList);
       // main.addEventListener("updateList", );
       getBirthdayList();
-
     }
     
     fetchBirthdayList();
