@@ -196,6 +196,7 @@ async function fetchBirthdayList() {
             document.body.appendChild(popup);
             popup.classList.add('open');
             document.body.style.overflow = "hidden";
+            document.body.style.background = "green";
             popup.addEventListener('submit', (e) => {
               e.preventDefault();
               person.lastName = e.target.lastName.value;
@@ -205,6 +206,7 @@ async function fetchBirthdayList() {
               displayList(people); 
               destroyPopup(popup);
               document.body.style.overflow = "auto";
+              document.body.style.background = "#D8EEFE";
             main.dispatchEvent(new CustomEvent('updateList'));
 
             }, { once: true });
@@ -248,7 +250,7 @@ async function fetchBirthdayList() {
                     e.preventDefault()
                     people = people.filter(personToDelete => personToDelete.id != id);
                     displayList(people);
-
+                    
                     destroyPopup(deletePersonForm);
                     document.body.style.overflow = "auto";
                     
@@ -261,7 +263,7 @@ async function fetchBirthdayList() {
                       );
                     }
                     
-                  //Function to add a person to the list
+                    //Function to add a person to the list
                     const handleAddBtn = e => {
                       if (e.target.closest('button.add')) {
                         handleAddListBtn();
@@ -269,39 +271,40 @@ async function fetchBirthdayList() {
                     }
                     
           const handleAddListBtn = () => {
-              return new Promise(async function(resolve) {
+            return new Promise(async function(resolve) {
               const formatDate = new Date().toISOString().slice(0, 10);
-          // Create a popup form when clicking the add button
-          const popupAdd = document.createElement('form');
-          popupAdd.classList.add('popup');
+              // Create a popup form when clicking the add button
+              const popupAdd = document.createElement('form');
+              popupAdd.classList.add('popup');
           popupAdd.insertAdjacentHTML('afterbegin',
           `
           <form class="modalForm">
-            <h4 class="addNewPerson">Add a new person</h4>
-            <label>What is your Avantar?</label>
-            <input type="url" name="pic" placeholder="Enter your url image">
-            <label>What is your FirstName?</label>
-            <input type="text" name="firstname" placeholder="your firstname">
-            <label>What is your LastName?</label>
+          <h4 class="addNewPerson">Add a new person</h4>
+          <label>What is your Avantar?</label>
+          <input type="url" name="pic" placeholder="Enter your url image">
+          <label>What is your FirstName?</label>
+          <input type="text" name="firstname" placeholder="your firstname">
+          <label>What is your LastName?</label>
             <input type="text" name="lastname" placeholder="your lastname">
             <label>What is your Birthday date?</label>
             <input type="date" name="birthday" max="${formatDate}">
             <div class="form-btn" required>
               <button type="submit" class="submit ">Submit</button>
               <button class="removeAddPopup"><i class="ri-close-line"></i></button>
-            </div>
-          </form>
-          `);
-          const skipButton = document.createElement('button');
-          skipButton.type = 'button'; // so it doesn't submit
-          skipButton.textContent = 'Cancel';
-          skipButton.classList.add("cancel");
-          document.body.style.overflow = "auto";
-          popupAdd.lastElementChild.appendChild(skipButton);
-          
-          document.body.appendChild(popupAdd);
-          popupAdd.classList.add('open');
-          document.body.style.overflow = "hidden";
+              </div>
+              </form>
+              `);
+              const skipButton = document.createElement('button');
+              skipButton.type = 'button'; // so it doesn't submit
+              skipButton.textContent = 'Cancel';
+              skipButton.classList.add("cancel");
+              document.body.style.overflow = "auto";
+              popupAdd.lastElementChild.appendChild(skipButton);
+              
+              document.body.appendChild(popupAdd);
+              popupAdd.classList.add('open');
+              document.body.style.overflow = "hidden";
+              document.body.style.background = "green";
           
           
           // Listen to the submit event
@@ -323,6 +326,7 @@ async function fetchBirthdayList() {
             displayList(people);
             destroyPopup(popupAdd);
             document.body.style.overflow = "auto";
+            document.body.style.background = "#D8EEFE";
             main.dispatchEvent(new CustomEvent('updateList'));
             
           });
@@ -353,6 +357,7 @@ async function fetchBirthdayList() {
           const birthdayToDeleteId = deleteBirthdayId.dataset.id;
           deletePopup(birthdayToDeleteId);
           document.body.style.overflow = "hidden";
+          // document.body.style.background = "green";
         }
       }
       

@@ -4,6 +4,20 @@ body {
     background: #D8EEFE;
 }
 
+button, input {
+    outline: none;
+}
+
+select {
+	-webkit-appearance: none;
+}
+
+select {
+    background-image: url("../birthday-app/images/arrow-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 88% 30%;  
+}
+
 
 .form-search {
     align-items: flex-start;
@@ -67,7 +81,7 @@ img {
     background-color: #EF4565;
     font-size: 18px;
     font-weight: 500;
-    outline: none;
+    
 }
 
 li {
@@ -90,7 +104,7 @@ b {
     border-radius: 5px;
     font-size: 18px;
     text-transform: capitalize;
-    outline: none;
+    
 }
 
 .subheading {
@@ -111,7 +125,7 @@ b {
     border-radius: 5px;
     font-size: 18px;
     color: #5F6C7B;
-    outline: none;
+    
 }
 
 .filterMonth {
@@ -191,7 +205,7 @@ button {
     padding-bottom: 12px;
     padding-right: 110px;
     border: none;
-    outline: none;
+    
 }
 
 
@@ -276,7 +290,7 @@ fieldset {
     font-size: 39px;
     color: #094067;
     background: none;
-    outline: none;
+    
 }
 
 .removeAddPopup {  
@@ -582,7 +596,7 @@ fieldset {
         padding-bottom: 14px;
         padding-right: 156px;
         border: none;
-        outline: none;
+        
     }
     fieldset label {
         font-size: 18px;
@@ -681,7 +695,7 @@ fieldset {
         left: 80%;
         color: #094067;
         background: none;
-        outline: none;
+        
         height: 20%;
         font-weight: lighter;
     }
