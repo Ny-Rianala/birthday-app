@@ -14,12 +14,9 @@ body {
 
 img {
     border-radius: 5px;
-    padding-top: 20px;
-    /* padding-bottom: 23px; */
-    padding-bottom: 12px;
     max-width: 30%;
-    /* max-height: 82%; */
     height: auto;
+    margin-bottom: 13px;
 }
 
 .container {
@@ -395,7 +392,7 @@ fieldset {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 25px;
+    padding-right: 10px;
 }
 
 .days {
@@ -482,7 +479,7 @@ fieldset {
 
 .ri-delete-back-2-line {
     color: #EF4565;
-    padding-right: 19px;
+    /* padding-right: 19px; */
     font-size: 30px;
     cursor: pointer;
 }
@@ -522,42 +519,43 @@ fieldset {
         width: 779px;
         margin-top: 8px;
         padding-bottom: 0;
-        padding-top: 3px;
-        padding-bottom: 10px;
+        padding-top: 0;
+        /* padding-bottom: 10px; */
         /* padding-left: 35px; */
         max-height: 139px;
     }
     img {
         border-radius: 5px;
-        padding-bottom: 12px;
-        max-width: 84px;
+        padding-bottom: 0;
+        padding-top: 0;
+        max-width: 92px;
+        height: 94px;
+        margin-left: 17px;
+        margin-bottom: 0;
     }
     .firstandlastname {
         color: #094067;
         font-size: 48px;
     }
     .name {
-        padding-top: 7px;
+        /* padding-top: 7px; */
         font-size: 36px;
         font-weight: 500;
     }
     .buttonanddays {
         display: flex;
         flex-direction: column;
-        padding-left: 200px;
+        padding-right: 36px;
     }
     .delete_edit {
-        /* display: flex;
+        display: flex;
         flex-direction: row;
         justify-content: flex-end;
         padding-top: 50px;
-        padding-left: 25px; */
-        display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-top: 50px;
-    /* padding-left: 25px; */
-    margin-left: 43px;
+        margin-left: 43px;
+        padding-bottom: 19px;
+        padding-right: 0;
+        margin-right: -5px;
         }
     .search {
         margin-bottom: 0;
@@ -585,7 +583,7 @@ fieldset {
         color: #5F6C7B;
         font-size: 24px;
         font-weight: 500;
-        padding-top: 0;
+        padding-top: 18px;
         padding-bottom: 0;
        
     } 
@@ -699,7 +697,7 @@ fieldset label {
 }
 .container-name {
     position: absolute;
-    left: 28%;
+    left: 30%;
 }
 .removeEditPopup {
     position: absolute;
@@ -710,5 +708,10 @@ fieldset label {
     outline: none;
     height: 20%;
     font-weight: lighter;
+}
+.ri-delete-back-2-line {
+    color: #EF4565;
+    font-size: 30px;
+    cursor: pointer;
 }
 }
