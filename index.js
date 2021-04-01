@@ -265,7 +265,7 @@ const editBirthday = id => {
                     );
                      //removing popup
           document.querySelector(".removeDeletePopup").addEventListener('click', () => {
-            destroyPopup(popup);
+            destroyPopup(deletePersonForm);
         });
                   }
                   
