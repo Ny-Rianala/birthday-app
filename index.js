@@ -176,6 +176,7 @@ const editBirthday = id => {
           <label>Birthday</label>
           <input 
             class="editbirthday"
+            id="editbirthday"
             type="date" 
             id="start" 
             name="birthday"  
@@ -286,7 +287,7 @@ const editBirthday = id => {
         <label>What is your LastName?</label>
           <input type="text" name="lastname" placeholder="your lastname">
           <label>What is your Birthday date?</label>
-          <input type="date" name="birthday" max="${formatDate}">
+          <input type="date" id="birthday" name="birthday" max="${formatDate}">
           <div class="form-btn" required>
             <button type="submit" class="submit ">Submit</button>
             <button class="removeAddPopup"><i class="ri-close-line"></i></button>

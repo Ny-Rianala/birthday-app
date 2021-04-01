@@ -202,7 +202,7 @@ button {
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 12px;
-    padding-right: 95px;
+    padding-right: 40px;
     border: none;
     
 }
@@ -389,7 +389,7 @@ fieldset {
     color: #5F6C7B;
     position: absolute;
     top: 77.5%;
-    left: 46%;
+    left: 50%;
     margin-top: 11px;
 }
 
@@ -417,7 +417,6 @@ fieldset {
     font-size: 18px;
     text-transform: capitalize;
     margin-top: 49px;
-    margin-right: 170px;
 }
 
 .delete {
@@ -656,10 +655,12 @@ fieldset {
         padding-right: 185px;
     }
     .editbirthday {
-        padding-top: 15px;
+        /* padding-top: 15px;
         padding-left: 20px;
         padding-bottom: 14px;
-        padding-right: 144px;
+        padding-right: 144px; */
+        padding-left: 25px;
+    padding-right: 90px;
     }
     .submit-edit {
         padding-top: 14px;
@@ -672,24 +673,15 @@ fieldset {
     }
 
     .cancel-edit {
-        /* position: absolute;
-        top: 76%;
-        left: 46%;
+        position: absolute;
+        top: 78%;
+        left: 58%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
-        padding-right: 64px;
+        padding-right: 55px;
         line-height: 21.33px;
-        margin-top: 0; */
-        position: absolute;
-    top: 78.25%;
-    left: 55%;
-    padding-top: 14px;
-    padding-left: 48px;
-    padding-bottom: 15px;
-    padding-right: 64px;
-    line-height: 21.33px;
-    margin-top: 0;
+        margin-top: 0;
     }
     .search {
         margin-right: 0;
@@ -736,8 +728,14 @@ fieldset {
     }
     .cancel {
         margin-left: 35px;
-        top: 72.5%;
-        left: 50%;
+        top: 74%;
+        left: 55%;
         position: absolute;
+    }
+    #birthday {
+        padding-right: 100px;
+    }
+    #editbirthday {
+        padding-right: 100px;
     }
 }
