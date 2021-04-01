@@ -100,9 +100,9 @@ img {
     background-color: #EF4565;
     color: white;
     padding-top: 18px;
-    padding-left: 38px;
+    padding-left: 23px;
     padding-bottom: 15px;
-    padding-right: 34px;
+    padding-right: 23px;
     border-radius: 5px;
     font-size: 18px;
     text-transform: capitalize;
@@ -215,7 +215,7 @@ button {
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 12px;
-    padding-right: 40px;
+    padding-right: 14px;
     border: none;
     
 }
@@ -389,7 +389,7 @@ fieldset {
     color: #5F6C7B;
     position: absolute;
     top: 77.5%;
-    left: 50%;
+    left: 55%;
     margin-top: 11px;
 }
 
@@ -440,7 +440,7 @@ fieldset {
     font-size: 18px;
     color: rgb(95, 108, 123);
     position: absolute;
-    top: 19%;
+    top: 58%;
     left: 55%;
 }
 
@@ -673,7 +673,7 @@ fieldset {
 
     .cancel-edit {
         position: absolute;
-        top: 78%;
+        top: 79%;
         left: 46%;
         padding-top: 14px;
         padding-left: 48px;
@@ -707,16 +707,21 @@ fieldset {
     .popup label {
     padding-top: 20px;
     padding-right: 70px;
+    padding-bottom: 10px;
    }
    .addNewPerson {
        color: #094067;
        font-size: 34px;
        margin: 0;
        padding-bottom: 12px;
+       padding-left: 30px;
    }
    .submit {
-       margin-top: 30px;
-       margin-left: -114px;
+        padding-left: 40px;
+        padding-bottom: 15px;
+        padding-right: 40px;
+        margin-top: 20px;
+        margin-left: -114px;
    }
    
     .removeAddPopup {  
@@ -729,15 +734,15 @@ fieldset {
     }
     .cancel {
         margin-left: 35px;
-        top: 76%;
-        left: 52%;
+        top: 82%;
+        left: 51%;
         position: absolute;
     }
     #birthday {
-        padding-right: 100px;
-        padding-top: 18px;
-        padding-left: 20px;
-        padding-bottom: 27px;
+        padding-right: 68px;
+        padding-top: 22px;
+        padding-left: 28px;
+        padding-bottom: 26px;
     }
     #editbirthday {
         padding-right: 100px;

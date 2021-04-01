@@ -282,11 +282,11 @@ const editBirthday = id => {
         <h4 class="addNewPerson">Add a new person</h4>
         <label>What is your Avantar?</label>
         <input type="url" name="pic" placeholder="Enter your url image">
-        <label>What is your FirstName?</label>
+        <label>What is your Firstname?</label>
         <input type="text" name="firstname" placeholder="your firstname">
-        <label>What is your LastName?</label>
+        <label>What is your Lastname?</label>
           <input type="text" name="lastname" placeholder="your lastname">
-          <label>What is your Birthday date?</label>
+          <label>When is your birthday?</label>
           <input type="date" id="birthday" name="birthday" max="${formatDate}">
           <div class="form-btn" required>
             <button type="submit" class="submit ">Submit</button>
