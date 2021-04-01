@@ -235,6 +235,7 @@ const editBirthday = id => {
           `<fieldset>
               <h2>Are you sure to delete this person?</h2>
                   <button type="submit" class="delete">Delete</button>
+                  <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
             </fieldset>
           `);
                   
@@ -262,6 +263,10 @@ const editBirthday = id => {
                   document.body.style.overflow = "auto";
                     }, { once: true }
                     );
+                     //removing popup
+          document.querySelector(".removeDeletePopup").addEventListener('click', () => {
+            destroyPopup(popup);
+        });
                   }
                   
                   //Function to add a person to the list
@@ -292,7 +297,7 @@ const editBirthday = id => {
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
             <div class="form-btn" required>
               <button type="submit" class="submit ">Submit</button>
-              <button class="removeAddPopup"><i class="ri-close-line"></i></button>
+              <button classDelete"><i class="ri-close-line"></i></button>
             </div>
           </fieldset>
         </form>
@@ -341,7 +346,7 @@ const editBirthday = id => {
             document.body.style.overflow = "auto";
           }, { once: true }
           );
-            document.querySelector(".removeAddPopup").addEventListener('click', () => {
+            document.querySelector(".removeDeletePopup").addEventListener('click', () => {
               destroyPopup(popupAdd);
           });
         });

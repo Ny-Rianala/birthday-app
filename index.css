@@ -292,8 +292,16 @@ fieldset {
     left: 70%;
     font-size: 39px;
     color: #094067;
-    background: none;
-    
+    background: none;  
+}
+
+.removeDeletePopup {
+    position: absolute;
+    top: 11%;
+    left: 70%;
+    font-size: 39px;
+    color: #094067;
+    background: none;  
 }
 
 .removeAddPopup {  
@@ -491,11 +499,11 @@ fieldset {
 
 @media(min-width: 1000px) {
     .subheading {
-       padding-left: 21%;
+        padding-left: 22%;
         font-size: 64px;
         margin: 0;
-        padding-top: 64px;
-        padding-bottom: 57px;
+        padding-top: 63px;
+        padding-bottom: 50px;
     }
     .birthday {
         display: flex;
