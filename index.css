@@ -484,6 +484,10 @@ fieldset {
     cursor: pointer;
 }
 
+.popup input {
+    border-radius: 5px;
+}
+
 
 @media(min-width: 1000px) {
     .subheading {
@@ -493,11 +497,6 @@ fieldset {
         padding-top: 64px;
         padding-bottom: 57px;
     }
-    /* .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } */
     .birthday {
         display: flex;
         flex-direction: column;
