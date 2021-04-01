@@ -487,16 +487,17 @@ fieldset {
 
 @media(min-width: 1000px) {
     .subheading {
+       padding-left: 21%;
         font-size: 64px;
         margin: 0;
         padding-top: 64px;
         padding-bottom: 57px;
     }
-    .header {
+    /* .header {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    } */
     .birthday {
         display: flex;
         flex-direction: column;
