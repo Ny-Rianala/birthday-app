@@ -185,7 +185,7 @@ const editBirthday = id => {
             >
           <button class="submit-edit" type="submit">Save changes</button>
           <button class="removeEditPopup"><i class="ri-close-line"></i></button>
-          </fieldset>`;
+        </fieldset>`;
           
           const cancelEdit = document.createElement('button');
           // so it doesn't submit
@@ -231,11 +231,12 @@ const editBirthday = id => {
         document.body.appendChild(deletePersonForm);
         deletePersonForm.classList.add('popup');
         deletePersonForm.insertAdjacentHTML(
-          "afterbegin",`<fieldset>
-          <h2>Are you sure to delete this person</h2>
+          "afterbegin",
+          `<fieldset>
+              <h2>Are you sure to delete this person?</h2>
                   <button type="submit" class="delete">Delete</button>
-                  </fieldset>
-                  `);
+            </fieldset>
+          `);
                   
                 document.body.appendChild(deletePersonForm);
                 deletePersonForm.classList.add("open");
@@ -279,20 +280,22 @@ const editBirthday = id => {
         popupAdd.insertAdjacentHTML('afterbegin',
         `
         <form class="modalForm">
-        <h4 class="addNewPerson">Add a new person</h4>
-        <label>What is your Avantar?</label>
-        <input type="url" name="pic" placeholder="Enter your url image">
-        <label>What is your Firstname?</label>
-        <input type="text" name="firstname" placeholder="your firstname">
-        <label>What is your Lastname?</label>
-          <input type="text" name="lastname" placeholder="your lastname">
-          <label>When is your birthday?</label>
-          <input type="date" id="birthday" name="birthday" max="${formatDate}">
-          <div class="form-btn" required>
-            <button type="submit" class="submit ">Submit</button>
-            <button class="removeAddPopup"><i class="ri-close-line"></i></button>
+          <fieldset>
+            <h4 class="addNewPerson">Add a new birthday</h4>
+            <label>What is your Avantar?</label>
+            <input type="url" name="pic" placeholder="Enter your url image">
+            <label>What is your Firstname?</label>
+            <input type="text" name="firstname" placeholder="your firstname">
+            <label>What is your Lastame?</label>
+            <input type="text" name="lastname" placeholder="your lastname">
+            <label>When is your birthday?</label>
+            <input type="date" id="birthday" name="birthday" max="${formatDate}">
+            <div class="form-btn" required>
+              <button type="submit" class="submit ">Submit</button>
+              <button class="removeAddPopup"><i class="ri-close-line"></i></button>
             </div>
-            </form>
+          </fieldset>
+        </form>
             `);
             const skipButton = document.createElement('button');
             skipButton.type = 'button'; // so it doesn't submit

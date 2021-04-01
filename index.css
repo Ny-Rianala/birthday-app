@@ -8,18 +8,14 @@ button, input {
     outline: none;
 }
 
-input {
-    display: block;
-}
-
 select {
 	-webkit-appearance: none;
 }
 
 select {
-    background-image: url("./images/arrow-icon.svg");
+    background-image: url("../birthday-app/images/arrow-icon.svg");
     background-repeat: no-repeat;
-    background-position: 88% 50%;  
+    background-position: 88% 30%;  
 }
 
 
@@ -86,31 +82,6 @@ img {
     font-size: 19px;
     
 }
-.cancel {
-    padding-top: 16px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-left: 25px;
-    border: 3px solid #5F6C7B;
-    border-radius: 5px;
-    background-color: #ffff;
-    font-size: 18px;
-    color: #5F6C7B;
-    margin-top: 30px;
-    margin-left: 3px;
-}
-
-.submit {
-    background-color: #EF4565;
-    color: white;
-    padding-top: 18px;
-    padding-left: 23px;
-    padding-bottom: 15px;
-    padding-right: 23px;
-    border-radius: 5px;
-    font-size: 18px;
-    text-transform: capitalize;
-}
 
 li {
     list-style: none;
@@ -122,6 +93,18 @@ b {
     color: #EF4565; 
 }
 
+.submit{
+    background-color: #EF4565;
+    color: white;
+    padding-top: 18px;
+    padding-left: 54px;
+    padding-bottom: 19px;
+    padding-right: 51px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: capitalize;
+    
+}
 
 .subheading {
     font-size: 36px;
@@ -219,7 +202,7 @@ button {
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 12px;
-    padding-right: 14px;
+    padding-right: 40px;
     border: none;
     
 }
@@ -239,6 +222,7 @@ fieldset {
     flex-direction: column;
     align-items: flex-start;
     border: none;
+    width: 40vw;
 }
 
 .popup.open {
@@ -358,6 +342,19 @@ fieldset {
     height: 48px;
 }
 
+.cancel {
+    padding-top: 15px;
+    padding-left: 48px;
+    padding-bottom: 17px;
+    padding-right: 54px;
+    border: 3px solid #5F6C7B;
+    border-radius: 5px;
+    background-color: #ffff;
+    font-size: 18px;
+    color: #5F6C7B;
+    margin-top: 30px;
+};
+
 
 
 .confirm-btn,
@@ -393,7 +390,7 @@ fieldset {
     color: #5F6C7B;
     position: absolute;
     top: 77.5%;
-    left: 55%;
+    left: 50%;
     margin-top: 11px;
 }
 
@@ -444,7 +441,7 @@ fieldset {
     font-size: 18px;
     color: rgb(95, 108, 123);
     position: absolute;
-    top: 58%;
+    top: 59%;
     left: 55%;
 }
 
@@ -494,8 +491,7 @@ fieldset {
 
 @media(min-width: 1000px) {
     .subheading {
-        color: #094067;
-        padding-left: 21%;
+       padding-left: 21%;
         font-size: 64px;
         margin: 0;
         padding-top: 64px;
@@ -617,10 +613,7 @@ fieldset {
         left: 22%;
         padding-top: 55px;
         padding-bottom: 80px;
-        padding-left: 80px;
-        padding-right: 60px;
-        width: 800px;
-        height: 450px;
+        width: 60vw;
     }
     .cancel-delete {
         padding-top: 13px;
@@ -633,8 +626,8 @@ fieldset {
         font-size: 18px;
         color: #5F6C7B;
         position: absolute;
-        top: 22%;
-        left: 48%;
+        top: 47.5%;
+        left: 35%;
     }
     .searchName {
         margin-right: 18px;
@@ -677,8 +670,8 @@ fieldset {
 
     .cancel-edit {
         position: absolute;
-        top: 79%;
-        left: 46%;
+        top: 76%;
+        left: 37%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
@@ -710,22 +703,15 @@ fieldset {
     }
     .popup label {
     padding-top: 20px;
-    padding-right: 70px;
-    padding-bottom: 10px;
    }
    .addNewPerson {
        color: #094067;
        font-size: 34px;
        margin: 0;
        padding-bottom: 12px;
-       padding-left: 30px;
    }
    .submit {
-        padding-left: 40px;
-        padding-bottom: 15px;
-        padding-right: 40px;
-        margin-top: 20px;
-        margin-left: -114px;
+       margin-top: 30px;
    }
    
     .removeAddPopup {  
@@ -738,17 +724,14 @@ fieldset {
     }
     .cancel {
         margin-left: 35px;
-        top: 82%;
-        left: 51%;
+        top: 73.75%;
+        left: 33%;
         position: absolute;
     }
     #birthday {
-        padding-right: 68px;
-        padding-top: 22px;
-        padding-left: 28px;
-        padding-bottom: 26px;
+        padding-right: 100px;
     }
     #editbirthday {
-        padding-right: 80px;
+        padding-right: 100px;
     }
 }
