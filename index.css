@@ -73,14 +73,13 @@ img {
 
 .add {
     padding-top: 15px;
-    padding-left: 18px;
+    padding-left: 19px;
     padding-bottom: 14px;
     padding-right: 17px;
     border-radius: 8px;
     color: white;
     background-color: #EF4565;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 19px;
     
 }
 
@@ -629,16 +628,25 @@ fieldset {
         left: 58%;
     }
     .searchName {
-        margin-right: 35px;
+        margin-right: 18px;
+    padding-top: 15px;
+    padding-left: 23px;
+    padding-bottom: 14px;
+    padding-right: 20px;
+        /* margin-right: 35px;
         padding-top: 15px;
         padding-left: 20px;
-        padding-bottom: 14px;
+        padding-bottom: 14px; */
     }
     .filterMonth {
-        padding-top: 15px;
+        /* padding-top: 15px;
         padding-left: 20px;
         padding-bottom: 14px;
-        padding-right: 129px;
+        padding-right: 129px; */
+        padding-top: 15px;
+        padding-left: 30px;
+        padding-bottom: 14px;
+        padding-right: 130px;
     }
     .editfirstname {
         padding-top: 15px;
