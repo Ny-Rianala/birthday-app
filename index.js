@@ -245,7 +245,6 @@ const editBirthday = id => {
                 cancelDelete.classList.add("cancel-delete");
                 document.body.style.overflow = "auto";
                 deletePersonForm.firstElementChild.appendChild(cancelDelete);
-                console.log(people);
                 deletePersonForm.addEventListener('submit',(e) => {
                   e.preventDefault()
                   people = people.filter(personToDelete => personToDelete.id != id);
