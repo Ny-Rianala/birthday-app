@@ -15,7 +15,7 @@ select {
 select {
     background-image: url("../birthday-app/images/arrow-icon.svg");
     background-repeat: no-repeat;
-    background-position: 88% 30%;  
+    background-position: 88% 50%;  
 }
 
 
@@ -440,7 +440,7 @@ fieldset {
     font-size: 18px;
     color: rgb(95, 108, 123);
     position: absolute;
-    top: 48%;
+    top: 19%;
     left: 55%;
 }
 
@@ -605,15 +605,17 @@ fieldset {
     .popup {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         opacity: 0;
         background-color: #ffff;
         position: absolute;
         left: 22%;
         padding-top: 55px;
         padding-bottom: 80px;
-        padding-left: 263px;
-        padding-right: 230px;
+        padding-left: 80px;
+        padding-right: 60px;
+        width: 800px;
+        height: 450px;
     }
     .cancel-delete {
         padding-top: 13px;
@@ -626,8 +628,8 @@ fieldset {
         font-size: 18px;
         color: #5F6C7B;
         position: absolute;
-        top: 43%;
-        left: 58%;
+        top: 22%;
+        left: 48%;
     }
     .searchName {
         margin-right: 18px;
@@ -655,12 +657,8 @@ fieldset {
         padding-right: 185px;
     }
     .editbirthday {
-        /* padding-top: 15px;
-        padding-left: 20px;
-        padding-bottom: 14px;
-        padding-right: 144px; */
         padding-left: 25px;
-    padding-right: 90px;
+        padding-right: 90px;
     }
     .submit-edit {
         padding-top: 14px;
@@ -675,7 +673,7 @@ fieldset {
     .cancel-edit {
         position: absolute;
         top: 78%;
-        left: 58%;
+        left: 46%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
@@ -707,6 +705,7 @@ fieldset {
     }
     .popup label {
     padding-top: 20px;
+    padding-right: 70px;
    }
    .addNewPerson {
        color: #094067;
@@ -716,6 +715,7 @@ fieldset {
    }
    .submit {
        margin-top: 30px;
+       margin-left: -114px;
    }
    
     .removeAddPopup {  
@@ -728,8 +728,8 @@ fieldset {
     }
     .cancel {
         margin-left: 35px;
-        top: 74%;
-        left: 55%;
+        top: 72%;
+        left: 52%;
         position: absolute;
     }
     #birthday {

@@ -232,7 +232,7 @@ const editBirthday = id => {
         deletePersonForm.classList.add('popup');
         deletePersonForm.insertAdjacentHTML(
           "afterbegin",`<fieldset>
-          <p>Are you sure to delete this person</p>
+          <h2>Are you sure to delete this person</h2>
                   <button type="submit" class="delete">Delete</button>
                   </fieldset>
                   `);
