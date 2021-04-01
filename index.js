@@ -297,7 +297,7 @@ const editBirthday = id => {
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
             <div class="form-btn" required>
               <button type="submit" class="submit ">Submit</button>
-              <button classDelete"><i class="ri-close-line"></i></button>
+              <button class="removeAddPopup"><i class="ri-close-line"></i></button>
             </div>
           </fieldset>
         </form>
@@ -346,7 +346,7 @@ const editBirthday = id => {
             document.body.style.overflow = "auto";
           }, { once: true }
           );
-            document.querySelector(".removeDeletePopup").addEventListener('click', () => {
+            document.querySelector(".removeAddPopup").addEventListener('click', () => {
               destroyPopup(popupAdd);
           });
         });
