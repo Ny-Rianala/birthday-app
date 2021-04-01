@@ -8,6 +8,10 @@ button, input {
     outline: none;
 }
 
+input {
+    display: block;
+}
+
 select {
 	-webkit-appearance: none;
 }
@@ -745,6 +749,6 @@ fieldset {
         padding-bottom: 26px;
     }
     #editbirthday {
-        padding-right: 100px;
+        padding-right: 80px;
     }
 }
