@@ -642,7 +642,7 @@ fieldset {
         color: #5F6C7B;
         position: absolute;
         top: 47.5%;
-        left: 41%;
+        left: 43%;
     }
     .searchName {
         margin-right: 18px;
@@ -686,7 +686,7 @@ fieldset {
     .cancel-edit {
         position: absolute;
         top: 76%;
-        left: 35%;
+        left: 36%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
@@ -740,7 +740,7 @@ fieldset {
     .cancel {
         margin-left: 35px;
         top: 73.75%;
-        left: 33%;
+        left: 45%;
         position: absolute;
     }
     #birthday {
