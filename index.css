@@ -103,6 +103,7 @@ b {
     border-radius: 5px;
     font-size: 18px;
     text-transform: capitalize;
+    margin-top: 22px;
     
 }
 
@@ -361,8 +362,9 @@ fieldset {
     font-size: 18px;
     color: #5F6C7B;
     margin-top: 30px;
-    top: 74%;
-    left: 46%;
+    top: 75%;
+    left: 53%;
+    position: absolute;
 };
 
 
