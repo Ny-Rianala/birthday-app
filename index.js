@@ -18,101 +18,101 @@ async function fetchBirthdayList() {
   people = birthdayList;
 
   function setBirthdayList() {
-      localStorage.setItem("people", JSON.stringify(people));
+    localStorage.setItem("people", JSON.stringify(people));
   }
 
-  
+
   function getBirthdayList() {
-      let listOfPeople = JSON.parse(localStorage.getItem("people"));
-      if(listOfPeople !== []) {
-          people = listOfPeople;
-      }else {
-          people = birthdayList;
-      }
-      displayList(people);
+    let listOfPeople = JSON.parse(localStorage.getItem("people"));
+    if (listOfPeople !== []) {
+      people = listOfPeople;
+    } else {
+      people = birthdayList;
+    }
+    displayList(people);
   }
 
-//filter name and select a month
-function filters () {
-  const selectSearch = searchByMonth.value.toLowerCase().trim();
-  const inputSearch = searchByName.value.toLowerCase().trim();
-  const searchedPeople = people.filter(person => {
-    return person.firstName.toLowerCase().includes(inputSearch) ||
-    person.lastName.toLowerCase().includes(inputSearch)
-  })
-  const filteredPeople = searchedPeople.filter(person => {
-    const month = new Date(person.birthday).toLocaleString("en-US", {month: "long"})
-    return month.toLowerCase().includes(selectSearch)
-  })
-  displayList(filteredPeople);
-}
+  //filter name and select a month
+  function filters() {
+    const selectSearch = searchByMonth.value.toLowerCase().trim();
+    const inputSearch = searchByName.value.toLowerCase().trim();
+    const searchedPeople = people.filter(person => {
+      return person.firstName.toLowerCase().includes(inputSearch) ||
+        person.lastName.toLowerCase().includes(inputSearch)
+    })
+    const filteredPeople = searchedPeople.filter(person => {
+      const month = new Date(person.birthday).toLocaleString("en-US", { month: "long" })
+      return month.toLowerCase().includes(selectSearch)
+    })
+    displayList(filteredPeople);
+  }
 
-//function that will display the list 
-function displayList(people) {
-  const htmlList = people.map(person => {
-    // Store all the months in a variable
-    const monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    // Get the day and month
-    let date = new Date(person.birthday),
-    day = date.getDate(),
-    month = date.getMonth();
-    // Adding "st", "nd", "rd" depending on the number
-    if (day == 1 || day == 21 || day == 31) {
-      day = day + "st";
-    } else if (day == 2 || day == 22) {
-      day = day + "nd";
-    } else if (day == 3 || day == 23) {
-      day = day + "rd";
-    } else {
-      day = day + "th";
-    }
-    // Get the full converted date
-    const dateString = monthName[month] + " " + day;
-    // To get the number of the days
-    const oneDay = 1000 * 60 * 60 * 24;
-    // get current year  
-    const today = new Date();
-    let birthDayYear;
-    // A function that calculates the age each person
-    function calculateAge(dob) {
-      let diffMs = Date.now() - dob.getTime();
-      let ageDt = new Date(diffMs);
-      return Math.abs(ageDt.getUTCFullYear() - 1970);
-    }
-    // Assign the age in a variable so that we can use it with the object
-    let age = calculateAge(new Date(person.birthday));
-    // Set a condition for the number of days until the birthday comes
-    if (date.getMonth() < today.getMonth()) {
-      birthDayYear = today.getFullYear() + 1;
-      age++;
-    } else if (date.getMonth() == today.getMonth() && date.getDate() > today.getDate()) {
-      birthDayYear = today.getFullYear();
-      age = age;
-    } else if (date.getMonth() == today.getMonth() && date.getDate() < today.getDate()) {
-      birthDayYear = today.getFullYear() + 1;
-      age++;
-    } else {
-      birthDayYear = today.getFullYear();
-    }
-    let birthdayDate = new Date(birthDayYear, date.getMonth(), date.getDate());
-    let diffDays = Math.ceil((birthdayDate.getTime() - today.getTime()) / (oneDay));
-    // This is an object that is used to store the person with the days and date
-    const newPerson = {
-      firstName: person.firstName,
-      lastName: person.lastName,
-      id: person.id,
-      birthday: person.birthday,
-      picture: person.picture,
-      ages: age,
-      date: dateString,
-      differenceBetweenDays: diffDays,
-    }
+  //function that will display the list 
+  function displayList(people) {
+    const htmlList = people.map(person => {
+      // Store all the months in a variable
+      const monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      // Get the day and month
+      let date = new Date(person.birthday),
+        day = date.getDate(),
+        month = date.getMonth();
+      // Adding "st", "nd", "rd" depending on the number
+      if (day == 1 || day == 21 || day == 31) {
+        day = day + "st";
+      } else if (day == 2 || day == 22) {
+        day = day + "nd";
+      } else if (day == 3 || day == 23) {
+        day = day + "rd";
+      } else {
+        day = day + "th";
+      }
+      // Get the full converted date
+      const dateString = monthName[month] + " " + day;
+      // To get the number of the days
+      const oneDay = 1000 * 60 * 60 * 24;
+      // get current year  
+      const today = new Date();
+      let birthDayYear;
+      // A function that calculates the age each person
+      function calculateAge(dob) {
+        let diffMs = Date.now() - dob.getTime();
+        let ageDt = new Date(diffMs);
+        return Math.abs(ageDt.getUTCFullYear() - 1970);
+      }
+      // Assign the age in a variable so that we can use it with the object
+      let age = calculateAge(new Date(person.birthday));
+      // Set a condition for the number of days until the birthday comes
+      if (date.getMonth() < today.getMonth()) {
+        birthDayYear = today.getFullYear() + 1;
+        age++;
+      } else if (date.getMonth() == today.getMonth() && date.getDate() > today.getDate()) {
+        birthDayYear = today.getFullYear();
+        age = age;
+      } else if (date.getMonth() == today.getMonth() && date.getDate() < today.getDate()) {
+        birthDayYear = today.getFullYear() + 1;
+        age++;
+      } else {
+        birthDayYear = today.getFullYear();
+      }
+      let birthdayDate = new Date(birthDayYear, date.getMonth(), date.getDate());
+      let diffDays = Math.ceil((birthdayDate.getTime() - today.getTime()) / (oneDay));
+      // This is an object that is used to store the person with the days and date
+      const newPerson = {
+        firstName: person.firstName,
+        lastName: person.lastName,
+        id: person.id,
+        birthday: person.birthday,
+        picture: person.picture,
+        ages: age,
+        date: dateString,
+        differenceBetweenDays: diffDays,
+      }
 
-    return newPerson;
-  });
-  
-  const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
-    return `
+      return newPerson;
+    });
+
+    const html = htmlList.sort((a, b) => a.differenceBetweenDays - b.differenceBetweenDays).map(person => {
+      return `
     <div>
       <ul class="container" data-id ="${person.id}">
         <li scope="row"><img src="${person.picture}"/></li>
@@ -133,40 +133,40 @@ function displayList(people) {
       </ul>
     </div>
     `;
-  });
-  listOfBirthday.innerHTML = html.join('');
-  main.dispatchEvent(new CustomEvent('updateList'));
+    });
+    listOfBirthday.innerHTML = html.join('');
+    main.dispatchEvent(new CustomEvent('updateList'));
 
-};
-displayList(people);
+  };
+  displayList(people);
 
-async function destroyPopup(popup) {
-  popup.classList.remove('open');
-  // wait for 1 second, to let the animation do its work
-  await wait(1000);
-  // remove it from the dom
-  popup.remove();
-  // remove it from the javascript memory
-  popup = null;
-}
-
-    
-  //function that will look for the birthday id
-const editBirthday = id => {
-  const personToEdit = people.find((birthday => birthday.id == id)); 
-  const result = editPopup(personToEdit);
-  if (result) {
+  async function destroyPopup(popup) {
+    popup.classList.remove('open');
+    // wait for 1 second, to let the animation do its work
+    await wait(1000);
+    // remove it from the dom
+    popup.remove();
+    // remove it from the javascript memory
+    popup = null;
   }
-}
-    
-    
-    const editPopup = (person) => {
-      const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10);
-      const formatDate = new Date().toISOString().slice(0, 10);
-      return new Promise(async resolve => {
-        const popup = document.createElement('form');
-        popup.classList.add('popup');
-        popup.innerHTML =
+
+
+  //function that will look for the birthday id
+  const editBirthday = id => {
+    const personToEdit = people.find((birthday => birthday.id == id));
+    const result = editPopup(personToEdit);
+    if (result) {
+    }
+  }
+
+
+  const editPopup = (person) => {
+    const birthdayDate = new Date(person.birthday).toISOString().slice(0, 10);
+    const formatDate = new Date().toISOString().slice(0, 10);
+    return new Promise(async resolve => {
+      const popup = document.createElement('form');
+      popup.classList.add('popup');
+      popup.innerHTML =
         `<fieldset>
           <button class="removeEditPopup"><i class="ri-close-line"></i></button>
           <h3 class="firstandlastname">Edit ${person.firstName} ${person.lastName}</h3>
@@ -189,47 +189,47 @@ const editBirthday = id => {
             <button type="button" class="cancel-edit">Cancel</button>
           </div>
         </fieldset>`;
-  
-          document.body.style.overflow = "auto";
-          document.body.appendChild(popup);
-          popup.classList.add('open');
-          document.body.style.overflow = "hidden";
-          document.body.style.background = "rgba(240, 248, 255, 0.932)";
-          popup.addEventListener('submit', (e) => {
-            e.preventDefault();
-            person.lastName = e.target.lastName.value;
-            person.firstName = e.target.firstName.value;
-            person.birthday = e.target.birthday.value;
-            person.id= Date.now().toString();
-            displayList(people); 
-            destroyPopup(popup);
-            document.body.style.overflow = "auto";
-            document.body.style.background = "rgba(240, 248, 255, 0.932)";
-          main.dispatchEvent(new CustomEvent('updateList'));
 
-          }, { once: true });
+      document.body.style.overflow = "auto";
+      document.body.appendChild(popup);
+      popup.classList.add('open');
+      document.body.style.overflow = "hidden";
+      document.body.style.background = "rgba(240, 248, 255, 0.932)";
+      popup.addEventListener('submit', (e) => {
+        e.preventDefault();
+        person.lastName = e.target.lastName.value;
+        person.firstName = e.target.firstName.value;
+        person.birthday = e.target.birthday.value;
+        person.id = Date.now().toString();
+        displayList(people);
+        destroyPopup(popup);
+        document.body.style.overflow = "auto";
+        document.body.style.background = "rgba(240, 248, 255, 0.932)";
+        main.dispatchEvent(new CustomEvent('updateList'));
 
-          popup.addEventListener('click', () => {
-            resolve(null);
-            destroyPopup(popup);
-            document.body.style.overflow = "auto";
-            setBirthdayList()
-          }, { once: true });
+      }, { once: true });
 
-          //removing popup
-          document.querySelector(".removeEditPopup").addEventListener('click', () => {
-            destroyPopup(popup);
-        });
-        });
-      };
+      popup.addEventListener('click', () => {
+        resolve(null);
+        destroyPopup(popup);
+        document.body.style.overflow = "auto";
+        setBirthdayList()
+      }, { once: true });
 
-   const deletePopup = id => {
-        const deletePersonForm = document.createElement('form');
-        document.body.appendChild(deletePersonForm);
-        deletePersonForm.classList.add('popup');
-        deletePersonForm.insertAdjacentHTML(
-          "afterbegin",
-          `<fieldset>
+      //removing popup
+      document.querySelector(".removeEditPopup").addEventListener('click', () => {
+        destroyPopup(popup);
+      });
+    });
+  };
+
+  const deletePopup = id => {
+    const deletePersonForm = document.createElement('form');
+    document.body.appendChild(deletePersonForm);
+    deletePersonForm.classList.add('popup');
+    deletePersonForm.insertAdjacentHTML(
+      "afterbegin",
+      `<fieldset>
               <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
               <div class="deleteButton">
@@ -238,46 +238,48 @@ const editBirthday = id => {
               </div>
             </fieldset>
           `);
-                  
-                document.body.appendChild(deletePersonForm);
-                deletePersonForm.classList.add("open");
-                document.body.style.overflow = "hidden";
-                document.body.style.overflow = "auto";
-                deletePersonForm.addEventListener('submit',(e) => {
-                  e.preventDefault()
-                  people = people.filter(personToDelete => personToDelete.id != id);
-                  displayList(people);
-                  
-                  destroyPopup(deletePersonForm);
-                  document.body.style.overflow = "auto";
-                  
-                }, { once: true });
-                
-                deletePersonForm.addEventListener('click',() => {
-                  destroyPopup(deletePersonForm);
-                  document.body.style.overflow = "auto";
-                    }, { once: true }
-                    );
-                     //removing popup
-          document.querySelector(".removeDeletePopup").addEventListener('click', () => {
-            destroyPopup(deletePersonForm);
-        });
-                  }
-                  
-                  //Function to add a person to the list
-                  const handleAddBtn = e => {
-                    if (e.target.closest('button.add')) {
-                      handleAddListBtn();
-                    }
-                  }
-                  
-        const handleAddListBtn = () => {
-          return new Promise(async function(resolve) {
-            const formatDate = new Date().toISOString().slice(0, 10);
-            // Create a popup form when clicking the add button
-            const popupAdd = document.createElement('form');
-            popupAdd.classList.add('popup');
-        popupAdd.insertAdjacentHTML('afterbegin',
+
+    document.body.appendChild(deletePersonForm);
+    deletePersonForm.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "auto";
+    deletePersonForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      people = people.filter(personToDelete => personToDelete.id != id);
+      displayList(people);
+
+      destroyPopup(deletePersonForm);
+      document.body.style.overflow = "auto";
+
+    }, { once: true });
+
+    document.querySelector(".cancel-delete").addEventListener('click', () => {
+      destroyPopup(deletePersonForm);
+      console.log("cancel");
+      document.body.style.overflow = "auto";
+    }, { once: true }
+    );
+    //removing popup
+    document.querySelector(".removeDeletePopup").addEventListener('click', () => {
+      destroyPopup(deletePersonForm);
+      console.log("x");
+    }, { once: true });
+  }
+
+  //Function to add a person to the list
+  const handleAddBtn = e => {
+    if (e.target.closest('button.add')) {
+      handleAddListBtn();
+    }
+  }
+
+  const handleAddListBtn = () => {
+    return new Promise(async function (resolve) {
+      const formatDate = new Date().toISOString().slice(0, 10);
+      // Create a popup form when clicking the add button
+      const popupAdd = document.createElement('form');
+      popupAdd.classList.add('popup');
+      popupAdd.insertAdjacentHTML('afterbegin',
         `
         <form class="modalForm">
           <fieldset>
@@ -297,81 +299,80 @@ const editBirthday = id => {
           </fieldset>
         </form>
             `);
-            const skipButton = document.createElement('button');
-            skipButton.type = 'button'; // so it doesn't submit
-            skipButton.textContent = 'Cancel';
-            skipButton.classList.add("cancel");
-            document.body.style.overflow = "auto";
-            popupAdd.lastElementChild.appendChild(skipButton);
-            
-            document.body.appendChild(popupAdd);
-            popupAdd.classList.add('open');
-            document.body.style.overflow = "hidden";
-            document.body.style.background = "rgba(240, 248, 255, 0.932)";
-        
-        
-        // Listen to the submit event
-        popupAdd.addEventListener('submit', e => {
-          e.preventDefault();
-          const form = e.currentTarget;
-          resolve();
-          
-          
-          // Create a new object for the new person
-          const newPerson = {
-            picture: form.pic.value,
-            lastName: form.lastname.value,
-            firstName: form.firstname.value,
-            birthday: form.birthday.value,
-            id: Date.now().toString()
-          }
-          people.push(newPerson);
-          displayList(people);
+      const skipButton = document.createElement('button');
+      skipButton.type = 'button'; // so it doesn't submit
+      skipButton.textContent = 'Cancel';
+      skipButton.classList.add("cancel");
+      document.body.style.overflow = "auto";
+      popupAdd.lastElementChild.appendChild(skipButton);
+
+      document.body.appendChild(popupAdd);
+      popupAdd.classList.add('open');
+      document.body.style.overflow = "hidden";
+      document.body.style.background = "rgba(240, 248, 255, 0.932)";
+
+
+      // Listen to the submit event
+      popupAdd.addEventListener('submit', e => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        resolve();
+
+
+        // Create a new object for the new person
+        const newPerson = {
+          picture: form.pic.value,
+          lastName: form.lastname.value,
+          firstName: form.firstname.value,
+          birthday: form.birthday.value,
+          id: Date.now().toString()
+        }
+        people.push(newPerson);
+        displayList(people);
+        destroyPopup(popupAdd);
+        document.body.style.overflow = "auto";
+        document.body.style.background = "#D8EEFE";
+        main.dispatchEvent(new CustomEvent('updateList'));
+
+      });
+      skipButton.addEventListener(
+        'click',
+        () => {
+          resolve(null);
           destroyPopup(popupAdd);
           document.body.style.overflow = "auto";
-          document.body.style.background = "#D8EEFE";
-          main.dispatchEvent(new CustomEvent('updateList'));
-          
-        });
-        skipButton.addEventListener(
-          'click',
-          () => {
-            resolve(null);
-            destroyPopup(popupAdd);
-            document.body.style.overflow = "auto";
-          }, { once: true }
-          );
-            document.querySelector(".removeAddPopup").addEventListener('click', () => {
-              destroyPopup(popupAdd);
-          });
-        });
-      }
-    addPersonToList.addEventListener('click', handleAddBtn);
-    
-    
-    const handleClick = (e) => {
-      if (e.target.closest("li.editButton")) {
-        const editBirthdayId = e.target.closest("ul");
-        const birthdayId = editBirthdayId.dataset.id;
-        editBirthday(birthdayId);
-      }
-      if (e.target.closest("li.deleteButton")) {
-        const deleteBirthdayId = e.target.closest("ul");
-        const birthdayToDeleteId = deleteBirthdayId.dataset.id;
-        deletePopup(birthdayToDeleteId);
-        document.body.style.overflow = "hidden";
-      }
-    }
-    
-    listOfBirthday.addEventListener("click", handleClick);
-    setBirthdayList();
-    //Filter person's birthday by name  
-    searchByName.addEventListener("keyup", filters);    
-    //Select person's birthday by month
-    searchByMonth.addEventListener("change",filters);
-    main.addEventListener("updateList", setBirthdayList);
-    getBirthdayList();
+        }, { once: true }
+      );
+      document.querySelector(".removeAddPopup").addEventListener('click', () => {
+        destroyPopup(popupAdd);
+      });
+    });
   }
-  
-  fetchBirthdayList();
-  
+  addPersonToList.addEventListener('click', handleAddBtn);
+
+
+  const handleClick = (e) => {
+    if (e.target.closest("li.editButton")) {
+      const editBirthdayId = e.target.closest("ul");
+      const birthdayId = editBirthdayId.dataset.id;
+      editBirthday(birthdayId);
+    }
+    if (e.target.closest("li.deleteButton")) {
+      const deleteBirthdayId = e.target.closest("ul");
+      const birthdayToDeleteId = deleteBirthdayId.dataset.id;
+      deletePopup(birthdayToDeleteId);
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  listOfBirthday.addEventListener("click", handleClick);
+  setBirthdayList();
+  //Filter person's birthday by name  
+  searchByName.addEventListener("keyup", filters);
+  //Select person's birthday by month
+  searchByMonth.addEventListener("change", filters);
+  main.addEventListener("updateList", setBirthdayList);
+  getBirthdayList();
+}
+
+fetchBirthdayList();
