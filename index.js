@@ -186,7 +186,7 @@ const editBirthday = id => {
           >
           <div class="submitandEdit">
             <button class="submit-edit" type="submit">Save changes</button>
-            <button class="cancel-edit">Cancel</button>
+            <button type="button" class="cancel-edit">Cancel</button>
           </div>
         </fieldset>`;
   
@@ -232,20 +232,17 @@ const editBirthday = id => {
           `<fieldset>
               <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
-                  <button type="submit" class="delete">Delete</button>
-                  <button type="button" class="cancel-delete">Cancel</button>
+              <div class="deleteButton">
+                <button type="submit" class="delete">Delete</button>
+                <button type="button" class="cancel-delete">Cancel</button>
+              </div>
             </fieldset>
           `);
                   
                 document.body.appendChild(deletePersonForm);
                 deletePersonForm.classList.add("open");
                 document.body.style.overflow = "hidden";
-                // const cancelDelete = document.createElement('button');
-                cancelDelete.type = 'button'; // so it doesn't submit
-                // cancelDelete.textContent = 'Cancel';
-                // cancelDelete.classList.add("cancel-delete");
                 document.body.style.overflow = "auto";
-                // deletePersonForm.firstElementChild.appendChild(cancelDelete);
                 deletePersonForm.addEventListener('submit',(e) => {
                   e.preventDefault()
                   people = people.filter(personToDelete => personToDelete.id != id);
@@ -256,7 +253,7 @@ const editBirthday = id => {
                   
                 }, { once: true });
                 
-                cancelDelete.addEventListener('click',() => {
+                deletePersonForm.addEventListener('click',() => {
                   destroyPopup(deletePersonForm);
                   document.body.style.overflow = "auto";
                     }, { once: true }

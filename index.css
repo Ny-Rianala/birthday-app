@@ -167,7 +167,7 @@ button {
     max-width: 50%;
 }
 
-.submitandEdit {
+.submitandEdit, .deleteButton {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -646,9 +646,8 @@ fieldset {
         background-color: #ffff;
         font-size: 18px;
         color: #5F6C7B;
-        position: absolute;
-        top: 47.5%;
-        left: 43%;
+        margin-top: -31px;
+        margin-left: -95px;
     }
     .searchName {
         margin-right: 18px;
@@ -754,7 +753,7 @@ fieldset {
     #editbirthday {
         padding-right: 100px;
     }
-    .submitandEdit {
+    .submitandEdit, .deleteButton {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
