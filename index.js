@@ -209,7 +209,7 @@ const editBirthday = id => {
 
           }, { once: true });
 
-          cancelEdit.addEventListener('click', () => {
+          popup.addEventListener('click', () => {
             resolve(null);
             destroyPopup(popup);
             document.body.style.overflow = "auto";
@@ -230,21 +230,22 @@ const editBirthday = id => {
         deletePersonForm.insertAdjacentHTML(
           "afterbegin",
           `<fieldset>
+              <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
                   <button type="submit" class="delete">Delete</button>
-                  <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
+                  <button type="button" class="cancel-delete">Cancel</button>
             </fieldset>
           `);
                   
                 document.body.appendChild(deletePersonForm);
                 deletePersonForm.classList.add("open");
                 document.body.style.overflow = "hidden";
-                const cancelDelete = document.createElement('button');
+                // const cancelDelete = document.createElement('button');
                 cancelDelete.type = 'button'; // so it doesn't submit
-                cancelDelete.textContent = 'Cancel';
-                cancelDelete.classList.add("cancel-delete");
+                // cancelDelete.textContent = 'Cancel';
+                // cancelDelete.classList.add("cancel-delete");
                 document.body.style.overflow = "auto";
-                deletePersonForm.firstElementChild.appendChild(cancelDelete);
+                // deletePersonForm.firstElementChild.appendChild(cancelDelete);
                 deletePersonForm.addEventListener('submit',(e) => {
                   e.preventDefault()
                   people = people.filter(personToDelete => personToDelete.id != id);
