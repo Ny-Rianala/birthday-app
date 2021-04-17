@@ -223,7 +223,7 @@ fieldset {
     flex-direction: column;
     align-items: flex-start;
     border: none;
-    width: 40vw;
+    /* width: 40vw; */
 }
 
 .popup.open {
@@ -642,7 +642,7 @@ fieldset {
         color: #5F6C7B;
         position: absolute;
         top: 47.5%;
-        left: 35%;
+        left: 41%;
     }
     .searchName {
         margin-right: 18px;
@@ -686,7 +686,7 @@ fieldset {
     .cancel-edit {
         position: absolute;
         top: 76%;
-        left: 37%;
+        left: 35%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
