@@ -168,6 +168,7 @@ const editBirthday = id => {
         popup.classList.add('popup');
         popup.innerHTML =
         `<fieldset>
+          <button class="removeEditPopup"><i class="ri-close-line"></i></button>
           <h3 class="firstandlastname">Edit ${person.firstName} ${person.lastName}</h3>
           <label>Firstname</label>
           <input class="editfirstname" type="text" name="firstName" value="${person.firstName}"/>
@@ -182,9 +183,10 @@ const editBirthday = id => {
             name="birthday"  
             value="${birthdayDate}"
             max="${formatDate}"
-            >
-          <button class="submit-edit" type="submit">Save changes</button>
-          <button class="removeEditPopup"><i class="ri-close-line"></i></button>
+          >
+          <div class="submitandEdit">
+            <button class="submit-edit" type="submit">Save changes</button>
+          </div>
         </fieldset>`;
           
           const cancelEdit = document.createElement('button');
@@ -227,7 +229,7 @@ const editBirthday = id => {
       };
 
    const deletePopup = id => {
-        const deletePersonForm = document.createElement("form");
+        const deletePersonForm = document.createElement('form');
         document.body.appendChild(deletePersonForm);
         deletePersonForm.classList.add('popup');
         deletePersonForm.insertAdjacentHTML(

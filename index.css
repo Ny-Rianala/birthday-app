@@ -749,4 +749,9 @@ fieldset {
     #editbirthday {
         padding-right: 100px;
     }
+    .submitandEdit {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
