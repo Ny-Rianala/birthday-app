@@ -167,6 +167,12 @@ button {
     max-width: 50%;
 }
 
+.submitandEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .popup {
     display: flex;
     flex-direction: column;
@@ -684,15 +690,14 @@ fieldset {
     }
 
     .cancel-edit {
-        position: absolute;
-        top: 76%;
-        left: 36%;
         padding-top: 14px;
         padding-left: 48px;
         padding-bottom: 15px;
         padding-right: 55px;
         line-height: 21.33px;
         margin-top: 0;
+        margin-top: -9px;
+        margin-left: -60px
     }
     .search {
         margin-right: 15px;

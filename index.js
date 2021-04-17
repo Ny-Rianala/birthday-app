@@ -186,16 +186,11 @@ const editBirthday = id => {
           >
           <div class="submitandEdit">
             <button class="submit-edit" type="submit">Save changes</button>
+            <button class="cancel-edit">Cancel</button>
           </div>
         </fieldset>`;
-          
-          const cancelEdit = document.createElement('button');
-          // so it doesn't submit
-          cancelEdit.type = 'button'; 
-          cancelEdit.textContent = 'Cancel';
-          cancelEdit.classList.add("cancel-edit");
+  
           document.body.style.overflow = "auto";
-          popup.firstElementChild.appendChild(cancelEdit);
           document.body.appendChild(popup);
           popup.classList.add('open');
           document.body.style.overflow = "hidden";
