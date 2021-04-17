@@ -150,7 +150,6 @@ async function fetchBirthdayList() {
     popup = null;
   }
 
-
   //function that will look for the birthday id
   const editBirthday = id => {
     const personToEdit = people.find((birthday => birthday.id == id));
@@ -219,6 +218,7 @@ async function fetchBirthdayList() {
       //removing popup
       document.querySelector(".removeEditPopup").addEventListener('click', () => {
         destroyPopup(popup);
+        console.log("remove");
       });
     });
   };
@@ -230,7 +230,7 @@ async function fetchBirthdayList() {
     deletePersonForm.insertAdjacentHTML(
       "afterbegin",
       `<fieldset>
-              <button class="removeDeletePopup"><i class="ri-close-line"></i></button>
+              <button type="button" class="removeDeletePopup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
               <div class="deleteButton">
                 <button type="submit" class="delete">Delete</button>
@@ -243,11 +243,11 @@ async function fetchBirthdayList() {
     deletePersonForm.classList.add("open");
     document.body.style.overflow = "hidden";
     document.body.style.overflow = "auto";
+
     deletePersonForm.addEventListener('submit', (e) => {
       e.preventDefault()
       people = people.filter(personToDelete => personToDelete.id != id);
       displayList(people);
-
       destroyPopup(deletePersonForm);
       document.body.style.overflow = "auto";
 
@@ -262,7 +262,7 @@ async function fetchBirthdayList() {
     //removing popup
     document.querySelector(".removeDeletePopup").addEventListener('click', () => {
       destroyPopup(deletePersonForm);
-      console.log("x");
+      document.body.style.overflow = "auto";
     }, { once: true });
   }
 
@@ -283,28 +283,23 @@ async function fetchBirthdayList() {
         `
         <form class="modalForm">
           <fieldset>
+            <button type="button" class="removeAddPopup"><i class="ri-close-line"></i></button>
             <h4 class="addNewPerson">Add a new birthday</h4>
             <label>What is your Avantar?</label>
             <input type="url" name="pic" placeholder="Enter your url image">
             <label>What is your lirstname?</label>
-            <input type="text" name="firstname" placeholder="your firstname">
+            <input type="text" name="firstname" placeholder="your firstname" required>
             <label>What is your lastname?</label>
-            <input type="text" name="lastname" placeholder="your lastname">
+            <input type="text" name="lastname" placeholder="your lastname" reqiured>
             <label>When is your birthday?</label>
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
-            <div class="form-btn" required>
-              <button type="submit" class="submit ">Submit</button>
-              <button class="removeAddPopup"><i class="ri-close-line"></i></button>
+            <div class="addButton">
+              <button type="submit" class="submit">Submit</button>
+              <button type="button" class="cancel">Cancel</button>
             </div>
           </fieldset>
         </form>
             `);
-      const skipButton = document.createElement('button');
-      skipButton.type = 'button'; // so it doesn't submit
-      skipButton.textContent = 'Cancel';
-      skipButton.classList.add("cancel");
-      document.body.style.overflow = "auto";
-      popupAdd.lastElementChild.appendChild(skipButton);
 
       document.body.appendChild(popupAdd);
       popupAdd.classList.add('open');
@@ -330,21 +325,24 @@ async function fetchBirthdayList() {
         people.push(newPerson);
         displayList(people);
         destroyPopup(popupAdd);
+        console.log("newadd");
         document.body.style.overflow = "auto";
         document.body.style.background = "#D8EEFE";
         main.dispatchEvent(new CustomEvent('updateList'));
-
       });
-      skipButton.addEventListener(
+
+      document.querySelector(".cancel").addEventListener(
         'click',
         () => {
           resolve(null);
           destroyPopup(popupAdd);
+          console.log("cancel");
           document.body.style.overflow = "auto";
         }, { once: true }
       );
       document.querySelector(".removeAddPopup").addEventListener('click', () => {
         destroyPopup(popupAdd);
+        document.body.style.overflow = "auto";
       });
     });
   }

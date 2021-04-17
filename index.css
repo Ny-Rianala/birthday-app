@@ -73,9 +73,9 @@ img {
 
 .add {
     padding-top: 15px;
-    padding-left: 19px;
+    padding-left: 65px;
     padding-bottom: 14px;
-    padding-right: 17px;
+    padding-right: 65px;
     border-radius: 8px;
     color: white;
     background-color: #EF4565;
@@ -167,7 +167,9 @@ button {
     max-width: 50%;
 }
 
-.submitandEdit, .deleteButton {
+.submitandEdit,
+.deleteButton,
+.addButton {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -229,7 +231,6 @@ fieldset {
     flex-direction: column;
     align-items: flex-start;
     border: none;
-    /* width: 40vw; */
 }
 
 .popup.open {
@@ -560,7 +561,6 @@ fieldset {
     .buttonanddays {
         display: flex;
         flex-direction: column;
-        /* padding-right: 40px; */
         padding-right: 22px;
     }
     .delete_edit {
@@ -568,9 +568,7 @@ fieldset {
         flex-direction: row;
         justify-content: flex-end;
         padding-top: 13px;
-        /* margin-left: 43px; */
         padding-right: 0;
-        /* margin-right: -4px; */
         }
     .search {
         margin-bottom: 0;
@@ -753,7 +751,7 @@ fieldset {
     #editbirthday {
         padding-right: 100px;
     }
-    .submitandEdit, .deleteButton {
+    .submitandEdit, .deleteButton, .addButton {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
