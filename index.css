@@ -15,7 +15,7 @@ select {
 select {
     background-image: url("./images/arrow-icon.svg");
     background-repeat: no-repeat;
-    background-position: 88% 30%;  
+    background-position: 88% 50%;  
 }
 
 
@@ -361,6 +361,8 @@ fieldset {
     font-size: 18px;
     color: #5F6C7B;
     margin-top: 30px;
+    top: 74%;
+    left: 46%;
 };
 
 
@@ -463,6 +465,7 @@ fieldset {
 #date {
     font-size: 22px;
     color: #5F6C7B;
+    padding-left: 4px;
 }
 
 .searchName {
@@ -517,7 +520,7 @@ fieldset {
         justify-content: space-between;
         background-color: #ffff;
         max-height: 106px;
-        width: 760px;
+        width: 757px;
         margin-bottom: 31px;
         margin-top: 0;
         margin-left: 0;
@@ -532,7 +535,7 @@ fieldset {
         padding-top: 0;
         max-width: 92px;
         height: 94px;
-        margin-left: 17px;
+        margin-left: 21px;
         margin-bottom: 0;
     }
     .firstandlastname {
@@ -544,20 +547,22 @@ fieldset {
         font-weight: 500;
         font-size: 36px;
         line-height: 43px;
+        padding-left: 2px;
     }
     .buttonanddays {
         display: flex;
         flex-direction: column;
-        padding-right: 40px;
+        /* padding-right: 40px; */
+        padding-right: 22px;
     }
     .delete_edit {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         padding-top: 13px;
-        margin-left: 43px;
+        /* margin-left: 43px; */
         padding-right: 0;
-        margin-right: -10px;
+        /* margin-right: -4px; */
         }
     .search {
         margin-bottom: 0;
@@ -577,7 +582,7 @@ fieldset {
     }
     .add {
         margin-top: 67px;
-        margin-left: 34px;
+        margin-left: 33px;
         margin-bottom: 31px;
     }
     .days {
@@ -688,11 +693,11 @@ fieldset {
         margin-top: 0;
     }
     .search {
-        margin-right: 0;
+        margin-right: 15px;
     }
     .container-name {
         position: absolute;
-        left: 33.5%;
+        left: 33.75%;
     }
     .removeEditPopup {
         position: absolute;
