@@ -1,0 +1,54 @@
+Arguments: 
+  /snap/node/4594/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/student/Android/Sdk/emulator:/home/student/Android/Sdk/tools:/home/student/Android/Sdk/tools/bin:/home/student/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect ECONNREFUSED 192.168.1.46:4873
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)
+
+npm manifest: 
+  {
+    "name": "birthday-app",
+    "version": "1.0.0",
+    "description": "Hey team! So the final project here will be a birthday list.",
+    "main": "script.js",
+    "dependencies": {
+      "date-fns": "^2.16.1",
+      "express": "^4.17.1",
+      "regenerator-runtime": "^0.13.7"
+    },
+    "devDependencies": {},
+    "browserslist": [
+  		"last 1 chrome versions"
+  	],
+    "scripts": {
+      "start": "parcel index.html --open"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Ny-Rianala/birthday-app.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Ny-Rianala/birthday-app/issues"
+    },
+    "homepage": "https://github.com/Ny-Rianala/birthday-app#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
