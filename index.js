@@ -199,7 +199,7 @@ async function fetchBirthdayList() {
       const popup = document.createElement('form')
       popup.classList.add('popup')
       popup.innerHTML = `<fieldset>
-          <button class="removeEditPopup"><i class="ri-close-line"></i></button>
+          <button type='button' class="removeEditPopup"><i class="ri-close-line"></i></button>
           <h3 class="firstandlastname">Edit ${person.firstName} ${person.lastName}</h3>
           <label>Firstname</label>
           <input class="editfirstname" type="text" name="firstName" value="${person.firstName}"/>
@@ -247,12 +247,16 @@ async function fetchBirthdayList() {
         'click',
         () => {
           resolve(null)
-          destroyPopup(popup)
+          // destroyPopup(popup)
           document.body.style.overflow = 'auto'
           setBirthdayList()
         },
         { once: true }
       )
+
+      document.querySelector('.cancel-edit').addEventListener('click', () => {
+        destroyPopup(popup)
+      })
 
       //removing popup
       document
