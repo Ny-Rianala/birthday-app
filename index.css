@@ -61,6 +61,7 @@ img {
   padding-bottom: 13px;
   font-size: 18px;
   font-weight: 500;
+  margin-left: 15px;
 }
 
 .add {
@@ -521,7 +522,7 @@ fieldset {
     padding-top: 0;
     max-width: 92px;
     height: 94px;
-    margin-left: 21px;
+    margin-left: 20px;
     margin-bottom: 0;
   }
   .firstandlastname {
