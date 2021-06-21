@@ -144,7 +144,7 @@ async function fetchBirthdayList() {
         return `
     <div>
       <ul class="container" data-id ="${person.id}">
-        <li scope="row"><img src="${person.picture}"/></li>
+        <li scope="row"><img class="imageProfile" src="${person.picture}"/></li>
         <div class="container-name">
           <span class="name">
             <li class="firstname">${person.firstName}</li>
