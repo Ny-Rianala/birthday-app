@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthday App</title>
-    <link rel="stylesheet" href="./index.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <h1 class="subheading">Birthday App</h1>
-		<div class="form-search">
-			<form class="search">
-			  <label>Filter by name</label>
-			  <input 
-				    class="searchName" 
-					type="text" 
-					name="search" 
-					placeholder="Type a name" 
-					id="birthday_id"
-			  />
-			</form>
-			<form class="month-filter">
-				<label>Filter by month</label>
-				<select class="filterMonth" id="filter_month" name="select">
-						<option value="">Select a month</option>
-						<option value="January">January</option>
-						<option value="February">February</option>
-						<option value="March">March</option>
-						<option value="April">April</option>
-						<option value="May">May</option>
-						<option value="June">June</option>
-						<option value="July">July</option>
-						<option value="August">August</option>
-						<option value="September">September</option>
-						<option value="Octber">October</option>
-						<option value="November">November</option>
-						<option value="December">December</option>
-				</select>
-			</form>
-			<button type="button" class="add">Add somebody</button>
-		</div>
+      <h1 class="subheading">Birthday App</h1>
+      <div class="form-search">
+        <form class="search">
+          <label>Filter by name</label>
+          <input
+            class="searchName"
+            type="text"
+            name="search"
+            placeholder="Type a name"
+            id="birthday_id"
+          />
+        </form>
+        <form class="month-filter">
+          <label>Filter by month</label>
+          <select class="filterMonth" id="filter_month" name="select">
+            <option value="">Select a month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="Octber">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </form>
+        <button type="button" class="add">Add somebody</button>
+      </div>
     </header>
     <main>
-        <section class="birthday">
-            <div class="wrapper"></div>
-        </section>
-        <div class="outer-confirm-modal">
-            <div class="inner-confirm-modal"></div>
-        </div>
+      <section class="birthday">
+        <div class="wrapper"></div>
+      </section>
+      <div class="outer-confirm-modal">
+        <div class="inner-confirm-modal"></div>
+      </div>
     </main>
-</body>
-<script src="./index.js"></script>
-
+  </body>
+  <script src="./index.js"></script>
 </html>
