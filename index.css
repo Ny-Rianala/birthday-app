@@ -63,11 +63,6 @@ img {
   font-weight: 500;
 }
 
-.subheading {
-  font-size: 32px;
-  color: #094067;
-}
-
 .add {
   padding-top: 15px;
   padding-left: 18px;
@@ -104,7 +99,7 @@ b {
 
 .subheading {
   font-size: 36px;
-  color: #594a4e;
+  color: #094067;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
