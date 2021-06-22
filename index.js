@@ -144,15 +144,17 @@ async function fetchBirthdayList() {
         return `
     <div>
       <ul class="container" data-id ="${person.id}">
-        <li scope="row"><img class="imageProfile" src="${person.picture}"/></li>
+        <li scope="row"><img class="image-profile" src="${
+          person.picture
+        }"/></li>
         <div class="container-name">
           <span class="name">
-            <li class="firstname">${person.firstName}</li>
-            <li class="lastname">${person.lastName}</li>
+            <li class="first-name">${person.firstName}</li>
+            <li class="last-name">${person.lastName}</li>
           </span>
           <li id="date">Turns <b>${person.ages + 1}</b> in ${person.date}</li>
         </div>
-        <div class="buttonanddays">
+        <div class="button-and-days">
           <li class="days">${
             person.differenceBetweenDays === 0
               ? 'Today is your birthday!'
@@ -160,7 +162,7 @@ async function fetchBirthdayList() {
           }</li>  
           <div class="delete_edit">
               <li class="editButton"><i class="ri-edit-box-line"></i></li> 
-              <li class= "deleteButton" data-id="${
+              <li class= "delete-birthday" data-id="${
                 person.id
               }"><i class="ri-delete-back-2-line"></i></li>
           </div>
@@ -199,15 +201,15 @@ async function fetchBirthdayList() {
       const popup = document.createElement('form')
       popup.classList.add('popup')
       popup.innerHTML = `<fieldset>
-          <button type='button' class="removeEditPopup"><i class="ri-close-line"></i></button>
-          <h3 class="firstandlastname">Edit ${person.firstName} ${person.lastName}</h3>
-          <label>Firstname</label>
-          <input class="editfirstname" type="text" name="firstName" value="${person.firstName}"/>
-          <label>Lastname</label>
-          <input class="editlastname" type="text" name="lastName" value="${person.lastName}"/>
+          <button type='button' class="remove-edit-popup"><i class="ri-close-line"></i></button>
+          <h3 class="first-and-last-name">Edit ${person.firstName} ${person.lastName}</h3>
+          <label>First Name</label>
+          <input class="edit-first-name" type="text" name="firstName" value="${person.firstName}"/>
+          <label>Last Name</label>
+          <input class="edit-last-name" type="text" name="lastName" value="${person.lastName}"/>
           <label>Birthday</label>
           <input 
-            class="editbirthday"
+            class="edit-birthday"
             id="editbirthday"
             type="date" 
             id="start" 
@@ -215,7 +217,7 @@ async function fetchBirthdayList() {
             value="${birthdayDate}"
             max="${formatDate}"
           >
-          <div class="submitandEdit">
+          <div class="submit-and-edit">
             <button class="submit-edit" type="submit">Save changes</button>
             <button type="button" class="cancel-edit">Cancel</button>
           </div>
@@ -260,7 +262,7 @@ async function fetchBirthdayList() {
 
       //removing popup
       document
-        .querySelector('.removeEditPopup')
+        .querySelector('.remove-edit-popup')
         .addEventListener('click', () => {
           destroyPopup(popup)
         })
@@ -274,9 +276,9 @@ async function fetchBirthdayList() {
     deletePersonForm.insertAdjacentHTML(
       'afterbegin',
       `<fieldset>
-              <button type="button" class="removeDeletePopup"><i class="ri-close-line"></i></button>
+              <button type="button" class="remove-delete-popup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
-              <div class="deleteButton">
+              <div class="delete-birthday">
                 <button type="submit" class="delete">Delete</button>
                 <button type="button" class="cancel-delete">Cancel</button>
               </div>
@@ -310,7 +312,7 @@ async function fetchBirthdayList() {
       { once: true }
     )
     //removing popup
-    document.querySelector('.removeDeletePopup').addEventListener(
+    document.querySelector('.remove-delete-popup').addEventListener(
       'click',
       () => {
         destroyPopup(deletePersonForm)
@@ -338,9 +340,9 @@ async function fetchBirthdayList() {
         `
         <form class="modalForm">
           <fieldset>
-            <button type="button" class="removeAddPopup"><i class="ri-close-line"></i></button>
-            <h4 class="addNewPerson">Add a new birthday</h4>
-            <label>What is your Avantar?</label>
+            <button type="button" class="remove-add-popup"><i class="ri-close-line"></i></button>
+            <h4 class="add-new-birthday">Add a new birthday</h4>
+            <label>What is your avatar</label>
             <input type="url" name="pic" placeholder="Enter your url image">
             <label>What is your first name?</label>
             <input type="text" name="firstname" placeholder="your firstname" required>
@@ -348,9 +350,9 @@ async function fetchBirthdayList() {
             <input type="text" name="lastname" placeholder="your lastname" reqiured>
             <label>When is your birthday?</label>
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
-            <div class="addButton">
+            <div class="add-button">
               <button type="submit" class="submit">Submit</button>
-              <button type="button" class="cancel">Cancel</button>
+              <button type="button" class="cancel-add">Cancel</button>
             </div>
           </fieldset>
         </form>
@@ -379,24 +381,22 @@ async function fetchBirthdayList() {
         people.push(newPerson)
         displayList(people)
         destroyPopup(popupAdd)
-        console.log('newadd')
         document.body.style.overflow = 'auto'
         document.body.style.background = '#D8EEFE'
         main.dispatchEvent(new CustomEvent('updateList'))
       })
 
-      document.querySelector('.cancel').addEventListener(
+      document.querySelector('.cancel-add').addEventListener(
         'click',
         () => {
           resolve(null)
           destroyPopup(popupAdd)
-          console.log('cancel')
           document.body.style.overflow = 'auto'
         },
         { once: true }
       )
       document
-        .querySelector('.removeAddPopup')
+        .querySelector('.remove-add-popup')
         .addEventListener('click', () => {
           destroyPopup(popupAdd)
           document.body.style.overflow = 'auto'
@@ -411,7 +411,7 @@ async function fetchBirthdayList() {
       const birthdayId = editBirthdayId.dataset.id
       editBirthday(birthdayId)
     }
-    if (e.target.closest('li.deleteButton')) {
+    if (e.target.closest('li.delete-birthday')) {
       const deleteBirthdayId = e.target.closest('ul')
       const birthdayToDeleteId = deleteBirthdayId.dataset.id
       deletePopup(birthdayToDeleteId)

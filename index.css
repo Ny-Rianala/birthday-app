@@ -19,11 +19,35 @@ select {
   background-position: 88% 50%;
 }
 
-.form-search {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin-left: 14px;
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+b {
+  color: #ef4565;
+}
+
+button {
+  border: none;
+}
+
+td {
+  padding-left: 3rem;
+  padding-top: 1rem;
+  column-gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+select {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #faeee7;
+  color: #594a4e;
 }
 
 img {
@@ -31,6 +55,21 @@ img {
   max-width: 30%;
   height: auto;
   margin-bottom: 13px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+  margin-left: 40px;
+}
+
+.form-search {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
 }
 
 .container {
@@ -43,27 +82,6 @@ img {
   border-radius: 12px;
 }
 
-.search {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
-}
-
-.search label {
-  color: #094067;
-  padding-bottom: 13px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.search-by-month label {
-  color: #094067;
-  padding-bottom: 13px;
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 15px;
-}
-
 .add {
   padding-top: 15px;
   padding-left: 18px;
@@ -73,16 +91,6 @@ img {
   color: white;
   background-color: #ef4565;
   font-size: 19px;
-}
-
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-b {
-  color: #ef4565;
 }
 
 .submit {
@@ -105,6 +113,27 @@ b {
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 14px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.search label {
+  color: #094067;
+  padding-bottom: 13px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.search-by-month label {
+  color: #094067;
+  padding-bottom: 13px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 15px;
 }
 
 .search-by-name {
@@ -133,34 +162,9 @@ b {
   background-color: white;
 }
 
-select {
-  width: 50%;
-  border-radius: 5px;
-  border: 1px solid #faeee7;
-  color: #594a4e;
-}
-
-td {
-  padding-left: 3rem;
-  padding-top: 1rem;
-  column-gap: 1rem;
-}
-
-button {
-  cursor: pointer;
-}
-
-.profil_pic {
-  max-width: 50%;
-}
-
-.imageUrl {
-  max-width: 50%;
-}
-
-.submitandEdit,
-.deleteButton,
-.addButton {
+.submit-and-edit,
+.delete-button,
+.add-button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -187,6 +191,10 @@ button {
   padding-top: 12px;
 }
 
+.popup input {
+  border-radius: 5px;
+}
+
 .name {
   display: flex;
   flex-direction: row;
@@ -208,18 +216,6 @@ button {
 
 .birthday {
   margin-top: 0.25rem;
-}
-
-button {
-  border: none;
-}
-
-fieldset {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: none;
-  margin-left: 40px;
 }
 
 .popup.open {
@@ -270,19 +266,7 @@ fieldset {
   margin-top: 1rem;
 }
 
-.btn {
-  display: block;
-  margin-left: 2px;
-  margin-top: 10px;
-  padding: 10px;
-  width: 100px;
-  border-radius: 2px;
-  border: 1px solid lightgray;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.removeEditPopup {
+.remove-edit-popup {
   position: absolute;
   top: 11%;
   left: 70%;
@@ -291,7 +275,7 @@ fieldset {
   background: none;
 }
 
-.removeDeletePopup {
+.remove-delete-popup {
   position: absolute;
   top: 11%;
   left: 70%;
@@ -300,7 +284,7 @@ fieldset {
   background: none;
 }
 
-.removeAddPopup {
+.remove-add-popup {
   position: absolute;
   top: 5%;
   left: 75%;
@@ -310,16 +294,16 @@ fieldset {
 }
 
 .outer-confirm-modal {
+  background-color: hsla(0, 0%, 0%, 0.7);
+  width: 80vw;
+  height: 100vh;
   display: grid;
   place-items: center center;
-  background-color: hsla(0, 0%, 0%, 0.7);
   pointer-events: none;
   opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 80vw;
 }
 
 .outer-confirm-modal.confirm {
@@ -334,18 +318,7 @@ fieldset {
   padding: 20px;
 }
 
-.delete-btn,
-.edit-btn {
-  padding-left: 0.5rem;
-  padding-top: 0.25rem;
-  padding-right: 0.5rem;
-  padding-bottom: 0.5rem;
-  border: none;
-  width: 48px;
-  height: 48px;
-}
-
-.cancel {
+.cancel-add {
   padding-top: 15px;
   padding-left: 48px;
   padding-bottom: 17px;
@@ -356,29 +329,7 @@ fieldset {
   font-size: 18px;
   color: #5f6c7b;
   margin-top: 30px;
-  margin-top: 22px;
   margin-left: 11px;
-}
-
-.confirm-btn,
-.cancel-btn {
-  color: white;
-  padding-left: 1rem;
-  padding-top: 0.5rem;
-  padding-right: 1rem;
-  padding-bottom: 0.5rem;
-  background: rgb(77, 184, 169);
-  border: none;
-  border-radius: 10px;
-  margin-right: 1rem;
-}
-
-.cake-image svg {
-  position: absolute;
-  top: 3%;
-  left: 61%;
-  width: 48px;
-  height: 48px;
 }
 
 .cancel-edit {
@@ -400,12 +351,6 @@ fieldset {
   flex-direction: row;
   justify-content: flex-end;
   padding-right: 40px;
-}
-
-.days {
-  padding-bottom: 15px;
-  padding-top: 12px;
-  font-size: 22px;
 }
 
 .submit-edit {
@@ -443,6 +388,12 @@ fieldset {
   margin-left: -88px;
 }
 
+.days {
+  padding-bottom: 15px;
+  padding-top: 12px;
+  font-size: 22px;
+}
+
 .name {
   display: flex;
   flex-direction: row;
@@ -456,7 +407,7 @@ fieldset {
   padding-left: 4px;
 }
 
-.searchName {
+.search-by-name {
   margin-right: 35px;
   padding-top: 14px;
   padding-left: 24px;
@@ -483,28 +434,12 @@ fieldset {
   cursor: pointer;
 }
 
-.popup input {
-  border-radius: 5px;
-}
-
 @media (min-width: 1000px) {
-  .subheading {
-    padding-left: 22%;
-    font-size: 64px;
-    margin: 0;
-    padding-top: 63px;
-    padding-bottom: 50px;
-  }
-  .birthday {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     background-color: #ffff;
     max-height: 106px;
     width: 757px;
@@ -516,27 +451,39 @@ fieldset {
     padding-bottom: 15px;
     padding-top: 17px;
   }
-  .imageProfile {
-    border-radius: 5px;
-    padding-bottom: 0;
-    padding-top: 0;
-    max-width: 92px;
-    height: 94px;
-    margin-left: 20px;
-    margin-bottom: 0;
-  }
-  .firstandlastname {
-    color: #094067;
-    font-size: 48px;
+  .subheading {
+    font-size: 64px;
+    padding-left: 22%;
+    padding-top: 63px;
+    padding-bottom: 50px;
     margin: 0;
   }
+  .birthday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-profile {
+    max-width: 92px;
+    height: 94px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-left: 20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+  }
+  .first-and-last-name {
+    font-size: 48px;
+    margin: 0;
+    color: #094067;
+  }
   .name {
-    font-weight: 500;
     font-size: 36px;
+    font-weight: 500;
     line-height: 43px;
     padding-left: 2px;
   }
-  .buttonanddays {
+  .button-and-days {
     display: flex;
     flex-direction: column;
     padding-right: 22px;
@@ -586,9 +533,9 @@ fieldset {
     padding-right: 95px;
   }
   fieldset input {
+    background-color: #d8eefe;
     color: #094067;
     font-size: 18px;
-    background-color: #d8eefe;
     padding-top: 15px;
     padding-left: 20px;
     padding-bottom: 14px;
@@ -604,62 +551,62 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
     background-color: #ffff;
+    width: 60vw;
     position: absolute;
     left: 22%;
     padding-top: 55px;
     padding-bottom: 80px;
-    width: 60vw;
+    opacity: 0;
   }
   .cancel-delete {
+    background-color: #ffff;
+    border: 3px solid #5f6c7b;
+    color: #5f6c7b;
+    font-size: 18px;
     padding-top: 13px;
     padding-left: 40px;
     padding-bottom: 13px;
     padding-right: 40px;
-    border: 3px solid #5f6c7b;
-    border-radius: 5px;
-    background-color: #ffff;
-    font-size: 18px;
-    color: #5f6c7b;
     margin-left: -74px;
+    border-radius: 5px;
   }
-  .searchName {
+  .search-by-name {
+    width: 77%;
     margin-right: -15px;
     padding-top: 15px;
     padding-bottom: 14px;
-    width: 77%;
   }
   .select-by-month {
-    margin-left: 15px;
     padding-top: 15px;
     padding-left: 20px;
     padding-bottom: 14px;
     padding-right: 125px;
+    margin-left: 15px;
   }
-  .editfirstname {
+  .edit-first-name {
     padding-top: 15px;
     padding-left: 20px;
     padding-bottom: 14px;
     padding-right: 156px;
   }
-  .editlastname {
+  .edit-last-name {
     padding-top: 14px;
     padding-left: 20px;
     padding-bottom: 15px;
     padding-right: 185px;
   }
-  .editbirthday {
+  .edit-birthday {
     padding-left: 25px;
     padding-right: 90px;
   }
   .submit-edit {
+    font-size: 18px;
+    line-height: 23.33px;
     padding-top: 14px;
     padding-left: 21px;
     padding-bottom: 15px;
     padding-right: 23px;
-    font-size: 18px;
-    line-height: 23.33px;
     margin-right: 0;
   }
 
@@ -673,19 +620,21 @@ fieldset {
     margin-left: 19px;
   }
 
-  .container-name {
-    position: absolute;
-    left: 33.75%;
-  }
-  .removeEditPopup {
+  .remove-edit-popup {
+    height: 20%;
     position: absolute;
     top: 0%;
     left: 80%;
     color: #094067;
     background: none;
-
-    height: 20%;
     font-weight: lighter;
+  }
+  .remove-add-popup {
+    top: 5%;
+    left: 85%;
+    font-size: 45px;
+    color: #094067;
+    background: none;
   }
   .ri-delete-back-2-line {
     color: #ef4565;
@@ -695,9 +644,9 @@ fieldset {
   .popup label {
     padding-top: 20px;
   }
-  .addNewPerson {
-    color: #094067;
+  .add-new-birthday {
     font-size: 34px;
+    color: #094067;
     margin: 0;
     padding-bottom: 12px;
   }
@@ -705,16 +654,9 @@ fieldset {
     margin-top: 30px;
   }
 
-  .removeAddPopup {
-    top: 5%;
-    left: 85%;
-    font-size: 45px;
-    color: #094067;
-    background: none;
-  }
-  .cancel {
-    margin-left: 17px;
-    margin-top: 29px;
+  .container-name {
+    position: absolute;
+    left: 33.75%;
   }
   #birthday {
     padding-right: 100px;
@@ -722,9 +664,9 @@ fieldset {
   #editbirthday {
     padding-right: 100px;
   }
-  .submitandEdit,
-  .deleteButton,
-  .addButton {
+  .submit-and-edit,
+  .delete-button,
+  .add-button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
