@@ -1,7 +1,5 @@
 # Birthday App
 
-There is file in the project called person.json. It contains a list of persons, and we want to add all those people to our birthday list app.
-
 ![BIRTHDAY APP](./images/birthdayAppDesktop.png)
 
 ![BIRTHDAY APP](./images/birthdayAppMobile.png)

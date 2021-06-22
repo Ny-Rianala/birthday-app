@@ -342,9 +342,9 @@ async function fetchBirthdayList() {
             <h4 class="addNewPerson">Add a new birthday</h4>
             <label>What is your Avantar?</label>
             <input type="url" name="pic" placeholder="Enter your url image">
-            <label>What is your lirstname?</label>
+            <label>What is your first name?</label>
             <input type="text" name="firstname" placeholder="your firstname" required>
-            <label>What is your lastname?</label>
+            <label>What is your ast name?</label>
             <input type="text" name="lastname" placeholder="your lastname" reqiured>
             <label>When is your birthday?</label>
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
