@@ -351,7 +351,7 @@ async function fetchBirthdayList() {
             <label>When is your birthday?</label>
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
             <div class="add-button">
-              <button type="submit" class="submit">Submit</button>
+              <button type="submit" class="submit-new-birthday">Submit</button>
               <button type="button" class="cancel-add">Cancel</button>
             </div>
           </fieldset>
