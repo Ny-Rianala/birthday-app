@@ -200,7 +200,7 @@ async function fetchBirthdayList() {
     return new Promise(async (resolve) => {
       const popup = document.createElement('form')
       popup.classList.add('popup')
-      popup.innerHTML = `<fieldset>
+      popup.innerHTML = `<fieldset class='edit-popup'>
           <button type='button' class="remove-edit-popup"><i class="ri-close-line"></i></button>
           <h3 class="first-and-last-name">Edit ${person.firstName} ${person.lastName}</h3>
           <label>First Name</label>
@@ -275,7 +275,7 @@ async function fetchBirthdayList() {
     deletePersonForm.classList.add('popup')
     deletePersonForm.insertAdjacentHTML(
       'afterbegin',
-      `<fieldset>
+      `<fieldset class='delete-popup'>
               <button type="button" class="remove-delete-popup"><i class="ri-close-line"></i></button>
               <h2>Are you sure to delete this person?</h2>
               <div class="delete-birthday">
@@ -339,16 +339,16 @@ async function fetchBirthdayList() {
         'afterbegin',
         `
         <form class="modalForm">
-          <fieldset>
+          <fieldset class='add-popup'>  
             <button type="button" class="remove-add-popup"><i class="ri-close-line"></i></button>
             <h4 class="add-new-birthday">Add a new birthday</h4>
-            <label>What is your avatar</label>
+            <label>Picture url</label>
             <input type="url" name="pic" placeholder="Enter your url image">
-            <label>What is your first name?</label>
+            <label>Firstname</label>
             <input type="text" name="firstname" placeholder="your firstname" required>
-            <label>What is your ast name?</label>
+            <label>Lastname</label>
             <input type="text" name="lastname" placeholder="your lastname" reqiured>
-            <label>When is your birthday?</label>
+            <label>Birthday</label>
             <input type="date" id="birthday" name="birthday" max="${formatDate}">
             <div class="add-button">
               <button type="submit" class="submit-new-birthday">Submit</button>

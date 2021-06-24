@@ -1,7 +1,7 @@
 body {
   font-family: 'Rubik', sans-serif;
   margin: 0;
-  background: #d8eefe;
+  background-color: #d8eefe;
 }
 
 button,
@@ -62,7 +62,6 @@ fieldset {
   flex-direction: column;
   align-items: flex-start;
   border: none;
-  margin-left: 40px;
 }
 
 .form-search {
@@ -84,35 +83,41 @@ fieldset {
 
 .add {
   padding-top: 15px;
-  padding-left: 18px;
+  padding-left: 84px;
   padding-bottom: 14px;
-  padding-right: 14px;
+  padding-right: 84px;
   border-radius: 8px;
   color: white;
   background-color: #ef4565;
   font-size: 19px;
+  margin-top: 24px;
 }
 
 .submit-new-birthday {
   background-color: #ef4565;
   color: white;
   padding-top: 18px;
-  padding-left: 54px;
+  padding-left: 35px;
   padding-bottom: 19px;
-  padding-right: 51px;
+  padding-right: 40px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: capitalize;
   margin-top: 30px;
 }
 
 .subheading {
-  font-size: 36px;
+  font-size: 48px;
   color: #094067;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 14px;
+}
+
+.add-new-birthday {
+  font-size: 24px;
+  color: #094067;
 }
 
 .search {
@@ -154,7 +159,7 @@ fieldset {
   padding-top: 15px;
   padding-left: 12px;
   padding-bottom: 14px;
-  padding-right: 126px;
+  padding-right: 162px;
   width: 100%;
   font-size: 18px;
   color: #5f6c7b;
@@ -179,13 +184,12 @@ fieldset {
   position: absolute;
   top: 10%;
   left: 0%;
-  padding-bottom: 56px;
-  padding-left: 24px;
-  padding-right: 75px;
 }
 
 .popup label {
   padding-top: 12px;
+  padding-bottom: 8px;
+  color: #094067;
 }
 
 .popup input {
@@ -202,7 +206,7 @@ fieldset {
 
 .popup input {
   color: #094067;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #d8eefe;
   padding-top: 12px;
   padding-left: 15px;
@@ -215,7 +219,12 @@ fieldset {
   margin-top: 0.25rem;
 }
 
+#birthday {
+  padding-right: 110px;
+}
+
 .popup.open {
+  width: 96%;
   position: fixed;
   top: 2rem;
   opacity: 1;
@@ -223,6 +232,7 @@ fieldset {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  align-items: center;
 }
 
 .outer-modal {
@@ -264,17 +274,15 @@ fieldset {
 }
 
 .remove-edit-popup {
-  position: absolute;
-  top: 11%;
-  left: 70%;
-  font-size: 39px;
+  margin-left: 279px;
+  font-size: 28px;
   color: #094067;
+  font-size: 41px;
   background: none;
 }
 
 .remove-delete-popup {
-  margin-top: 5%;
-  margin-left: 85%;
+  margin-left: 296px;
   font-size: 39px;
   color: #094067;
   background: none;
@@ -282,8 +290,9 @@ fieldset {
 
 .remove-add-popup {
   margin-left: 285px;
-  font-size: 28px;
+  font-size: 36px;
   color: #094067;
+  font-size: 41px;
   background: none;
 }
 
@@ -314,16 +323,16 @@ fieldset {
 
 .cancel-add {
   padding-top: 15px;
-  padding-left: 48px;
+  padding-left: 33px;
   padding-bottom: 17px;
-  padding-right: 54px;
+  padding-right: 34px;
   border: 3px solid #5f6c7b;
   border-radius: 5px;
   background-color: #ffff;
-  font-size: 18px;
+  font-size: 16px;
   color: #5f6c7b;
   margin-top: 30px;
-  margin-left: 11px;
+  margin-left: 19px;
 }
 
 .cancel-edit {
@@ -334,12 +343,21 @@ fieldset {
   border: 3px solid #5f6c7b;
   border-radius: 5px;
   background-color: #ffff;
-  font-size: 18px;
+  font-size: 16px;
   color: #5f6c7b;
   margin-top: 50px;
-  margin-left: 7px;
+  margin-left: 28px;
 }
 
+.cancel-delete {
+  padding: 13px 40px;
+  border: 3px solid rgb(95, 108, 123);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+  color: rgb(95, 108, 123);
+  margin-left: -88px;
+}
 .delete_edit {
   display: flex;
   flex-direction: row;
@@ -351,11 +369,11 @@ fieldset {
   background-color: #ef4565;
   color: white;
   padding-top: 14px;
-  padding-left: 21px;
+  padding-left: 15px;
   padding-bottom: 15px;
-  padding-right: 16px;
+  padding-right: 15px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: capitalize;
   margin-top: 50px;
 }
@@ -367,7 +385,7 @@ fieldset {
   padding-right: 54px;
   border-radius: 5px;
   background-color: #ef4565;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   margin-right: 100px;
 }
@@ -375,16 +393,6 @@ fieldset {
 .delete-birthday {
   display: flex;
   flex-direction: row;
-}
-
-.cancel-delete {
-  padding: 13px 40px;
-  border: 3px solid rgb(95, 108, 123);
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  font-size: 18px;
-  color: rgb(95, 108, 123);
-  margin-left: -88px;
 }
 
 .days {
@@ -414,6 +422,11 @@ fieldset {
   padding-right: 20px;
 }
 
+.first-and-last-name {
+  font-size: 24px;
+  color: #094067;
+}
+
 .age {
   font-size: 24px;
   color: #ef4565;
@@ -431,6 +444,19 @@ fieldset {
   padding-right: 19px;
   color: #094067;
   cursor: pointer;
+}
+
+/* .popup.open fieldset,
+.edit-popup {
+  max-width: 70%;
+  padding-left: 165px;
+  margin-left: 40px;
+} */
+
+@media (min-width: 900px) {
+  .remove-add-popup {
+    margin-left: 723px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -474,7 +500,6 @@ fieldset {
   .first-and-last-name {
     font-size: 48px;
     margin: 0;
-    color: #094067;
   }
   .name {
     font-size: 36px;
@@ -511,8 +536,13 @@ fieldset {
     background-color: white;
   }
   .add {
+    padding-top: 10px;
+    padding-left: 18px;
+    padding-bottom: 9px;
+    padding-right: 11px;
+    margin-right: -20px;
     margin-top: 67px;
-    margin-left: 48px;
+    margin-left: 52px;
     margin-bottom: 31px;
   }
   .days {
@@ -522,14 +552,13 @@ fieldset {
     padding-bottom: 0;
     margin-bottom: 32px;
   }
-  fieldset {
+  /* fieldset {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     border: none;
     color: #094067;
-    padding-left: 0;
-  }
+  } */
   fieldset input {
     background-color: #d8eefe;
     color: #094067;
@@ -550,11 +579,9 @@ fieldset {
     flex-direction: column;
     align-items: flex-start;
     background-color: #ffff;
-    width: 50vw;
-    position: absolute;
-    left: 22%;
-    padding-top: 55px;
-    padding-bottom: 80px;
+    width: 60vw;
+    padding-top: 45px;
+    padding-bottom: 40px;
     opacity: 0;
   }
   .cancel-delete {
@@ -570,17 +597,23 @@ fieldset {
     border-radius: 5px;
   }
   .search-by-name {
-    width: 77%;
+    max-width: 81%;
     margin-right: -15px;
-    padding-top: 15px;
-    padding-bottom: 14px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 18px;
+    margin-top: -1px;
   }
   .select-by-month {
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-bottom: 14px;
+    padding-top: 11px;
+    padding-left: 16px;
+    padding-bottom: 9px;
     padding-right: 125px;
-    margin-left: 15px;
+    margin-left: 19px;
+    margin-top: 10px;
+  }
+  .search-by-month label {
+    margin-left: 21px;
   }
   .edit-first-name {
     padding-top: 15px;
@@ -609,29 +642,37 @@ fieldset {
   }
 
   .cancel-edit {
-    padding-top: 14px;
-    padding-left: 48px;
-    padding-bottom: 15px;
-    padding-right: 55px;
-    margin-top: 0;
-    margin-top: 50px;
-    margin-left: 19px;
+    padding-top: 13px;
+    padding-left: 38px;
+    padding-bottom: 13px;
+    padding-right: 41px;
+    border: 3px solid #5f6c7b;
+    border-radius: 5px;
+    background-color: #ffff;
+    font-size: 16px;
+    color: #5f6c7b;
+    margin-top: 49px;
+    margin-left: 28px;
+  }
+  .popup.open {
+    max-width: 70%;
   }
 
   .remove-edit-popup {
     font-weight: lighter;
+    font-size: 45px;
     height: 20%;
-    left: 90%;
-    top: 0%;
+    margin-top: -20px;
+    margin-left: 650px;
   }
   .remove-add-popup {
     font-size: 45px;
-    left: 85%;
-    top: 5%;
+    margin-left: 522px;
+    margin-top: -8px;
   }
   .remove-delete-popup {
     margin-left: 500px;
-    margin-top: -51px;
+    margin-top: -35px;
   }
   .ri-delete-back-2-line {
     color: #ef4565;
@@ -660,6 +701,7 @@ fieldset {
   }
   #editbirthday {
     padding-right: 100px;
+    padding-right: 110px;
   }
   .submit-and-edit,
   .delete-birthday,
@@ -668,4 +710,19 @@ fieldset {
     flex-direction: row;
     justify-content: space-between;
   }
+  .popup.open fieldset,
+  .edit-popup {
+    max-width: 70%;
+    /* padding-left: 165px; */
+    margin-left: 40px;
+  }
 }
+
+/* @media (max-width: 1000px) {
+  .popup .open fieldset,
+  .edit-popup {
+    max-width: 430px;
+    padding-left: 122px;
+    padding-top: 12px;
+  }
+} */
