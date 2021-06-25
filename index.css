@@ -446,16 +446,15 @@ fieldset {
   cursor: pointer;
 }
 
-/* .popup.open fieldset,
-.edit-popup {
-  max-width: 70%;
-  padding-left: 165px;
-  margin-left: 40px;
-} */
-
-@media (min-width: 900px) {
-  .remove-add-popup {
-    margin-left: 723px;
+@media (max-width: 999px) {
+  .remove-add-popup,
+  .remove-edit-popup {
+    font-size: 36px;
+    color: #094067;
+    font-size: 41px;
+    background: none;
+    position: absolute;
+    right: 3%;
   }
 }
 
@@ -655,20 +654,22 @@ fieldset {
     margin-left: 28px;
   }
   .popup.open {
-    max-width: 70%;
+    max-width: calc(1440px - 400px - 37px);
   }
 
   .remove-edit-popup {
-    font-weight: lighter;
-    font-size: 45px;
+    font-size: 48px;
+    font-weight: 100;
     height: 20%;
-    margin-top: -20px;
-    margin-left: 650px;
+    position: absolute;
+    right: 3%;
+    top: -1%;
   }
   .remove-add-popup {
     font-size: 45px;
-    margin-left: 522px;
-    margin-top: -8px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
   }
   .remove-delete-popup {
     margin-left: 500px;
@@ -712,9 +713,13 @@ fieldset {
   }
   .popup.open fieldset,
   .edit-popup {
-    max-width: 70%;
-    /* padding-left: 165px; */
     margin-left: 40px;
+    padding-bottom: 132px;
+  }
+  .popup.open fieldset,
+  .add-popup {
+    margin-left: 40px;
+    padding-bottom: 0;
   }
 }
 
@@ -724,5 +729,13 @@ fieldset {
     max-width: 430px;
     padding-left: 122px;
     padding-top: 12px;
+  }
+} */
+
+/* @media (min-width: 1001px) {
+  .remove-edit-popup {
+    position: absolute;
+    right: 3%;
+    top: 1%;
   }
 } */
