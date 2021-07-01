@@ -9,7 +9,6 @@ const addPersonToList = document.querySelector('button.add')
 const searchByName = document.querySelector("[name='search']")
 const searchByMonth = document.querySelector('[name="select"]')
 
-//fetch data from the url
 async function fetchBirthdayList() {
   let res = await fetch(
     'https://gist.githubusercontent.com/Pinois/e1c72b75917985dc77f5c808e876b67f/raw/b17e08696906abeaac8bc260f57738eaa3f6abb1/birthdayPeople.json'
@@ -34,7 +33,6 @@ async function fetchBirthdayList() {
     displayList(people)
   }
 
-  //filter name and select a month
   function filters() {
     const selectSearch = searchByMonth.value.toLowerCase().trim()
     const inputSearch = searchByName.value.toLowerCase().trim()
@@ -53,10 +51,8 @@ async function fetchBirthdayList() {
     displayList(filteredPeople)
   }
 
-  //function that will display the list
   function displayList(people) {
     const htmlList = people.map((person) => {
-      // Store all the months in a variable
       const monthName = [
         'January',
         'February',
@@ -71,11 +67,9 @@ async function fetchBirthdayList() {
         'November',
         'December',
       ]
-      // Get the day and month
       let date = new Date(person.birthday),
         day = date.getDate(),
         month = date.getMonth()
-      // Adding "st", "nd", "rd" depending on the number
       if (day == 1 || day == 21 || day == 31) {
         day = day + 'st'
       } else if (day == 2 || day == 22) {
@@ -85,22 +79,16 @@ async function fetchBirthdayList() {
       } else {
         day = day + 'th'
       }
-      // Get the full converted date
       const dateString = monthName[month] + ' ' + day
-      // To get the number of the days
       const oneDay = 1000 * 60 * 60 * 24
-      // get current year
       const today = new Date()
       let birthDayYear
-      // A function that calculates the age each person
       function calculateAge(dob) {
         let diffMs = Date.now() - dob.getTime()
         let ageDt = new Date(diffMs)
         return Math.abs(ageDt.getUTCFullYear() - 1970)
       }
-      // Assign the age in a variable so that we can use it with the object
       let age = calculateAge(new Date(person.birthday))
-      // Set a condition for the number of days until the birthday comes
       if (date.getMonth() < today.getMonth()) {
         birthDayYear = today.getFullYear() + 1
         age++
@@ -123,7 +111,7 @@ async function fetchBirthdayList() {
       let diffDays = Math.ceil(
         (birthdayDate.getTime() - today.getTime()) / oneDay
       )
-      // This is an object that is used to store the person with the days and date
+
       const newPerson = {
         firstName: person.firstName,
         lastName: person.lastName,
@@ -178,15 +166,11 @@ async function fetchBirthdayList() {
 
   async function destroyPopup(popup) {
     popup.classList.remove('open')
-    // wait for 1 second, to let the animation do its work
     await wait(1000)
-    // remove it from the dom
     popup.remove()
-    // remove it from the javascript memory
     popup = null
   }
 
-  //function that will look for the birthday id
   const editBirthday = (id) => {
     const personToEdit = people.find((birthday) => birthday.id == id)
     const result = editPopup(personToEdit)
@@ -227,7 +211,7 @@ async function fetchBirthdayList() {
       document.body.appendChild(popup)
       popup.classList.add('open')
       document.body.style.overflow = 'hidden'
-      document.body.style.background = 'rgba(240, 248, 255, 0.932)'
+      document.body.style.background = 'rgba(240, 248, 255, 0.8)'
       popup.addEventListener(
         'submit',
         (e) => {
@@ -239,7 +223,7 @@ async function fetchBirthdayList() {
           displayList(people)
           destroyPopup(popup)
           document.body.style.overflow = 'auto'
-          document.body.style.background = 'rgba(240, 248, 255, 0.932)'
+          document.body.style.background = 'rgba(240, 248, 255, 0.8)'
           main.dispatchEvent(new CustomEvent('updateList'))
         },
         { once: true }
@@ -249,7 +233,6 @@ async function fetchBirthdayList() {
         'click',
         () => {
           resolve(null)
-          // destroyPopup(popup)
           document.body.style.overflow = 'auto'
           setBirthdayList()
         },
@@ -260,7 +243,6 @@ async function fetchBirthdayList() {
         destroyPopup(popup)
       })
 
-      //removing popup
       document
         .querySelector('.remove-edit-popup')
         .addEventListener('click', () => {
@@ -332,7 +314,6 @@ async function fetchBirthdayList() {
   const handleAddListBtn = () => {
     return new Promise(async function (resolve) {
       const formatDate = new Date().toISOString().slice(0, 10)
-      // Create a popup form when clicking the add button
       const popupAdd = document.createElement('form')
       popupAdd.classList.add('popup')
       popupAdd.insertAdjacentHTML(
@@ -364,13 +345,11 @@ async function fetchBirthdayList() {
       document.body.style.overflow = 'hidden'
       document.body.style.background = 'rgba(240, 248, 255, 0.8)'
 
-      // Listen to the submit event
       popupAdd.addEventListener('submit', (e) => {
         e.preventDefault()
         const form = e.currentTarget
         resolve()
 
-        // Create a new object for the new person
         const newPerson = {
           picture: form.pic.value,
           lastName: form.lastname.value,
@@ -421,9 +400,7 @@ async function fetchBirthdayList() {
 
   listOfBirthday.addEventListener('click', handleClick)
   setBirthdayList()
-  //Filter person's birthday by name
   searchByName.addEventListener('keyup', filters)
-  //Select person's birthday by month
   searchByMonth.addEventListener('change', filters)
   main.addEventListener('updateList', setBirthdayList)
   getBirthdayList()
