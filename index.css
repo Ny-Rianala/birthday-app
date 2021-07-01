@@ -128,7 +128,7 @@ fieldset {
 
 .search label {
   color: #094067;
-  padding-bottom: 13px;
+  padding-bottom: 10px;
   font-size: 18px;
   font-weight: 500;
 }
@@ -449,12 +449,23 @@ fieldset {
 @media (max-width: 999px) {
   .remove-add-popup,
   .remove-edit-popup {
-    font-size: 36px;
-    color: #094067;
-    font-size: 41px;
     background: none;
     position: absolute;
     right: 3%;
+    font-size: 36px;
+    color: #094067;
+    font-size: 41px;
+  }
+  .remove-delete-popup {
+    position: absolute;
+    right: 0%;
+  }
+}
+
+@media (min-width: 400px) {
+  .remove-delete-popup {
+    right: 5%;
+    position: absolute;
   }
 }
 
@@ -551,13 +562,6 @@ fieldset {
     padding-bottom: 0;
     margin-bottom: 32px;
   }
-  /* fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: none;
-    color: #094067;
-  } */
   fieldset input {
     background-color: #d8eefe;
     color: #094067;
@@ -672,8 +676,10 @@ fieldset {
     top: 2%;
   }
   .remove-delete-popup {
-    margin-left: 500px;
-    margin-top: -35px;
+    font-size: 45px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
   }
   .ri-delete-back-2-line {
     color: #ef4565;
@@ -722,20 +728,3 @@ fieldset {
     padding-bottom: 0;
   }
 }
-
-/* @media (max-width: 1000px) {
-  .popup .open fieldset,
-  .edit-popup {
-    max-width: 430px;
-    padding-left: 122px;
-    padding-top: 12px;
-  }
-} */
-
-/* @media (min-width: 1001px) {
-  .remove-edit-popup {
-    position: absolute;
-    right: 3%;
-    top: 1%;
-  }
-} */
