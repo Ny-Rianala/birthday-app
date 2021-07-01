@@ -35,4 +35,4 @@ Every action is persisted into the local storage.
 
 ## Contact
 
-- https://github.com/Ny-Rianala
+- [Github](https://github.com/Ny-Rianala)
