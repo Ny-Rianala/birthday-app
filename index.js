@@ -223,7 +223,7 @@ async function fetchBirthdayList() {
           displayList(people)
           destroyPopup(popup)
           document.body.style.overflow = 'auto'
-          document.body.style.background = 'rgba(240, 248, 255, 0.8)'
+          document.body.style.background = '#d8eefe'
           main.dispatchEvent(new CustomEvent('updateList'))
         },
         { once: true }
@@ -293,18 +293,18 @@ async function fetchBirthdayList() {
       },
       { once: true }
     )
-    //removing popup
+
     document.querySelector('.remove-delete-popup').addEventListener(
       'click',
       () => {
         destroyPopup(deletePersonForm)
         document.body.style.overflow = 'auto'
+        document.body.style.background = '#d8eefe'
       },
       { once: true }
     )
   }
 
-  //Function to add a person to the list
   const handleAddBtn = (e) => {
     if (e.target.closest('button.add')) {
       handleAddListBtn()
@@ -361,7 +361,6 @@ async function fetchBirthdayList() {
         displayList(people)
         destroyPopup(popupAdd)
         document.body.style.overflow = 'auto'
-        document.body.style.background = '#D8EEFE'
         main.dispatchEvent(new CustomEvent('updateList'))
       })
 
@@ -379,6 +378,7 @@ async function fetchBirthdayList() {
         .addEventListener('click', () => {
           destroyPopup(popupAdd)
           document.body.style.overflow = 'auto'
+          document.body.style.background = '#d8eefe'
         })
     })
   }

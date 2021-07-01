@@ -1,6 +1,6 @@
 # Birthday App
 
-![BIRTHDAY APP](./images/birthday-app-desktop.png)
+![BIRTHDAY APP](./images/birthday-app-desktop-picture.png)
 
 ![BIRTHDAY APP](./images/birthday-app-mobile-picture.png)
 
