@@ -2,7 +2,7 @@
 
 ![BIRTHDAY APP](./images/birthdayAppDesktop.png)
 
-![BIRTHDAY APP](./images/birthdayAppMobile.png)
+![BIRTHDAY APP](./images/birthday-app-mobile-picture.png)
 
 ## Features
 
