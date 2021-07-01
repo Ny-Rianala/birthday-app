@@ -78,7 +78,7 @@ fieldset {
   margin-left: 14px;
   margin-right: 14px;
   padding-left: 21px;
-  border-radius: 12px;
+  border-radius: 5px;
 }
 
 .add {
@@ -478,7 +478,7 @@ fieldset {
     max-height: 106px;
     width: 757px;
     margin-bottom: 31px;
-    margin-top: 0;
+    margin-top: 11px;
     margin-left: 0;
     margin-right: 0;
     padding-top: 0;
@@ -531,6 +531,9 @@ fieldset {
   .search {
     margin-bottom: 0;
   }
+  .search label {
+    padding-bottom: 13px;
+  }
   .form-search {
     display: flex;
     flex-direction: row;
@@ -545,12 +548,11 @@ fieldset {
     background-color: white;
   }
   .add {
-    padding-top: 10px;
     padding-left: 18px;
-    padding-bottom: 9px;
+    padding-bottom: 11px;
     padding-right: 11px;
     margin-right: -20px;
-    margin-top: 67px;
+    margin-top: 64px;
     margin-left: 52px;
     margin-bottom: 31px;
   }
@@ -602,7 +604,7 @@ fieldset {
     max-width: 81%;
     margin-right: -15px;
     padding-top: 11px;
-    padding-bottom: 11px;
+    padding-bottom: 12px;
     padding-left: 18px;
     margin-top: -1px;
   }
@@ -612,7 +614,6 @@ fieldset {
     padding-bottom: 9px;
     padding-right: 125px;
     margin-left: 19px;
-    margin-top: 10px;
   }
   .search-by-month label {
     margin-left: 21px;
