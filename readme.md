@@ -1,6 +1,6 @@
 # Birthday App
 
-![BIRTHDAY APP](./images/birthdayAppDesktop.png)
+![BIRTHDAY APP](./images/birthday-app-desktop.png)
 
 ![BIRTHDAY APP](./images/birthday-app-mobile-picture.png)
 
@@ -35,4 +35,4 @@ Every action is persisted into the local storage.
 
 ## Contact
 
-- GitHub
+- https://github.com/Ny-Rianala
