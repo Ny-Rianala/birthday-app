@@ -6,14 +6,14 @@
 
 ## Features
 
-This is a birthday app to display list of people, sorted by the ones who will have their birthday the soonest.
+This is a birthday app to display list of people, sorted by people who will have their birthday the soonest.
 
 The users will be able to add a new element on the list in the app:
 
-- first name
-- last name
-- birthday
-- an url for their avatar image
+- First name
+- Last name
+- Birthday
+- An url for their image
 
 The users can edit a person's on the list. When you click the edit button, a modal will appear with a form inside, to edit any attribute.
 
