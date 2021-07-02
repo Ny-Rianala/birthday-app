@@ -84,9 +84,9 @@ fieldset {
 
 .add {
   padding-top: 15px;
-  padding-left: 84px;
+  padding-left: 20px;
   padding-bottom: 14px;
-  padding-right: 84px;
+  padding-right: 20px;
   border-radius: 8px;
   color: white;
   background-color: #ef4565;
@@ -117,7 +117,7 @@ fieldset {
 }
 
 .add-new-birthday {
-  font-size: 24px;
+  font-size: 32px;
   color: #094067;
 }
 
@@ -194,14 +194,6 @@ fieldset {
   --opacity: 0;
   opacity: var(--opacity);
   padding: 1rem;
-  /* background: rgb(255, 255, 255 0.8);
-  display: flex;
-  opacity: 0;
-  flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  top: 10%;
-  left: 0%; */
 }
 
 .popup label {
@@ -476,6 +468,21 @@ fieldset {
   .remove-delete-popup {
     position: absolute;
     right: 0%;
+  }
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .popup label {
+    padding-right: 203px;
+  }
+  #editbirthday {
+    padding-left: 18px;
+    padding-right: 119px;
+  }
+  .first-and-last-name {
+    font-size: 32px;
   }
 }
 
