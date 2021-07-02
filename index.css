@@ -58,6 +58,7 @@ img {
 }
 
 fieldset {
+  background-color: #ffff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -180,14 +181,27 @@ fieldset {
 }
 
 .popup {
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.25s;
+  top: 0;
+  display: grid;
+  justify-content: stretch;
+  align-items: center;
+  pointer-events: none;
+  --opacity: 0;
+  opacity: var(--opacity);
+  padding: 1rem;
+  /* background: rgb(255, 255, 255 0.8);
   display: flex;
   opacity: 0;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #ffff;
   position: absolute;
   top: 10%;
-  left: 0%;
+  left: 0%; */
 }
 
 .popup label {
@@ -585,16 +599,6 @@ fieldset {
     padding-bottom: 8px;
     padding-top: 18px;
   }
-  .popup {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #ffff;
-    width: 60vw;
-    padding-top: 45px;
-    padding-bottom: 40px;
-    opacity: 0;
-  }
   .cancel-delete {
     background-color: #ffff;
     border: 3px solid #5f6c7b;
@@ -671,7 +675,9 @@ fieldset {
     margin-left: 19px;
   }
   .popup.open {
-    max-width: calc(1440px - 400px - 37px);
+    display: flex;
+    flex-direction: column;
+    /* max-width: calc(1440px - 400px - 37px); */
   }
 
   .remove-edit-popup {
@@ -679,8 +685,8 @@ fieldset {
     font-weight: 100;
     height: 20%;
     position: absolute;
-    right: 3%;
-    top: -1%;
+    right: 15%;
+    top: 0%;
   }
   .remove-add-popup {
     font-size: 45px;
@@ -732,12 +738,9 @@ fieldset {
   }
   .popup.open fieldset,
   .edit-popup {
-    margin-left: 40px;
-    padding-bottom: 132px;
-  }
-  .popup.open fieldset,
-  .add-popup {
-    margin-left: 40px;
-    padding-bottom: 0;
+    padding-bottom: 80px;
+    padding-left: 238px;
+    padding-right: 225px;
+    padding-top: 121px;
   }
 }

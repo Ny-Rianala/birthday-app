@@ -211,7 +211,6 @@ async function fetchBirthdayList() {
       document.body.appendChild(popup)
       popup.classList.add('open')
       document.body.style.overflow = 'hidden'
-      document.body.style.background = 'rgba(240, 248, 255, 0.8)'
       popup.addEventListener(
         'submit',
         (e) => {
@@ -344,7 +343,7 @@ async function fetchBirthdayList() {
       document.body.appendChild(popupAdd)
       popupAdd.classList.add('open')
       document.body.style.overflow = 'hidden'
-      document.body.style.background = 'rgba(240, 248, 255, 0.8)'
+      // document.body.style.background = 'rgba(240, 248, 255, 0.8)'
 
       popupAdd.addEventListener('submit', (e) => {
         e.preventDefault()
