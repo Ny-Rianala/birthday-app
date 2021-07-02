@@ -649,7 +649,7 @@ fieldset {
   }
   .edit-birthday {
     padding-left: 25px;
-    padding-right: 90px;
+    padding-right: 100px;
   }
   .submit-edit {
     font-size: 18px;
@@ -726,8 +726,7 @@ fieldset {
     padding-right: 100px;
   }
   #editbirthday {
-    padding-right: 100px;
-    padding-right: 110px;
+    padding-right: 111px;
   }
   .submit-and-edit,
   .delete-birthday,

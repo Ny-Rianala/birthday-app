@@ -222,7 +222,7 @@ async function fetchBirthdayList() {
           displayList(people)
           destroyPopup(popup)
           document.body.style.overflow = 'auto'
-          document.body.style.background = '#d8eefe'
+
           main.dispatchEvent(new CustomEvent('updateList'))
         },
         { once: true }
@@ -233,7 +233,7 @@ async function fetchBirthdayList() {
         () => {
           resolve(null)
           document.body.style.overflow = 'auto'
-          document.body.style.background = '#d8eefe'
+
           setBirthdayList()
         },
         { once: true }
@@ -299,7 +299,6 @@ async function fetchBirthdayList() {
       () => {
         destroyPopup(deletePersonForm)
         document.body.style.overflow = 'auto'
-        document.body.style.background = '#d8eefe'
       },
       { once: true }
     )
