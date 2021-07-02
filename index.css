@@ -689,10 +689,10 @@ fieldset {
     top: 0%;
   }
   .remove-add-popup {
-    font-size: 45px;
+    font-size: 48px;
     position: absolute;
-    right: 2%;
-    top: 2%;
+    right: 14%;
+    top: 5%;
   }
   .remove-delete-popup {
     font-size: 45px;
@@ -709,7 +709,7 @@ fieldset {
     padding-top: 20px;
   }
   .add-new-birthday {
-    font-size: 34px;
+    font-size: 48px;
     color: #094067;
     margin: 0;
     padding-bottom: 12px;
@@ -726,7 +726,7 @@ fieldset {
     padding-right: 100px;
   }
   #editbirthday {
-    padding-right: 111px;
+    padding-right: 100px;
   }
   .submit-and-edit,
   .delete-birthday,
@@ -741,5 +741,12 @@ fieldset {
     padding-left: 238px;
     padding-right: 225px;
     padding-top: 121px;
+  }
+  .popup.open fieldset,
+  .add-popup {
+    padding-bottom: 80px;
+    padding-left: 260px;
+    padding-right: 298px;
+    padding-top: 110px;
   }
 }
