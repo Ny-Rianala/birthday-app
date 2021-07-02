@@ -234,6 +234,7 @@ async function fetchBirthdayList() {
         () => {
           resolve(null)
           document.body.style.overflow = 'auto'
+          document.body.style.background = '#d8eefe'
           setBirthdayList()
         },
         { once: true }

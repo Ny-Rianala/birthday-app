@@ -137,18 +137,21 @@ fieldset {
   color: #094067;
   padding-bottom: 13px;
   font-size: 18px;
-  font-weight: 50px;
+  font-weight: 500;
 }
 
 .search-by-name {
+  font-size: 16px;
+  font-weight: 500;
   padding-top: 15px;
   padding-left: 20px;
   padding-bottom: 14px;
   padding-right: 41px;
   border: 1px solid #faeee7;
-  border-radius: 5px;
-  font-size: 18px;
   color: #5f6c7b;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 5px;
 }
 
 .select-by-month {
@@ -160,7 +163,9 @@ fieldset {
   padding-bottom: 14px;
   padding-right: 162px;
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
   color: #5f6c7b;
   margin-top: 12px;
   background-color: white;
@@ -410,7 +415,6 @@ fieldset {
 #date {
   font-size: 22px;
   color: #5f6c7b;
-  padding-left: 4px;
 }
 
 .search-by-name {
@@ -555,6 +559,9 @@ fieldset {
     margin-top: 64px;
     margin-left: 52px;
     margin-bottom: 31px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
   }
   .days {
     color: #5f6c7b;
@@ -607,6 +614,9 @@ fieldset {
     padding-bottom: 12px;
     padding-left: 18px;
     margin-top: -1px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
   }
   .select-by-month {
     padding-top: 11px;
@@ -614,6 +624,9 @@ fieldset {
     padding-bottom: 9px;
     padding-right: 125px;
     margin-left: 19px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
   }
   .search-by-month label {
     margin-left: 21px;
