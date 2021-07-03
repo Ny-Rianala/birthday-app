@@ -467,7 +467,7 @@ fieldset {
   }
   .remove-delete-popup {
     position: absolute;
-    right: 0%;
+    right: 4%;
   }
   fieldset {
     display: flex;
@@ -486,12 +486,12 @@ fieldset {
   }
 }
 
-@media (min-width: 400px) {
+/* @media (min-width: 400px) {
   .remove-delete-popup {
     right: 5%;
     position: absolute;
   }
-}
+} */
 
 @media (min-width: 1000px) {
   .container {
@@ -684,7 +684,6 @@ fieldset {
   .popup.open {
     display: flex;
     flex-direction: column;
-    /* max-width: calc(1440px - 400px - 37px); */
   }
 
   .remove-edit-popup {
@@ -693,7 +692,7 @@ fieldset {
     height: 20%;
     position: absolute;
     right: 15%;
-    top: 0%;
+    top: 6%;
   }
   .remove-add-popup {
     font-size: 48px;
@@ -704,8 +703,8 @@ fieldset {
   .remove-delete-popup {
     font-size: 45px;
     position: absolute;
-    right: 2%;
-    top: 2%;
+    right: 15%;
+    top: 12%;
   }
   .ri-delete-back-2-line {
     color: #ef4565;
@@ -755,5 +754,9 @@ fieldset {
     padding-left: 260px;
     padding-right: 298px;
     padding-top: 110px;
+  }
+  .popup.open fieldset,
+  .delete-popup {
+    margin-top: 53px;
   }
 }
