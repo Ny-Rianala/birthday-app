@@ -558,6 +558,7 @@ fieldset {
     align-items: center;
     margin: 0;
     justify-content: space-between;
+    padding-bottom: 20px;
   }
   .select-by-month {
     margin: 0;
