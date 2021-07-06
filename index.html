@@ -14,8 +14,8 @@
   <body>
     <header class="header">
       <h1 class="subheading">Birthday App</h1>
-      <div class="form-search">
-        <form class="search">
+      <form class="form-search">
+        <div class="search">
           <label>Filter by name</label>
           <input
             class="search-by-name"
@@ -24,8 +24,8 @@
             placeholder="Type a name"
             id="birthday_id"
           />
-        </form>
-        <form class="search-by-month">
+        </div>
+        <div class="search-by-month">
           <label>Filter by month</label>
           <select class="select-by-month" id="filter_month" name="select">
             <option value="">Select a month</option>
@@ -42,9 +42,11 @@
             <option value="November">November</option>
             <option value="December">December</option>
           </select>
-        </form>
-        <button type="button" class="add">Add somebody</button>
-      </div>
+        </div>
+        <div>
+          <button type="button" class="add">Add somebody</button>
+        </div>
+      </form>
     </header>
     <main>
       <section class="birthday">

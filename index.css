@@ -83,15 +83,16 @@ fieldset {
 }
 
 .add {
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-bottom: 14px;
-  padding-right: 20px;
-  border-radius: 8px;
-  color: white;
   background-color: #ef4565;
-  font-size: 19px;
-  margin-top: 24px;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 34px;
+  color: white;
+  padding-top: 12px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  padding-right: 12px;
 }
 
 .submit-new-birthday {
@@ -136,7 +137,7 @@ fieldset {
 
 .search-by-month label {
   color: #094067;
-  padding-bottom: 13px;
+  /* padding-bottom: 13px; */
   font-size: 18px;
   font-weight: 500;
 }
@@ -144,10 +145,10 @@ fieldset {
 .search-by-name {
   font-size: 16px;
   font-weight: 500;
-  padding-top: 15px;
+  /* padding-top: 15px;
   padding-left: 20px;
   padding-bottom: 14px;
-  padding-right: 41px;
+  padding-right: 41px; */
   border: 1px solid #faeee7;
   color: #5f6c7b;
   font-style: normal;
@@ -159,10 +160,10 @@ fieldset {
   display: flex;
   flex-direction: column;
   margin-bottom: 14px;
-  padding-top: 15px;
+  /* padding-top: 15px;
   padding-left: 12px;
   padding-bottom: 14px;
-  padding-right: 162px;
+  padding-right: 162px; */
   width: 100%;
   font-size: 16px;
   font-style: normal;
@@ -423,14 +424,6 @@ fieldset {
   color: #5f6c7b;
 }
 
-.search-by-name {
-  margin-right: 35px;
-  padding-top: 14px;
-  padding-left: 24px;
-  padding-bottom: 14px;
-  padding-right: 20px;
-}
-
 .first-and-last-name {
   font-size: 24px;
   color: #094067;
@@ -512,7 +505,6 @@ fieldset {
   }
   .subheading {
     font-size: 64px;
-    padding-left: 22%;
     padding-top: 63px;
     padding-bottom: 50px;
     margin: 0;
@@ -554,17 +546,18 @@ fieldset {
     padding-right: 0;
   }
   .search {
+    padding-left: 22px;
     margin-bottom: 0;
   }
-  .search label {
+  /* .search label {
     padding-bottom: 13px;
-  }
+  } */
   .form-search {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     margin: 0;
+    justify-content: space-between;
   }
   .select-by-month {
     margin: 0;
@@ -573,16 +566,16 @@ fieldset {
     background-color: white;
   }
   .add {
-    padding-left: 18px;
-    padding-bottom: 11px;
-    padding-right: 11px;
-    margin-right: -20px;
-    margin-top: 64px;
-    margin-left: 52px;
-    margin-bottom: 31px;
+    background-color: #ef4565;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
+    line-height: 21px;
+    margin-top: 34px;
+    color: white;
+    padding-top: 12px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    padding-right: 12px;
   }
   .days {
     color: #5f6c7b;
@@ -619,29 +612,26 @@ fieldset {
     border-radius: 5px;
   }
   .search-by-name {
-    max-width: 81%;
-    margin-right: -15px;
-    padding-top: 11px;
-    padding-bottom: 12px;
-    padding-left: 18px;
-    margin-top: -1px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
+    padding-right: 40px;
+    margin-left: -15px;
   }
   .select-by-month {
-    padding-top: 11px;
-    padding-left: 16px;
-    padding-bottom: 9px;
-    padding-right: 125px;
-    margin-left: 19px;
+    padding-right: 140px;
+    margin-right: -11px;
+  }
+  .select-by-month,
+  .search-by-name {
+    font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
+    padding-top: 10px;
+    padding-left: 19px;
+    padding-bottom: 11px;
   }
-  .search-by-month label {
+  /* .search-by-month label {
     margin-left: 21px;
-  }
+  } */
   .edit-first-name {
     padding-top: 15px;
     padding-left: 20px;
@@ -758,5 +748,10 @@ fieldset {
   .popup.open fieldset,
   .delete-popup {
     margin-top: 53px;
+  }
+  .header {
+    max-width: 779px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
