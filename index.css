@@ -137,40 +137,30 @@ fieldset {
 
 .search-by-month label {
   color: #094067;
-  /* padding-bottom: 13px; */
+  padding-bottom: 13px;
   font-size: 18px;
   font-weight: 500;
 }
 
-.search-by-name {
+.search-by-name,
+.select-by-month {
+  font-family: 'Rubik', sans-serif;
+  background-color: #ffff;
   font-size: 16px;
   font-weight: 500;
-  /* padding-top: 15px;
-  padding-left: 20px;
-  padding-bottom: 14px;
-  padding-right: 41px; */
   border: 1px solid #faeee7;
   color: #5f6c7b;
   font-style: normal;
   font-weight: 500;
   border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 19px;
+  padding-bottom: 11px;
 }
 
 .select-by-month {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
-  /* padding-top: 15px;
-  padding-left: 12px;
-  padding-bottom: 14px;
-  padding-right: 162px; */
-  width: 100%;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  color: #5f6c7b;
-  margin-top: 12px;
-  background-color: white;
+  width: 93%;
+  margin-top: 10px;
 }
 
 .submit-and-edit,
@@ -549,9 +539,6 @@ fieldset {
     padding-left: 22px;
     margin-bottom: 0;
   }
-  /* .search label {
-    padding-bottom: 13px;
-  } */
   .form-search {
     display: flex;
     flex-direction: row;
@@ -562,21 +549,22 @@ fieldset {
   }
   .select-by-month {
     margin: 0;
-    padding-right: 34px;
+    /* padding-right: 34px; */
     margin-top: 12px;
     background-color: white;
   }
   .add {
     background-color: #ef4565;
+    font-family: 'Rubik', sans-serif;
     font-size: 18px;
     line-height: 21px;
-    margin-top: 34px;
     color: white;
     padding-top: 12px;
     padding-left: 15px;
     padding-bottom: 10px;
     border-radius: 8px;
     padding-right: 12px;
+    margin-left: -27px;
   }
   .days {
     color: #5f6c7b;
@@ -613,12 +601,13 @@ fieldset {
     border-radius: 5px;
   }
   .search-by-name {
-    padding-right: 40px;
-    margin-left: -15px;
+    /* padding-right: 40px; */
+    margin-left: -16px;
   }
   .select-by-month {
-    padding-right: 140px;
-    margin-right: -11px;
+    /* padding-right: 140px; */
+    /* margin-right: -11px; */
+    margin-left: -2px;
   }
   .select-by-month,
   .search-by-name {
@@ -627,12 +616,10 @@ fieldset {
     font-style: normal;
     font-weight: 500;
     padding-top: 10px;
-    padding-left: 19px;
+    padding-left: 20px;
     padding-bottom: 11px;
+    padding-right: 30px;
   }
-  /* .search-by-month label {
-    margin-left: 21px;
-  } */
   .edit-first-name {
     padding-top: 15px;
     padding-left: 20px;
@@ -682,14 +669,14 @@ fieldset {
     font-weight: 100;
     height: 20%;
     position: absolute;
-    right: 15%;
+    right: 12%;
     top: 6%;
   }
   .remove-add-popup {
     font-size: 48px;
     position: absolute;
     right: 14%;
-    top: 5%;
+    top: 23%;
   }
   .remove-delete-popup {
     font-size: 45px;
@@ -756,3 +743,5 @@ fieldset {
     margin-right: auto;
   }
 }
+
+/* I still need to fix the each popup the close button */
